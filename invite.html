@@ -10,15 +10,12 @@
 <style>
 :root {
   --bg: #120c09;
-  --bg-elevated: #1b120e;
   --card: #221712;
-  --card-glass: rgba(34, 23, 18, 0.85);
   --cream: #f8f4ed;
   --cream-soft: #e6ddd2;
   --taupe: #a89888;
   --gold: #cfa968;
   --gold-light: #e6c98e;
-  --gold-dark: #9e7b3e;
   --border: rgba(207, 169, 104, 0.22);
   --border-strong: rgba(207, 169, 104, 0.48);
   --success: #34d399;
@@ -44,7 +41,7 @@ body {
 }
 
 .container {
-  max-width: 1120px;
+  max-width: 1100px;
   margin: 0 auto;
 }
 
@@ -60,7 +57,7 @@ body {
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  padding-bottom: 24px;
+  padding-bottom: 22px;
   margin-bottom: 24px;
   border-bottom: 1px solid var(--border);
 }
@@ -130,7 +127,7 @@ body {
   position: absolute;
   top: 0; left: 0; width: 3px; height: 100%;
   background: var(--gold);
-  opacity: 0.7;
+  opacity: 0.75;
 }
 
 .stat-card.sent::after { background: var(--success); }
@@ -157,38 +154,6 @@ body {
   font-size: 10px;
   color: var(--taupe);
   margin-top: 6px;
-}
-
-/* URL Bar */
-.url-config-bar {
-  background: var(--card-glass);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 14px 18px;
-  margin-bottom: 24px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-}
-
-.url-label-grp {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 11px;
-  color: var(--gold);
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.url-input-grp {
-  display: flex;
-  flex: 1;
-  min-width: 280px;
-  gap: 8px;
 }
 
 /* Navigation Tabs */
@@ -471,16 +436,6 @@ body {
   background: rgba(207, 169, 104, 0.1);
 }
 
-.btn-danger {
-  background: rgba(248, 113, 113, 0.1);
-  border-color: rgba(248, 113, 113, 0.3);
-  color: var(--danger);
-}
-
-.btn-danger:hover {
-  background: rgba(248, 113, 113, 0.2);
-}
-
 .action-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -648,7 +603,7 @@ tr:hover td {
     <div class="stat-card">
       <div class="stat-label">Total Invitees</div>
       <div class="stat-val" id="statTotalGuests">0</div>
-      <div class="stat-sub">Saved cards in database</div>
+      <div class="stat-sub">Saved cards in list</div>
     </div>
     <div class="stat-card pax">
       <div class="stat-label">Expected Guests (Pax)</div>
@@ -667,19 +622,6 @@ tr:hover td {
     </div>
   </section>
 
-  <!-- Public GitHub Base URL Config -->
-  <div class="url-config-bar">
-    <div class="url-label-grp">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-      <span>Live Invitation URL</span>
-    </div>
-    <div class="url-input-grp">
-      <input type="text" id="baseUrlInput" class="ctrl" style="padding:8px 12px;font-family:monospace;font-size:12px;" oninput="updatePreview()"/>
-      <button type="button" class="btn btn-gold" style="padding:8px 14px;" onclick="saveBaseUrl()">Save</button>
-      <button type="button" class="btn btn-outline" style="padding:8px 12px;" onclick="resetBaseUrl()">Reset</button>
-    </div>
-  </div>
-
   <!-- Navigation Tabs -->
   <nav class="nav-tabs">
     <button class="nav-btn active" id="nav-create" onclick="switchTab('create')">
@@ -688,7 +630,7 @@ tr:hover td {
     </button>
     <button class="nav-btn" id="nav-directory" onclick="switchTab('directory')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      Invitee Database & Tracking
+      Invitee List & Tracking
       <span class="count-pill" id="tabBadgeCount">0</span>
     </button>
     <button class="nav-btn" id="nav-batch" onclick="switchTab('batch')">
@@ -795,19 +737,19 @@ tr:hover td {
 
         <!-- Action Buttons -->
         <div class="action-grid">
-          <button type="button" class="btn btn-gold" id="saveGuestBtn" onclick="saveGuestRecord()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/></svg>
-            <span id="saveBtnLabel">Save to Database</span>
-          </button>
-
           <button type="button" class="btn btn-wa" onclick="shareCurrentWhatsApp()">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.49 0-2.94-.4-4.21-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23z"/></svg>
             Send WhatsApp
           </button>
 
-          <button type="button" class="btn btn-outline" onclick="copyCurrentLink()">
+          <button type="button" class="btn btn-gold" onclick="copyCurrentLink()">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
             Copy Invite Link
+          </button>
+
+          <button type="button" class="btn btn-outline" id="saveGuestBtn" onclick="saveGuestRecord()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/></svg>
+            <span id="saveBtnLabel">Save to List</span>
           </button>
 
           <button type="button" class="btn btn-outline" onclick="resetForm()">
@@ -842,11 +784,6 @@ tr:hover td {
 
       <div style="display:flex;gap:8px;flex-wrap:wrap;">
         <button type="button" class="btn btn-outline" style="padding:8px 13px;" onclick="exportCSV()">Export CSV</button>
-        <button type="button" class="btn btn-outline" style="padding:8px 13px;" onclick="exportJSON()">Backup JSON</button>
-        <label class="btn btn-outline" style="padding:8px 13px;margin:0;cursor:pointer;">
-          Restore JSON
-          <input type="file" accept=".json" style="display:none;" onchange="importJSON(event)"/>
-        </label>
       </div>
     </div>
 
@@ -895,7 +832,7 @@ Farhana Sultana & Spouse, 01819887766"></textarea>
     </div>
 
     <div style="display:flex;gap:10px;">
-      <button type="button" class="btn btn-gold" onclick="runBulkImport()">Import & Save All Guests</button>
+      <button type="button" class="btn btn-gold" onclick="runBulkImport()">Import & Add All</button>
       <button type="button" class="btn btn-outline" onclick="document.getElementById('batchInput').value=''">Clear</button>
     </div>
   </section>
@@ -904,51 +841,18 @@ Farhana Sultana & Spouse, 01819887766"></textarea>
 <!-- Toast -->
 <div id="toast">
   <span style="color:var(--gold);font-weight:bold;">✓</span>
-  <span id="toastText">Saved!</span>
+  <span id="toastText">Done!</span>
 </div>
 
 <script>
-const DEFAULT_BASE_URL = 'https://jhumurhut.github.io/Wedding_Ceremony/';
-const URL_KEY = 'jhumu_suvo_base_url_v3';
+// Fixed Live GitHub Pages URL
+const INVITE_BASE_URL = 'https://jhumurhut.github.io/Wedding_Ceremony/';
 const DB_KEY = 'jhumu_suvo_guests_db_v3';
 
 let guestList = [];
 
-/* URL Helpers */
-function normalizeBaseUrl(raw) {
-  let u = (raw || '').trim();
-  if (!u) u = DEFAULT_BASE_URL;
-  if (!/^https?:\/\//i.test(u)) u = 'https://' + u;
-  u = u.replace(/\/index\.html\/?$/i, '/');
-  if (!u.endsWith('/')) u += '/';
-  return u;
-}
-
-function getBaseUrl() {
-  const saved = localStorage.getItem(URL_KEY);
-  return normalizeBaseUrl(saved || DEFAULT_BASE_URL);
-}
-
-function saveBaseUrl() {
-  const val = normalizeBaseUrl(document.getElementById('baseUrlInput').value);
-  document.getElementById('baseUrlInput').value = val;
-  localStorage.setItem(URL_KEY, val);
-  updatePreview();
-  renderTable();
-  notify('Base URL updated!');
-}
-
-function resetBaseUrl() {
-  localStorage.removeItem(URL_KEY);
-  document.getElementById('baseUrlInput').value = DEFAULT_BASE_URL;
-  updatePreview();
-  renderTable();
-  notify('Reset to Wedding_Ceremony link');
-}
-
 function buildInviteUrl(name, salutation) {
-  const base = normalizeBaseUrl(document.getElementById('baseUrlInput').value || getBaseUrl());
-  const url = new URL(base);
+  const url = new URL(INVITE_BASE_URL);
   url.searchParams.set('guest', (name || 'Honoured Guest').trim());
   if (salutation && salutation !== 'Honoured Guest') {
     url.searchParams.set('salutation', salutation.trim());
@@ -956,31 +860,10 @@ function buildInviteUrl(name, salutation) {
   return url.toString();
 }
 
-/* Database Persistence */
+/* Local Session / Browser Persistence */
 function loadDB() {
   try {
     const raw = localStorage.getItem(DB_KEY);
-    // Migrate old v2 data if v3 is empty
-    if (!raw) {
-      const oldRaw = localStorage.getItem('jhumu_suvo_guest_list_v2');
-      if (oldRaw) {
-        const oldArr = JSON.parse(oldRaw);
-        guestList = oldArr.map(item => ({
-          id: item.id || Date.now() + Math.random(),
-          name: item.name,
-          salutation: item.salutation || 'Honoured Guest',
-          category: "Groom's Family",
-          phone: '',
-          pax: 2,
-          note: '',
-          lang: item.lang || 'bn',
-          sent: !!item.sent,
-          createdAt: item.dateAdded || new Date().toLocaleDateString()
-        }));
-        saveDB();
-        return;
-      }
-    }
     guestList = raw ? JSON.parse(raw) : [];
   } catch (e) {
     guestList = [];
@@ -989,7 +872,9 @@ function loadDB() {
 }
 
 function saveDB() {
-  localStorage.setItem(DB_KEY, JSON.stringify(guestList));
+  try {
+    localStorage.setItem(DB_KEY, JSON.stringify(guestList));
+  } catch (e) {}
   refreshStats();
 }
 
@@ -1066,21 +951,19 @@ function saveGuestRecord() {
     pax: Math.max(1, parseInt(document.getElementById('guestPax').value, 10) || 1),
     note: document.getElementById('guestNote').value.trim(),
     lang: document.querySelector('input[name="msgLang"]:checked').value,
-    sent: false,
-    createdAt: new Date().toLocaleDateString()
+    sent: false
   };
 
   if (editId) {
     const idx = guestList.findIndex(g => g.id == editId);
     if (idx !== -1) {
       record.sent = guestList[idx].sent;
-      record.createdAt = guestList[idx].createdAt;
       guestList[idx] = record;
     }
     notify('Guest details updated!');
   } else {
     guestList.unshift(record);
-    notify('Guest saved to database!');
+    notify('Added to guest list!');
   }
 
   saveDB();
@@ -1093,7 +976,7 @@ function resetForm() {
   document.getElementById('guestPhone').value = '';
   document.getElementById('guestPax').value = '2';
   document.getElementById('guestNote').value = '';
-  document.getElementById('saveBtnLabel').textContent = 'Save to Database';
+  document.getElementById('saveBtnLabel').textContent = 'Save to List';
   updatePreview();
 }
 
@@ -1116,6 +999,7 @@ function shareCurrentWhatsApp() {
   const name = document.getElementById('guestName').value.trim();
   if (!name) {
     notify('Enter guest name first!');
+    document.getElementById('guestName').focus();
     return;
   }
   const sal = document.getElementById('guestSalutation').value;
@@ -1247,7 +1131,7 @@ function deleteGuest(id) {
     guestList = guestList.filter(x => x.id !== id);
     saveDB();
     renderTable();
-    notify('Guest deleted');
+    notify('Guest removed');
   }
 }
 
@@ -1277,19 +1161,18 @@ function runBulkImport() {
         pax: pax,
         note: '',
         lang: 'bn',
-        sent: false,
-        createdAt: new Date().toLocaleDateString()
+        sent: false
       });
     }
   });
 
   saveDB();
   document.getElementById('batchInput').value = '';
-  notify(`Imported ${lines.length} guests!`);
+  notify(`Added ${lines.length} guests!`);
   switchTab('directory');
 }
 
-/* Export & Backup */
+/* Export CSV */
 function exportCSV() {
   if (!guestList.length) return notify('No data to export!');
   let csv = 'Name,Salutation,Category,Pax,Phone,Status,Note,Invitation Link\r\n';
@@ -1297,40 +1180,11 @@ function exportCSV() {
     const link = buildInviteUrl(g.name, g.salutation);
     csv += `"${g.name.replace(/"/g,'""')}","${g.salutation}","${g.category}",${g.pax},"${g.phone}","${g.sent ? 'Sent' : 'Pending'}","${(g.note||'').replace(/"/g,'""')}","${link}"\r\n`;
   });
-  downloadFile(csv, 'Jhumu-Suvo-Wedding-Guests.csv', 'text/csv;charset=utf-8;');
-}
-
-function exportJSON() {
-  if (!guestList.length) return notify('No data to backup!');
-  downloadFile(JSON.stringify(guestList, null, 2), 'Jhumu-Suvo-Guests-Backup.json', 'application/json');
-}
-
-function importJSON(e) {
-  const file = e.target.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = function(ev) {
-    try {
-      const parsed = JSON.parse(ev.target.result);
-      if (Array.isArray(parsed)) {
-        guestList = parsed;
-        saveDB();
-        renderTable();
-        notify('Backup restored successfully!');
-      }
-    } catch (err) {
-      notify('Invalid backup JSON file');
-    }
-  };
-  reader.readAsText(file);
-}
-
-function downloadFile(content, filename, mime) {
-  const blob = new Blob([content], { type: mime });
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = filename;
+  a.download = 'Jhumu-Suvo-Wedding-Guests.csv';
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -1348,7 +1202,6 @@ function notify(msg) {
 }
 
 /* Init */
-document.getElementById('baseUrlInput').value = getBaseUrl();
 loadDB();
 updatePreview();
 </script>
