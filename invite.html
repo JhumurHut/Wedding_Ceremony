@@ -3,971 +3,1353 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Guest Invite Generator – Jhumu &amp; Suvo's Wedding</title>
+<title>Guest Invite Studio – Jhumu & Suvo's Wedding</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500;600&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;500;600&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg: #18110d;
-  --bg-deep: #120c09;
-  --card: #251a14;
-  --card-inner: #1e1510;
-  --card-hover: #2e2019;
-  --cream: #f7f3ec;
-  --cream-soft: #e5dcd1;
-  --taupe: #a49485;
-  --taupe-dark: #6e6155;
-  --gold: #c8a96e;
-  --gold-light: #dfc896;
-  --gold-glow: #f0dfb3;
-  --border: rgba(200, 169, 110, 0.22);
-  --border-subtle: rgba(200, 169, 110, 0.12);
-  --border-strong: rgba(200, 169, 110, 0.42);
+:root {
+  --bg: #120c09;
+  --bg-elevated: #1b120e;
+  --card: #221712;
+  --card-glass: rgba(34, 23, 18, 0.85);
+  --cream: #f8f4ed;
+  --cream-soft: #e6ddd2;
+  --taupe: #a89888;
+  --gold: #cfa968;
+  --gold-light: #e6c98e;
+  --gold-dark: #9e7b3e;
+  --border: rgba(207, 169, 104, 0.22);
+  --border-strong: rgba(207, 169, 104, 0.48);
+  --success: #34d399;
+  --wa: #25D366;
+  --danger: #f87171;
 }
-*{box-sizing:border-box;margin:0;padding:0}
-body{
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
   background-color: var(--bg);
   background-image: 
-    radial-gradient(circle at 50% 10%, rgba(55, 38, 29, 0.5) 0%, transparent 60%),
-    linear-gradient(to bottom, #18110d 0%, #130d09 100%);
+    radial-gradient(circle at 15% 15%, rgba(207, 169, 104, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(207, 169, 104, 0.06) 0%, transparent 50%),
+    linear-gradient(180deg, #160f0b 0%, #0e0907 100%);
   background-attachment: fixed;
   color: var(--cream);
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   min-height: 100vh;
-  padding: 30px 16px 80px;
+  padding: 28px 18px 80px;
   -webkit-font-smoothing: antialiased;
 }
 
-.container{
-  max-width: 860px;
+.container {
+  max-width: 1120px;
   margin: 0 auto;
 }
 
 /* Typography */
-.cinzel{font-family:'Cinzel Decorative',serif;color:var(--gold)}
-.serif{font-family:'Cormorant Garamond',serif}
-.arabic{font-family:'Scheherazade New',serif;color:var(--gold)}
+.cinzel { font-family: 'Cinzel Decorative', serif; color: var(--gold); }
+.serif { font-family: 'Cormorant Garamond', serif; }
+.arabic { font-family: 'Scheherazade New', serif; color: var(--gold); }
 
 /* Header */
-.gen-header{
-  text-align: center;
-  padding: 20px 0 28px;
-  position: relative;
-}
-.header-badge{
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 9px;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  color: var(--taupe);
-  margin-bottom: 12px;
-}
-.header-badge::before, .header-badge::after{
-  content: '';
-  width: 28px;
-  height: 1px;
-  background: var(--gold);
-  opacity: .4;
-}
-
-/* GitHub Link Configuration Box */
-.gh-banner{
-  background: linear-gradient(160deg, #2b1f17, #1f140f);
-  border: 1px solid var(--border-strong);
-  border-radius: 6px;
-  padding: 16px 20px;
-  margin-bottom: 22px;
-  box-shadow: 0 10px 30px rgba(0,0,0,.45);
-}
-.gh-title-row{
+.top-header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 8px;
-}
-.gh-title{
-  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 8px;
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 500;
-}
-.gh-detected{
-  font-size: 10px;
-  color: var(--taupe);
-  letter-spacing: 1px;
-}
-
-/* Panels */
-.g-card{
-  background: linear-gradient(165deg, rgba(38,27,21,.95), rgba(24,17,13,.98));
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 28px 24px;
-  margin-bottom: 24px;
-  box-shadow: 0 16px 40px rgba(0,0,0,.4);
-  position: relative;
-}
-.g-card::before{
-  content: '';
-  position: absolute;
-  inset: 5px;
-  border: 1px dashed rgba(200,169,110,.1);
-  border-radius: 4px;
-  pointer-events: none;
-}
-
-/* Tabs */
-.tab-row{
-  display: flex;
-  gap: 8px;
+  gap: 16px;
+  padding-bottom: 24px;
   margin-bottom: 24px;
   border-bottom: 1px solid var(--border);
-  padding-bottom: 12px;
-}
-.tab-btn{
-  background: transparent;
-  border: 1px solid transparent;
-  color: var(--taupe);
-  padding: 9px 18px;
-  font-size: 11px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 3px;
-  transition: all .25s ease;
-}
-.tab-btn.active{
-  background: rgba(200,169,110,.12);
-  border-color: var(--gold);
-  color: var(--gold);
 }
 
-/* Form layout */
-.form-grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 16px;
-}
-
-.inp-grp{
-  margin-bottom: 18px;
-  text-align: left;
-}
-.inp-lbl{
-  display: block;
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--taupe);
-  margin-bottom: 7px;
-}
-.inp-ctrl{
-  width: 100%;
-  padding: 13px 16px;
-  background: rgba(20, 14, 10, 0.7);
-  border: 1px solid rgba(200,169,110,.25);
-  color: var(--cream);
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  outline: none;
-  border-radius: 3px;
-  transition: border-color .25s, box-shadow .25s;
-}
-.inp-ctrl:focus{
-  border-color: var(--gold);
-  box-shadow: 0 0 0 1px rgba(200,169,110,.2), 0 4px 18px rgba(200,169,110,.1);
-}
-
-/* Quick pills */
-.pills{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 8px;
-}
-.pill{
-  font-size: 10px;
-  letter-spacing: 1px;
-  padding: 5px 12px;
-  border-radius: 14px;
-  background: rgba(200,169,110,.08);
-  border: 1px solid rgba(200,169,110,.2);
-  color: var(--taupe);
-  cursor: pointer;
-  transition: all .2s;
-}
-.pill:hover, .pill.selected{
-  background: var(--gold);
-  color: var(--bg);
-  border-color: var(--gold);
-}
-
-/* Live Preview Mockup Card */
-.mockup-wrap{
-  background: linear-gradient(160deg, #2b1e17, #1f140f);
-  border: 1px solid var(--border-strong);
-  border-radius: 4px;
-  padding: 24px;
-  text-align: center;
-  position: relative;
-  margin: 20px 0;
-  box-shadow: 0 12px 30px rgba(0,0,0,.5);
-}
-.mockup-wrap::after{
-  content: '';
-  position: absolute;
-  inset: 5px;
-  border: 1px dashed rgba(200,169,110,.15);
-  border-radius: 3px;
-  pointer-events: none;
-}
-.mockup-guest-title{
+.brand-area .eyebrow {
   font-size: 9px;
   letter-spacing: 4px;
   text-transform: uppercase;
   color: var(--taupe);
   margin-bottom: 6px;
-}
-.mockup-guest-name{
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(24px, 5vw, 36px);
-  color: var(--gold);
-  font-style: italic;
-  line-height: 1.25;
-  text-shadow: 0 2px 10px rgba(200,169,110,.3);
-  margin-bottom: 8px;
-}
-
-/* Link Box */
-.link-box{
-  background: rgba(18, 12, 9, 0.85);
-  border: 1px solid rgba(200,169,110,.2);
-  padding: 12px 16px;
-  border-radius: 3px;
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin: 16px 0;
-  overflow: hidden;
+  gap: 8px;
 }
-.link-text{
-  flex: 1;
-  font-family: monospace;
+
+.brand-area .eyebrow::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.brand-area h1 {
+  font-size: clamp(22px, 3.5vw, 32px);
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.event-meta {
+  text-align: right;
   font-size: 11px;
   color: var(--cream-soft);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-align: left;
+  line-height: 1.6;
 }
 
-/* Buttons */
-.btn-row{
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  justify-content: center;
+.event-meta span {
+  color: var(--gold);
+  font-weight: 500;
+  letter-spacing: 1px;
 }
-.btn{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px 22px;
-  font-family: 'Montserrat', sans-serif;
+
+/* KPI Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.stat-card {
+  background: linear-gradient(145deg, rgba(38, 26, 20, 0.9), rgba(22, 15, 11, 0.95));
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 20px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+}
+
+.stat-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 3px; height: 100%;
+  background: var(--gold);
+  opacity: 0.7;
+}
+
+.stat-card.sent::after { background: var(--success); }
+.stat-card.pending::after { background: #fbbf24; }
+.stat-card.pax::after { background: #60a5fa; }
+
+.stat-label {
   font-size: 10px;
   letter-spacing: 2px;
   text-transform: uppercase;
-  cursor: pointer;
-  border-radius: 3px;
-  transition: all .25s ease;
-  text-decoration: none;
-  border: 1px solid var(--gold);
+  color: var(--taupe);
+  margin-bottom: 8px;
 }
-.btn-gold{
+
+.stat-val {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--cream);
+  line-height: 1;
+}
+
+.stat-sub {
+  font-size: 10px;
+  color: var(--taupe);
+  margin-top: 6px;
+}
+
+/* URL Bar */
+.url-config-bar {
+  background: var(--card-glass);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.url-label-grp {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 11px;
+  color: var(--gold);
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.url-input-grp {
+  display: flex;
+  flex: 1;
+  min-width: 280px;
+  gap: 8px;
+}
+
+/* Navigation Tabs */
+.nav-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+
+.nav-btn {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  color: var(--taupe);
+  padding: 11px 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.25s ease;
+}
+
+.nav-btn:hover {
+  color: var(--cream);
+  border-color: var(--border-strong);
+}
+
+.nav-btn.active {
+  background: linear-gradient(135deg, rgba(207, 169, 104, 0.2), rgba(207, 169, 104, 0.08));
+  border-color: var(--gold);
+  color: var(--gold-light);
+  box-shadow: 0 4px 20px rgba(207, 169, 104, 0.12);
+}
+
+.count-pill {
   background: var(--gold);
   color: var(--bg);
-  font-weight: 500;
+  font-size: 10px;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 10px;
 }
-.btn-gold:hover{
-  background: var(--gold-light);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(200,169,110,.3);
-}
-.btn-outline{
-  background: transparent;
-  color: var(--gold);
-}
-.btn-outline:hover{
-  background: rgba(200,169,110,.1);
-  transform: translateY(-2px);
-}
-.btn-wa{
-  background: #25D366;
-  border-color: #25D366;
-  color: #fff;
-  font-weight: 500;
-}
-.btn-wa:hover{
-  background: #20bd5a;
-  box-shadow: 0 8px 22px rgba(37,211,102,.35);
-  transform: translateY(-2px);
-}
-.btn svg{width:15px;height:15px;flex-shrink:0}
 
-/* Guest Table */
-.tbl-wrap{
-  overflow-x: auto;
-  margin-top: 16px;
+/* Main Panel */
+.panel {
+  background: linear-gradient(165deg, rgba(35, 24, 19, 0.94), rgba(20, 14, 10, 0.98));
   border: 1px solid var(--border);
-  border-radius: 4px;
+  border-radius: 10px;
+  padding: 28px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
-table{
+
+/* Two Column Studio Layout */
+.studio-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 28px;
+  align-items: start;
+}
+
+@media (max-width: 860px) {
+  .studio-grid { grid-template-columns: 1fr; }
+  .event-meta { text-align: left; }
+}
+
+/* Form Controls */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+@media (max-width: 540px) {
+  .form-row { grid-template-columns: 1fr; }
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.field label {
+  display: block;
+  font-size: 10px;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--taupe);
+  margin-bottom: 7px;
+  font-weight: 500;
+}
+
+.ctrl {
+  width: 100%;
+  padding: 12px 14px;
+  background: rgba(14, 9, 7, 0.75);
+  border: 1px solid rgba(207, 169, 104, 0.25);
+  color: var(--cream);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  border-radius: 6px;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.ctrl:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(207, 169, 104, 0.12);
+}
+
+.quick-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.tag-btn {
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(207, 169, 104, 0.08);
+  border: 1px solid rgba(207, 169, 104, 0.22);
+  color: var(--cream-soft);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tag-btn:hover {
+  background: var(--gold);
+  color: var(--bg);
+  border-color: var(--gold);
+}
+
+/* Royal Invitation Live Preview Card */
+.preview-box {
+  background: radial-gradient(circle at top, #2e2018 0%, #19110c 100%);
+  border: 1px solid var(--border-strong);
+  border-radius: 10px;
+  padding: 28px 22px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(207, 169, 104, 0.06);
+}
+
+.preview-box::before {
+  content: '';
+  position: absolute;
+  inset: 8px;
+  border: 1px solid rgba(207, 169, 104, 0.25);
+  border-radius: 6px;
+  pointer-events: none;
+}
+
+.preview-bismillah {
+  font-size: 20px;
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+.preview-salutation {
+  font-size: 9px;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--taupe);
+  margin-bottom: 6px;
+}
+
+.preview-guest {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(26px, 3vw, 34px);
+  font-style: italic;
+  font-weight: 600;
+  color: var(--gold-light);
+  line-height: 1.2;
+  margin-bottom: 10px;
+  word-break: break-word;
+}
+
+.preview-divider {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin: 12px auto;
+}
+
+.preview-meta-pills {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 12px;
+}
+
+.meta-chip {
+  font-size: 9px;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: rgba(207, 169, 104, 0.1);
+  border: 1px solid rgba(207, 169, 104, 0.2);
+  color: var(--cream-soft);
+}
+
+/* Generated Link Display */
+.generated-url-box {
+  margin-top: 16px;
+  background: rgba(10, 7, 5, 0.85);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.generated-url-text {
+  font-family: monospace;
+  font-size: 11px;
+  color: var(--gold-light);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 11px 18px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+.btn-gold {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  color: #140d09;
+}
+
+.btn-gold:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(207, 169, 104, 0.35);
+}
+
+.btn-wa {
+  background: var(--wa);
+  color: #fff;
+}
+
+.btn-wa:hover {
+  background: #20bd5a;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--border-strong);
+  color: var(--gold-light);
+}
+
+.btn-outline:hover {
+  background: rgba(207, 169, 104, 0.1);
+}
+
+.btn-danger {
+  background: rgba(248, 113, 113, 0.1);
+  border-color: rgba(248, 113, 113, 0.3);
+  color: var(--danger);
+}
+
+.btn-danger:hover {
+  background: rgba(248, 113, 113, 0.2);
+}
+
+.action-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+/* Guest Directory Table & Filters */
+.directory-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.filter-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex: 1;
+}
+
+.table-container {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: rgba(14, 9, 7, 0.6);
+}
+
+table {
   width: 100%;
   border-collapse: collapse;
   text-align: left;
   font-size: 12px;
 }
-th{
-  background: rgba(30, 21, 15, 0.9);
-  padding: 14px 16px;
+
+th {
+  background: rgba(34, 23, 18, 0.95);
+  padding: 13px 14px;
   font-size: 9px;
-  letter-spacing: 2px;
+  font-weight: 600;
+  letter-spacing: 1.8px;
   text-transform: uppercase;
   color: var(--gold);
   border-bottom: 1px solid var(--border);
+  white-space: nowrap;
 }
-td{
-  padding: 14px 16px;
-  border-bottom: 1px solid rgba(200,169,110,.08);
-  color: var(--cream);
+
+td {
+  padding: 13px 14px;
+  border-bottom: 1px solid rgba(207, 169, 104, 0.08);
+  vertical-align: middle;
 }
-tr:hover td{
-  background: rgba(200,169,110,.04);
+
+tr:hover td {
+  background: rgba(207, 169, 104, 0.04);
 }
-.badge-status{
+
+.cat-badge {
   display: inline-block;
-  padding: 4px 9px;
-  border-radius: 10px;
+  padding: 3px 8px;
   font-size: 9px;
+  letter-spacing: 0.8px;
+  border-radius: 4px;
+  background: rgba(207, 169, 104, 0.12);
+  color: var(--gold-light);
+  border: 1px solid rgba(207, 169, 104, 0.25);
+}
+
+.status-pill {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
   cursor: pointer;
-}
-.badge-sent{
-  background: rgba(37,211,102,.15);
-  color: #34d399;
-  border: 1px solid rgba(37,211,102,.3);
-}
-.badge-pending{
-  background: rgba(200,169,110,.12);
-  color: var(--gold);
-  border: 1px solid rgba(200,169,110,.25);
+  border: 1px solid transparent;
 }
 
-/* Toast */
-#toast{
+.status-sent {
+  background: rgba(52, 211, 153, 0.15);
+  color: var(--success);
+  border-color: rgba(52, 211, 153, 0.35);
+}
+
+.status-pending {
+  background: rgba(251, 191, 36, 0.12);
+  color: #fbbf24;
+  border-color: rgba(251, 191, 36, 0.35);
+}
+
+.row-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.icon-btn {
+  padding: 6px 9px;
+  border-radius: 5px;
+  font-size: 11px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border);
+  color: var(--cream-soft);
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s;
+}
+
+.icon-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* Toast Notification */
+#toast {
   position: fixed;
   bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%) translateY(40px);
-  opacity: 0;
-  pointer-events: none;
-  background: linear-gradient(135deg, #35251c, #221711);
+  right: 24px;
+  background: linear-gradient(135deg, #2c1e16, #1a110c);
   border: 1px solid var(--gold);
   color: var(--cream);
-  padding: 12px 24px;
-  border-radius: 4px;
-  font-size: 11px;
-  letter-spacing: 1px;
-  box-shadow: 0 12px 36px rgba(0,0,0,.7), 0 0 16px rgba(200,169,110,.25);
+  padding: 13px 20px;
+  border-radius: 8px;
+  font-size: 12px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.75);
   display: flex;
   align-items: center;
   gap: 10px;
-  z-index: 10000;
-  transition: all .3s cubic-bezier(.4,0,.2,1);
+  transform: translateY(80px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 9999;
 }
-#toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+
+#toast.show {
+  transform: translateY(0);
+  opacity: 1;
+}
 </style>
 </head>
 <body>
 
 <div class="container">
-  <!-- Header -->
-  <header class="gen-header">
-    <div class="header-badge">Host Management Interface</div>
-    <h1 class="cinzel" style="font-size:clamp(22px,4.5vw,34px);margin-bottom:6px;">Guest Invitation Generator</h1>
-    <div class="serif" style="font-size:clamp(15px,3vw,19px);color:var(--taupe);font-style:italic;">
-      The Wedding of Jhumu &amp; Suvo
+  <!-- Top Header -->
+  <header class="top-header">
+    <div class="brand-area">
+      <div class="eyebrow">Royal Wedding Guest Studio</div>
+      <h1 class="cinzel">Jhumu & Suvo</h1>
     </div>
-    <div style="font-size:10px;letter-spacing:2px;color:var(--gold);margin-top:8px;">
-      24 December 2026 · Al-Amin Community Center, Dhaka
+    <div class="event-meta">
+      <div><span>24 December 2026</span> · Thursday, 09:30 PM</div>
+      <div>Al-Amin Community Center, Sutrapur, Dhaka</div>
     </div>
   </header>
 
-  <!-- GitHub Live Link Configuration Bar -->
-  <div class="gh-banner">
-    <div class="gh-title-row">
-      <div class="gh-title">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-        <span>GitHub Pages Public Base Link</span>
-      </div>
-      <div class="gh-detected" id="ghStatusMsg">Target for WhatsApp &amp; Copy Links</div>
+  <!-- Live Dashboard Stats -->
+  <section class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-label">Total Invitees</div>
+      <div class="stat-val" id="statTotalGuests">0</div>
+      <div class="stat-sub">Saved cards in database</div>
     </div>
-    
-    <div style="display:flex;gap:8px;flex-wrap:wrap;">
-      <input class="inp-ctrl" id="githubBaseUrlInput" type="text" placeholder="https://jhumurhut.github.io/wedding/" oninput="onBaseUrlChanged()" style="flex:1;min-width:260px;padding:11px 14px;font-size:12px;font-family:monospace;background:rgba(15,10,7,0.8);"/>
-      <button class="btn btn-gold" type="button" style="padding:10px 18px;" onclick="saveBaseUrl()">Save URL</button>
-      <button class="btn btn-outline" type="button" style="padding:10px 14px;" onclick="resetBaseUrl()" title="Reset to auto-detect">Reset</button>
+    <div class="stat-card pax">
+      <div class="stat-label">Expected Guests (Pax)</div>
+      <div class="stat-val" id="statTotalPax">0</div>
+      <div class="stat-sub">Estimated total headcount</div>
     </div>
-    <div style="font-size:9px;color:var(--taupe);margin-top:7px;letter-spacing:0.5px;">
-      * All links generated for WhatsApp, copying, and SMS will use this public GitHub link so guests can open it on their phones.
+    <div class="stat-card sent">
+      <div class="stat-label">Invitations Sent</div>
+      <div class="stat-val" id="statSent">0</div>
+      <div class="stat-sub">Delivered via WhatsApp / Link</div>
+    </div>
+    <div class="stat-card pending">
+      <div class="stat-label">Pending Invites</div>
+      <div class="stat-val" id="statPending">0</div>
+      <div class="stat-sub">Awaiting dispatch</div>
+    </div>
+  </section>
+
+  <!-- Public GitHub Base URL Config -->
+  <div class="url-config-bar">
+    <div class="url-label-grp">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+      <span>Live Invitation URL</span>
+    </div>
+    <div class="url-input-grp">
+      <input type="text" id="baseUrlInput" class="ctrl" style="padding:8px 12px;font-family:monospace;font-size:12px;" oninput="updatePreview()"/>
+      <button type="button" class="btn btn-gold" style="padding:8px 14px;" onclick="saveBaseUrl()">Save</button>
+      <button type="button" class="btn btn-outline" style="padding:8px 12px;" onclick="resetBaseUrl()">Reset</button>
     </div>
   </div>
 
-  <!-- Navigation / Return Link -->
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;font-size:11px;">
-    <a href="index.html" class="btn btn-outline" style="padding:7px 14px;" target="_blank">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-      Open Local index.html
-    </a>
-    <div style="color:var(--taupe);font-size:11px;">
-      Total Saved Guests: <span id="guestCountBadge" style="color:var(--gold);font-weight:600;">0</span>
-    </div>
-  </div>
+  <!-- Navigation Tabs -->
+  <nav class="nav-tabs">
+    <button class="nav-btn active" id="nav-create" onclick="switchTab('create')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+      Create & Preview Invite
+    </button>
+    <button class="nav-btn" id="nav-directory" onclick="switchTab('directory')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      Invitee Database & Tracking
+      <span class="count-pill" id="tabBadgeCount">0</span>
+    </button>
+    <button class="nav-btn" id="nav-batch" onclick="switchTab('batch')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+      Bulk Import
+    </button>
+  </nav>
 
-  <!-- Main Generator Card -->
-  <div class="g-card">
-    <div class="tab-row">
-      <button class="tab-btn active" id="tabSingleBtn" onclick="switchTab('single')">Single Guest</button>
-      <button class="tab-btn" id="tabBatchBtn" onclick="switchTab('batch')">Batch / Multi-Guest Import</button>
-      <button class="tab-btn" id="tabListBtn" onclick="switchTab('list')">Guest List &amp; Status (<span id="tabCount">0</span>)</button>
-    </div>
-
-    <!-- TAB 1: SINGLE GUEST GENERATOR -->
-    <div id="tabSingle">
-      <div class="form-grid">
-        <!-- Guest Name Input -->
-        <div class="inp-grp">
-          <label class="inp-lbl" for="guestNameInput">Guest Name *</label>
-          <input class="inp-ctrl" id="guestNameInput" type="text" placeholder="e.g. Dr. Shafiqul Islam &amp; Family" oninput="updatePreview()" maxlength="70" autocomplete="off"/>
-          
-          <div class="pills">
-            <span style="font-size:9px;color:var(--taupe);display:flex;align-items:center;">Quick:</span>
-            <button class="pill" type="button" onclick="appendPill('&amp; Family')">+ &amp; Family</button>
-            <button class="pill" type="button" onclick="appendPill('&amp; Spouse')">+ &amp; Spouse</button>
-            <button class="pill" type="button" onclick="setPill('Uncle ')">Uncle...</button>
-            <button class="pill" type="button" onclick="setPill('Mr. &amp; Mrs. ')">Mr. &amp; Mrs...</button>
+  <!-- TAB 1: CREATE & PREVIEW -->
+  <section id="view-create" class="panel">
+    <div class="studio-grid">
+      <!-- Left: Guest Information Form -->
+      <div>
+        <input type="hidden" id="editGuestId" value=""/>
+        <div class="field">
+          <label for="guestName">Invitee Name *</label>
+          <input type="text" id="guestName" class="ctrl" placeholder="e.g. Dr. Shafiqul Islam & Family" oninput="updatePreview()" autocomplete="off"/>
+          <div class="quick-tags">
+            <button type="button" class="tag-btn" onclick="appendName('& Family')">+ & Family</button>
+            <button type="button" class="tag-btn" onclick="appendName('& Spouse')">+ & Spouse</button>
+            <button type="button" class="tag-btn" onclick="prefixName('Mr. & Mrs. ')">Mr. & Mrs.</button>
+            <button type="button" class="tag-btn" onclick="prefixName('Uncle ')">Uncle</button>
+            <button type="button" class="tag-btn" onclick="prefixName('Auntie ')">Auntie</button>
           </div>
         </div>
 
-        <!-- Honorific / Salutation Dropdown -->
-        <div class="inp-grp">
-          <label class="inp-lbl" for="salutationSelect">Salutation / Category</label>
-          <select class="inp-ctrl" id="salutationSelect" onchange="updatePreview()">
-            <option value="Honoured Guest">Honoured Guest (সম্মানিত অতিথি)</option>
-            <option value="Respected Uncle &amp; Family">Respected Uncle &amp; Family</option>
-            <option value="Dearest Friend">Dearest Friend (প্রিয় বন্ধু)</option>
-            <option value="Esteemed Colleague">Esteemed Colleague (শ্রদ্ধেয় সহকর্মী)</option>
-            <option value="Beloved Family">Beloved Family (আত্মীয়-স্বজন)</option>
-            <option value="VIP Guest">VIP Guest</option>
-          </select>
+        <div class="form-row">
+          <div class="field">
+            <label for="guestSalutation">Card Salutation</label>
+            <select id="guestSalutation" class="ctrl" onchange="updatePreview()">
+              <option value="Honoured Guest">Honoured Guest (সম্মানিত অতিথি)</option>
+              <option value="Respected Uncle & Family">Respected Uncle & Family</option>
+              <option value="Dearest Friend">Dearest Friend (প্রিয় বন্ধু)</option>
+              <option value="Esteemed Colleague">Esteemed Colleague (শ্রদ্ধেয় সহকর্মী)</option>
+              <option value="Beloved Family">Beloved Family (আত্মীয়-স্বজন)</option>
+              <option value="VIP Guest">VIP Guest</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="guestCategory">Guest Group / Side</label>
+            <select id="guestCategory" class="ctrl" onchange="updatePreview()">
+              <option value="Groom's Family">Groom's Family (বর পক্ষ)</option>
+              <option value="Bride's Family">Bride's Family (কনে পক্ষ)</option>
+              <option value="Friends">Friends (বন্ধুবান্ধব)</option>
+              <option value="Colleagues">Office / Colleagues</option>
+              <option value="VIP / Special">VIP / Special Guests</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="field">
+            <label for="guestPhone">WhatsApp / Phone Number (Optional)</label>
+            <input type="tel" id="guestPhone" class="ctrl" placeholder="e.g. 017XXXXXXXX"/>
+          </div>
+
+          <div class="field">
+            <label for="guestPax">Expected Guests (Pax)</label>
+            <input type="number" id="guestPax" class="ctrl" value="2" min="1" max="25" oninput="updatePreview()"/>
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="guestNote">Private Note / Table Info (Optional)</label>
+          <input type="text" id="guestNote" class="ctrl" placeholder="e.g. Mirpur relatives, VIP Table 2, etc."/>
+        </div>
+
+        <div class="field">
+          <label>WhatsApp Invitation Language</label>
+          <div style="display:flex;gap:18px;margin-top:6px;">
+            <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--cream);text-transform:none;letter-spacing:0;cursor:pointer;">
+              <input type="radio" name="msgLang" value="bn" checked/> বাংলা ও ইংরেজি (Bengali & English)
+            </label>
+            <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--cream);text-transform:none;letter-spacing:0;cursor:pointer;">
+              <input type="radio" name="msgLang" value="en"/> English Formal
+            </label>
+          </div>
         </div>
       </div>
 
-      <!-- Message Language Preference -->
-      <div class="inp-grp">
-        <label class="inp-lbl">WhatsApp / SMS Message Style</label>
-        <div style="display:flex;gap:16px;margin-top:6px;flex-wrap:wrap;">
-          <label style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--cream-soft);cursor:pointer;">
-            <input type="radio" name="msgLang" value="en" checked onchange="updatePreview()"/> English (Islamic Formal)
-          </label>
-          <label style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--cream-soft);cursor:pointer;">
-            <input type="radio" name="msgLang" value="bn" onchange="updatePreview()"/> Bengali &amp; English (বাংলা আমন্ত্রণ)
-          </label>
+      <!-- Right: Live Royal Card Preview & Actions -->
+      <div>
+        <div class="preview-box">
+          <div class="arabic preview-bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
+          <div class="preview-salutation" id="prevSalutation">Honoured Guest</div>
+          <div class="preview-guest" id="prevName">Guest Name Preview</div>
+          <div class="preview-divider"></div>
+          <div style="font-size:11px;color:var(--cream-soft);line-height:1.6;">
+            You are cordially invited to grace the auspicious wedding ceremony of
+          </div>
+          <div class="cinzel" style="font-size:18px;margin:8px 0;">Jhumu & Suvo</div>
+          <div class="preview-meta-pills">
+            <span class="meta-chip" id="prevCatChip">Groom's Family</span>
+            <span class="meta-chip" id="prevPaxChip">2 Guests</span>
+          </div>
         </div>
-      </div>
 
-      <!-- Live Mockup of How Guest Will See Their Card -->
-      <div class="mockup-wrap">
-        <div class="mockup-guest-title" id="mockupTitle">Honoured Guest</div>
-        <div class="mockup-guest-name" id="mockupName">— Type guest name above —</div>
-        <div style="font-size:10px;color:var(--taupe);letter-spacing:2px;text-transform:uppercase;">
-          Cordially Invited to the Wedding of Jhumu &amp; Suvo
+        <!-- Generated Link -->
+        <div class="generated-url-box">
+          <span class="generated-url-text" id="liveUrlDisplay">https://jhumurhut.github.io/Wedding_Ceremony/</span>
+          <a id="openLiveBtn" href="#" target="_blank" class="icon-btn" title="Open Link in New Tab">↗ Open</a>
         </div>
-      </div>
 
-      <!-- Generated Link Box (Public GitHub Link) -->
-      <div class="inp-lbl" style="text-align:left;">Public GitHub Link Ready to Share:</div>
-      <div class="link-box">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--gold);flex-shrink:0"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-        <div class="link-text" id="linkTextDisplay">Generating GitHub link...</div>
-      </div>
+        <!-- Action Buttons -->
+        <div class="action-grid">
+          <button type="button" class="btn btn-gold" id="saveGuestBtn" onclick="saveGuestRecord()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/></svg>
+            <span id="saveBtnLabel">Save to Database</span>
+          </button>
 
-      <!-- Action Buttons -->
-      <div class="btn-row">
-        <!-- Copy Link -->
-        <button class="btn btn-gold" onclick="copyPersonalizedLink()" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          Copy GitHub Link
-        </button>
+          <button type="button" class="btn btn-wa" onclick="shareCurrentWhatsApp()">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.49 0-2.94-.4-4.21-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23z"/></svg>
+            Send WhatsApp
+          </button>
 
-        <!-- Send via WhatsApp -->
-        <button class="btn btn-wa" onclick="sendWhatsAppDirect()" type="button">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.49 0-2.94-.4-4.21-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23z"/></svg>
-          Share on WhatsApp
-        </button>
+          <button type="button" class="btn btn-outline" onclick="copyCurrentLink()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            Copy Invite Link
+          </button>
 
-        <!-- Preview Invitation -->
-        <a class="btn btn-outline" id="previewBtn" href="#" target="_blank">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
-          Open Link
-        </a>
-
-        <!-- Save to List -->
-        <button class="btn btn-outline" onclick="saveGuestToList()" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-          Save to Guest List
-        </button>
+          <button type="button" class="btn btn-outline" onclick="resetForm()">
+            Clear / New Form
+          </button>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- TAB 2: BATCH GUEST IMPORT -->
-    <div id="tabBatch" style="display:none;">
-      <div class="inp-grp">
-        <label class="inp-lbl" for="batchTextarea">Paste Multiple Guest Names (One Name per Line)</label>
-        <textarea class="inp-ctrl" id="batchTextarea" rows="8" placeholder="Uncle Rafiq &amp; Family&#10;Dr. Kamal Hossain&#10;Tanvir Ahmed &amp; Spouse&#10;Farhana Sultana&#10;Auntie Bilkis"></textarea>
-      </div>
-      
-      <div class="btn-row" style="margin-top:14px;">
-        <button class="btn btn-gold" onclick="processBatchImport()" type="button">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-          Generate All GitHub Links
-        </button>
-        <button class="btn btn-outline" onclick="document.getElementById('batchTextarea').value=''" type="button">
-          Clear Text
-        </button>
-      </div>
-    </div>
-
-    <!-- TAB 3: GUEST LIST & TRACKER -->
-    <div id="tabList" style="display:none;">
-      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:14px;">
-        <input class="inp-ctrl" id="searchGuestInp" type="text" placeholder="Search guests…" oninput="renderGuestTable()" style="max-width:240px;padding:8px 12px;font-size:12px;"/>
+  <!-- TAB 2: INVITEE DATABASE & TRACKING -->
+  <section id="view-directory" class="panel" style="display:none;">
+    <div class="directory-toolbar">
+      <div class="filter-group">
+        <input type="text" id="searchInput" class="ctrl" placeholder="Search by name, phone, or note..." style="max-width:250px;padding:9px 12px;" oninput="renderTable()"/>
         
-        <div style="display:flex;gap:8px;">
-          <button class="btn btn-outline" style="padding:8px 14px;font-size:9px;" onclick="exportGuestsCSV()">
-            Export CSV
-          </button>
-          <button class="btn btn-outline" style="padding:8px 14px;font-size:9px;color:#f87171;border-color:rgba(248,113,113,.4);" onclick="clearAllGuests()">
-            Clear All
-          </button>
-        </div>
+        <select id="filterCategory" class="ctrl" style="max-width:170px;padding:9px 12px;" onchange="renderTable()">
+          <option value="ALL">All Groups</option>
+          <option value="Groom's Family">Groom's Family</option>
+          <option value="Bride's Family">Bride's Family</option>
+          <option value="Friends">Friends</option>
+          <option value="Colleagues">Colleagues</option>
+          <option value="VIP / Special">VIP / Special</option>
+        </select>
+
+        <select id="filterStatus" class="ctrl" style="max-width:150px;padding:9px 12px;" onchange="renderTable()">
+          <option value="ALL">All Status</option>
+          <option value="SENT">Sent Only</option>
+          <option value="PENDING">Pending Only</option>
+        </select>
       </div>
 
-      <div class="tbl-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Guest Name</th>
-              <th>Salutation</th>
-              <th>Status</th>
-              <th>Quick Actions</th>
-            </tr>
-          </thead>
-          <tbody id="guestTbody">
-            <!-- Dynamic rows -->
-          </tbody>
-        </table>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button type="button" class="btn btn-outline" style="padding:8px 13px;" onclick="exportCSV()">Export CSV</button>
+        <button type="button" class="btn btn-outline" style="padding:8px 13px;" onclick="exportJSON()">Backup JSON</button>
+        <label class="btn btn-outline" style="padding:8px 13px;margin:0;cursor:pointer;">
+          Restore JSON
+          <input type="file" accept=".json" style="display:none;" onchange="importJSON(event)"/>
+        </label>
       </div>
     </div>
-  </div>
+
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Invitee Details</th>
+            <th>Group</th>
+            <th>Pax</th>
+            <th>Phone</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="guestTableBody"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- TAB 3: BULK IMPORT -->
+  <section id="view-batch" class="panel" style="display:none;">
+    <div class="form-row" style="margin-bottom:14px;">
+      <div class="field">
+        <label for="batchCategory">Assign Group to All Imported Guests</label>
+        <select id="batchCategory" class="ctrl">
+          <option value="Groom's Family">Groom's Family (বর পক্ষ)</option>
+          <option value="Bride's Family">Bride's Family (কনে পক্ষ)</option>
+          <option value="Friends">Friends (বন্ধুবান্ধব)</option>
+          <option value="Colleagues">Office / Colleagues</option>
+          <option value="VIP / Special">VIP / Special Guests</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="batchDefaultPax">Default Guests (Pax) per Invite</label>
+        <input type="number" id="batchDefaultPax" class="ctrl" value="2" min="1" max="20"/>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="batchInput">Paste Guest Names (One per line — optionally add phone after comma, e.g. <code>Tanvir Ahmed, 01711000000</code>)</label>
+      <textarea id="batchInput" class="ctrl" rows="7" placeholder="Uncle Rafiq & Family, 01711223344
+Dr. Kamal Hossain
+Farhana Sultana & Spouse, 01819887766"></textarea>
+    </div>
+
+    <div style="display:flex;gap:10px;">
+      <button type="button" class="btn btn-gold" onclick="runBulkImport()">Import & Save All Guests</button>
+      <button type="button" class="btn btn-outline" onclick="document.getElementById('batchInput').value=''">Clear</button>
+    </div>
+  </section>
 </div>
 
-<!-- Floating Toast -->
+<!-- Toast -->
 <div id="toast">
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--gold);flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>
-  <span id="toastMsg">Link copied to clipboard!</span>
+  <span style="color:var(--gold);font-weight:bold;">✓</span>
+  <span id="toastText">Saved!</span>
 </div>
 
 <script>
-/* GITHUB BASE URL CONFIGURATION */
-const GITHUB_DEFAULT_FALLBACK = 'https://jhumurhut.github.io/wedding/';
-const GITHUB_STORAGE_KEY = 'wedding_github_base_url_v1';
+const DEFAULT_BASE_URL = 'https://jhumurhut.github.io/Wedding_Ceremony/';
+const URL_KEY = 'jhumu_suvo_base_url_v3';
+const DB_KEY = 'jhumu_suvo_guests_db_v3';
 
-function getEffectiveBaseUrl(){
-  const custom = localStorage.getItem(GITHUB_STORAGE_KEY);
-  if(custom && custom.trim()) return normalizeUrl(custom.trim());
-  
-  if(window.location.hostname.endsWith('github.io')){
-    let p = window.location.pathname;
-    if(p.endsWith('guest-invite-generator.html')){
-      p = p.replace('guest-invite-generator.html', '');
-    }
-    return normalizeUrl(window.location.origin + p);
-  }
-  
-  return normalizeUrl(GITHUB_DEFAULT_FALLBACK);
-}
+let guestList = [];
 
-function normalizeUrl(url){
-  let u = (url || '').trim();
-  if(!u) u = GITHUB_DEFAULT_FALLBACK;
-  if(!u.startsWith('http://') && !u.startsWith('https://')){
-    u = 'https://' + u;
-  }
+/* URL Helpers */
+function normalizeBaseUrl(raw) {
+  let u = (raw || '').trim();
+  if (!u) u = DEFAULT_BASE_URL;
+  if (!/^https?:\/\//i.test(u)) u = 'https://' + u;
   u = u.replace(/\/index\.html\/?$/i, '/');
-  if(!u.endsWith('/')){
-    u += '/';
-  }
+  if (!u.endsWith('/')) u += '/';
   return u;
 }
 
-function initBaseUrlUI(){
-  const current = getEffectiveBaseUrl();
-  const inp = document.getElementById('githubBaseUrlInput');
-  inp.value = current;
-  
-  if(window.location.hostname.endsWith('github.io')){
-    document.getElementById('ghStatusMsg').textContent = '✓ Live GitHub Pages Detected';
-  } else {
-    document.getElementById('ghStatusMsg').textContent = 'Custom GitHub Pages URL';
-  }
+function getBaseUrl() {
+  const saved = localStorage.getItem(URL_KEY);
+  return normalizeBaseUrl(saved || DEFAULT_BASE_URL);
 }
 
-function onBaseUrlChanged(){
+function saveBaseUrl() {
+  const val = normalizeBaseUrl(document.getElementById('baseUrlInput').value);
+  document.getElementById('baseUrlInput').value = val;
+  localStorage.setItem(URL_KEY, val);
   updatePreview();
+  renderTable();
+  notify('Base URL updated!');
 }
 
-function saveBaseUrl(){
-  const inp = document.getElementById('githubBaseUrlInput');
-  const normalized = normalizeUrl(inp.value);
-  inp.value = normalized;
-  localStorage.setItem(GITHUB_STORAGE_KEY, normalized);
-  showToast('✓ Public GitHub URL saved!');
+function resetBaseUrl() {
+  localStorage.removeItem(URL_KEY);
+  document.getElementById('baseUrlInput').value = DEFAULT_BASE_URL;
   updatePreview();
-  if(document.getElementById('tabList').style.display !== 'none'){
-    renderGuestTable();
-  }
+  renderTable();
+  notify('Reset to Wedding_Ceremony link');
 }
 
-function resetBaseUrl(){
-  localStorage.removeItem(GITHUB_STORAGE_KEY);
-  initBaseUrlUI();
-  showToast('Reset to default GitHub URL');
-  updatePreview();
-  if(document.getElementById('tabList').style.display !== 'none'){
-    renderGuestTable();
-  }
-}
-
-/* GUEST STORAGE */
-const STORAGE_KEY = 'jhumu_suvo_guest_list_v2';
-let guests = [];
-
-function loadGuests(){
-  try{
-    const d = localStorage.getItem(STORAGE_KEY);
-    guests = d ? JSON.parse(d) : [];
-  }catch(e){ guests = []; }
-  updateCountBadges();
-}
-
-function saveGuests(){
-  try{
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(guests));
-  }catch(e){}
-  updateCountBadges();
-}
-
-function updateCountBadges(){
-  document.getElementById('guestCountBadge').textContent = guests.length;
-  document.getElementById('tabCount').textContent = guests.length;
-}
-
-/* TAB SWITCHING */
-function switchTab(t){
-  ['single','batch','list'].forEach(id=>{
-    document.getElementById('tab' + capitalize(id)).style.display = (id === t ? 'block' : 'none');
-    document.getElementById('tab' + capitalize(id) + 'Btn').classList.toggle('active', id === t);
-  });
-  if(t === 'list') renderGuestTable();
-}
-function capitalize(s){return s.charAt(0).toUpperCase() + s.slice(1);}
-
-/* BUILD GITHUB PUBLIC INVITATION URL */
-function buildGuestUrl(name, salutation){
-  const base = getEffectiveBaseUrl();
+function buildInviteUrl(name, salutation) {
+  const base = normalizeBaseUrl(document.getElementById('baseUrlInput').value || getBaseUrl());
   const url = new URL(base);
-  url.searchParams.set('guest', name.trim());
-  if(salutation && salutation !== 'Honoured Guest'){
+  url.searchParams.set('guest', (name || 'Honoured Guest').trim());
+  if (salutation && salutation !== 'Honoured Guest') {
     url.searchParams.set('salutation', salutation.trim());
   }
   return url.toString();
 }
 
-/* WHATSAPP MESSAGE TEXT GENERATION */
-function buildWhatsAppMessage(name, salutation, link, lang){
-  if(lang === 'bn'){
-    return 'بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ\n\n' +
-      'আসসালামু আলাইকুম,\n\n' +
-      'শ্রদ্ধেয় ' + name + ',\n\n' +
-      'আল্লাহ্‌র অশেষ রহমতে আগামী ২৪ ডিসেম্বর ২০২৬, বৃহস্পতিবার জুমরাত সুলতানা (ঝুমু) এবং এস. এম. সাকিব (শুভ)-এর শুভ বিবাহ অনুষ্ঠিত হতে যাচ্ছে।\n\n' +
-      'আপনার জন্য বিশেষভাবে প্রস্তুত করা ডিজিটাল আমন্ত্রণপত্রটি দেখতে নিচের লিংকে ক্লিক করুন:\n' +
-      '👉 ' + link + '\n\n' +
-      'অনুষ্ঠানের স্থান: আল-আমিন কমিউনিটি সেন্টার, সূত্রাপুর, ঢাকা।\n' +
-      'সময়: রাত ০৯:৩০ মিনিট।\n\n' +
-      'আপনার সপরিবারে উপস্থিতি ও দোয়া আমাদের জন্য পরম আশীর্বাদ।\n\n' +
-      'ইতি,\nঝুমু ও শুভ এবং পরিবারবর্গ';
-  } else {
-    return 'بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ\n\n' +
-      'Assalamu Alaikum wa Rahmatullah,\n\n' +
-      'Dear ' + name + ',\n\n' +
-      'Together with their families, Jumrat Sultana (Jhumu) & S. M. Sakib (Suvo) joyfully invite you to share in the celebration of their Wedding (Nikah & Walima).\n\n' +
-      '📅 Date: Thursday, 24 December 2026 at 09:30 PM\n' +
-      '📍 Venue: Al-Amin Community Center, 103/1 R. M. Das Road, Loharpul, Sutrapur, Dhaka\n\n' +
-      'Please open your personalized digital wedding invitation card here:\n' +
-      '👉 ' + link + '\n\n' +
-      'Your gracious presence and heartfelt prayers will be a true blessing to us.\n\n' +
-      'Warm regards,\nJhumu & Suvo';
+/* Database Persistence */
+function loadDB() {
+  try {
+    const raw = localStorage.getItem(DB_KEY);
+    // Migrate old v2 data if v3 is empty
+    if (!raw) {
+      const oldRaw = localStorage.getItem('jhumu_suvo_guest_list_v2');
+      if (oldRaw) {
+        const oldArr = JSON.parse(oldRaw);
+        guestList = oldArr.map(item => ({
+          id: item.id || Date.now() + Math.random(),
+          name: item.name,
+          salutation: item.salutation || 'Honoured Guest',
+          category: "Groom's Family",
+          phone: '',
+          pax: 2,
+          note: '',
+          lang: item.lang || 'bn',
+          sent: !!item.sent,
+          createdAt: item.dateAdded || new Date().toLocaleDateString()
+        }));
+        saveDB();
+        return;
+      }
+    }
+    guestList = raw ? JSON.parse(raw) : [];
+  } catch (e) {
+    guestList = [];
   }
+  refreshStats();
 }
 
-/* LIVE PREVIEW */
-function updatePreview(){
-  const nameInp = document.getElementById('guestNameInput').value.trim();
-  const salSelect = document.getElementById('salutationSelect').value;
-  
-  const displayName = nameInp || '— Type guest name above —';
-  document.getElementById('mockupName').textContent = displayName;
-  document.getElementById('mockupTitle').textContent = salSelect;
-
-  const url = buildGuestUrl(nameInp || 'Honoured Guest', salSelect);
-  document.getElementById('linkTextDisplay').textContent = url;
-  document.getElementById('previewBtn').href = url;
+function saveDB() {
+  localStorage.setItem(DB_KEY, JSON.stringify(guestList));
+  refreshStats();
 }
 
-function appendPill(txt){
-  const el = document.getElementById('guestNameInput');
-  el.value = el.value.trim() + ' ' + txt;
-  updatePreview();
-  el.focus();
+function refreshStats() {
+  const total = guestList.length;
+  const sent = guestList.filter(g => g.sent).length;
+  const pending = total - sent;
+  const pax = guestList.reduce((sum, g) => sum + (parseInt(g.pax, 10) || 1), 0);
+
+  document.getElementById('statTotalGuests').textContent = total;
+  document.getElementById('statTotalPax').textContent = pax;
+  document.getElementById('statSent').textContent = sent;
+  document.getElementById('statPending').textContent = pending;
+  document.getElementById('tabBadgeCount').textContent = total;
 }
 
-function setPill(txt){
-  const el = document.getElementById('guestNameInput');
-  el.value = txt;
-  updatePreview();
-  el.focus();
-}
-
-/* COPY LINK (COPIES PUBLIC GITHUB LINK) */
-function copyPersonalizedLink(){
-  const name = document.getElementById('guestNameInput').value.trim();
-  if(!name){
-    showToast('⚠️ Please type a guest name first!');
-    document.getElementById('guestNameInput').focus();
-    return;
-  }
-  const sal = document.getElementById('salutationSelect').value;
-  const url = buildGuestUrl(name, sal);
-  
-  navigator.clipboard.writeText(url).then(()=>{
-    showToast('✓ Public GitHub link copied to clipboard!');
-  }).catch(()=>{
-    showToast('Copy failed, please copy manually');
+/* Navigation */
+function switchTab(tab) {
+  ['create', 'directory', 'batch'].forEach(t => {
+    document.getElementById('view-' + t).style.display = (t === tab) ? 'block' : 'none';
+    document.getElementById('nav-' + t).classList.toggle('active', t === tab);
   });
+  if (tab === 'directory') renderTable();
 }
 
-/* WHATSAPP DIRECT SHARE WITH GITHUB LINK */
-function sendWhatsAppDirect(){
-  const name = document.getElementById('guestNameInput').value.trim();
-  if(!name){
-    showToast('⚠️ Please type a guest name first!');
-    document.getElementById('guestNameInput').focus();
+/* Form & Live Preview */
+function updatePreview() {
+  const name = document.getElementById('guestName').value.trim();
+  const sal = document.getElementById('guestSalutation').value;
+  const cat = document.getElementById('guestCategory').value;
+  const pax = document.getElementById('guestPax').value || 1;
+
+  document.getElementById('prevName').textContent = name || 'Guest Name Preview';
+  document.getElementById('prevSalutation').textContent = sal;
+  document.getElementById('prevCatChip').textContent = cat;
+  document.getElementById('prevPaxChip').textContent = pax + (pax == 1 ? ' Guest' : ' Guests');
+
+  const link = buildInviteUrl(name || 'Honoured Guest', sal);
+  document.getElementById('liveUrlDisplay').textContent = link;
+  document.getElementById('openLiveBtn').href = link;
+}
+
+function appendName(suffix) {
+  const inp = document.getElementById('guestName');
+  inp.value = (inp.value.trim() + ' ' + suffix).trim();
+  updatePreview();
+  inp.focus();
+}
+
+function prefixName(prefix) {
+  const inp = document.getElementById('guestName');
+  if (!inp.value.startsWith(prefix)) {
+    inp.value = prefix + inp.value.trim();
+  }
+  updatePreview();
+  inp.focus();
+}
+
+function saveGuestRecord() {
+  const name = document.getElementById('guestName').value.trim();
+  if (!name) {
+    notify('Please enter the invitee name first!');
+    document.getElementById('guestName').focus();
     return;
   }
-  const sal = document.getElementById('salutationSelect').value;
+
+  const editId = document.getElementById('editGuestId').value;
+  const record = {
+    id: editId ? Number(editId) : Date.now(),
+    name: name,
+    salutation: document.getElementById('guestSalutation').value,
+    category: document.getElementById('guestCategory').value,
+    phone: document.getElementById('guestPhone').value.trim(),
+    pax: Math.max(1, parseInt(document.getElementById('guestPax').value, 10) || 1),
+    note: document.getElementById('guestNote').value.trim(),
+    lang: document.querySelector('input[name="msgLang"]:checked').value,
+    sent: false,
+    createdAt: new Date().toLocaleDateString()
+  };
+
+  if (editId) {
+    const idx = guestList.findIndex(g => g.id == editId);
+    if (idx !== -1) {
+      record.sent = guestList[idx].sent;
+      record.createdAt = guestList[idx].createdAt;
+      guestList[idx] = record;
+    }
+    notify('Guest details updated!');
+  } else {
+    guestList.unshift(record);
+    notify('Guest saved to database!');
+  }
+
+  saveDB();
+  resetForm();
+}
+
+function resetForm() {
+  document.getElementById('editGuestId').value = '';
+  document.getElementById('guestName').value = '';
+  document.getElementById('guestPhone').value = '';
+  document.getElementById('guestPax').value = '2';
+  document.getElementById('guestNote').value = '';
+  document.getElementById('saveBtnLabel').textContent = 'Save to Database';
+  updatePreview();
+}
+
+/* WhatsApp & Copy Helpers */
+function generateMessage(name, link, lang) {
+  if (lang === 'bn') {
+    return `بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ\n\nআসসালামু আলাইকুম,\nশ্রদ্ধেয় ${name},\n\nআল্লাহ্‌র অশেষ রহমতে আগামী ২৪ ডিসেম্বর ২০২৬, বৃহস্পতিবার জুমরাত সুলতানা (ঝুমু) এবং এস. এম. সাকিব (শুভ)-এর শুভ বিবাহ অনুষ্ঠিত হতে যাচ্ছে।\n\nআপনার জন্য বিশেষভাবে প্রস্তুতকৃত ডিজিটাল আমন্ত্রণপত্রটি দেখতে নিচের লিংকে ক্লিক করুন:\n👉 ${link}\n\n📍 স্থান: আল-আমিন কমিউনিটি সেন্টার, সূত্রাপুর, ঢাকা।\n⏰ সময়: রাত ০৯:৩০ মিনিট।\n\nআপনার সপরিবারে উপস্থিতি ও দোয়া আমাদের একান্ত কাম্য।\n\nইতি,\nঝুমু ও শুভ`;
+  }
+  return `بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ\n\nAssalamu Alaikum wa Rahmatullah,\nDear ${name},\n\nTogether with their families, Jumrat Sultana (Jhumu) & S. M. Sakib (Suvo) joyfully invite you to their wedding ceremony.\n\n📅 Date: Thursday, 24 December 2026 at 09:30 PM\n📍 Venue: Al-Amin Community Center, Sutrapur, Dhaka\n\nOpen your personalized digital invitation card here:\n👉 ${link}\n\nWarm regards,\nJhumu & Suvo`;
+}
+
+function formatWaPhone(phone) {
+  let p = (phone || '').replace(/[^\d]/g, '');
+  if (!p) return '';
+  if (p.startsWith('01') && p.length === 11) return '88' + p;
+  return p;
+}
+
+function shareCurrentWhatsApp() {
+  const name = document.getElementById('guestName').value.trim();
+  if (!name) {
+    notify('Enter guest name first!');
+    return;
+  }
+  const sal = document.getElementById('guestSalutation').value;
   const lang = document.querySelector('input[name="msgLang"]:checked').value;
-  const url = buildGuestUrl(name, sal);
-  const msg = buildWhatsAppMessage(name, sal, url, lang);
-  
-  const waUrl = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(msg);
+  const phone = formatWaPhone(document.getElementById('guestPhone').value);
+  const link = buildInviteUrl(name, sal);
+  const msg = generateMessage(name, link, lang);
+
+  const waUrl = phone
+    ? `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(msg)}`
+    : `https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
   window.open(waUrl, '_blank');
 }
 
-/* SAVE GUEST */
-function saveGuestToList(){
-  const name = document.getElementById('guestNameInput').value.trim();
-  if(!name){
-    showToast('⚠️ Please enter a guest name!');
-    return;
-  }
-  const sal = document.getElementById('salutationSelect').value;
-  const lang = document.querySelector('input[name="msgLang"]:checked').value;
-  
-  guests.push({
-    id: Date.now(),
-    name: name,
-    salutation: sal,
-    lang: lang,
-    sent: false,
-    dateAdded: new Date().toLocaleDateString()
-  });
-  saveGuests();
-  showToast('✓ Guest saved to list with GitHub link!');
-  document.getElementById('guestNameInput').value = '';
-  updatePreview();
+function copyCurrentLink() {
+  const name = document.getElementById('guestName').value.trim() || 'Honoured Guest';
+  const sal = document.getElementById('guestSalutation').value;
+  const link = buildInviteUrl(name, sal);
+  navigator.clipboard.writeText(link).then(() => notify('Invitation link copied!'));
 }
 
-/* BATCH IMPORT */
-function processBatchImport(){
-  const txt = document.getElementById('batchTextarea').value;
-  const lines = txt.split('\n').map(l=>l.trim()).filter(l=>l.length>0);
-  if(!lines.length){
-    showToast('⚠️ Please paste at least one name!');
-    return;
-  }
-  
-  lines.forEach(line=>{
-    guests.push({
-      id: Date.now() + Math.random(),
-      name: line,
-      salutation: 'Honoured Guest',
-      lang: 'en',
-      sent: false,
-      dateAdded: new Date().toLocaleDateString()
-    });
-  });
-  saveGuests();
-  showToast('✓ Added ' + lines.length + ' guests to list!');
-  document.getElementById('batchTextarea').value = '';
-  switchTab('list');
-}
+/* Directory Table & Actions */
+function renderTable() {
+  const tbody = document.getElementById('guestTableBody');
+  const q = (document.getElementById('searchInput').value || '').toLowerCase();
+  const catFilter = document.getElementById('filterCategory').value;
+  const statusFilter = document.getElementById('filterStatus').value;
 
-/* RENDER GUEST TABLE */
-function renderGuestTable(){
-  const tbody = document.getElementById('guestTbody');
-  const q = (document.getElementById('searchGuestInp').value || '').toLowerCase();
-  
-  const filtered = guests.filter(g => g.name.toLowerCase().includes(q) || (g.salutation||'').toLowerCase().includes(q));
-  
-  if(!filtered.length){
-    tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--taupe);padding:30px;">No guests found. Add someone above!</td></tr>';
+  const filtered = guestList.filter(g => {
+    const matchText = g.name.toLowerCase().includes(q) ||
+                      (g.phone || '').toLowerCase().includes(q) ||
+                      (g.note || '').toLowerCase().includes(q);
+    const matchCat = (catFilter === 'ALL') || (g.category === catFilter);
+    const matchStatus = (statusFilter === 'ALL') ||
+                        (statusFilter === 'SENT' && g.sent) ||
+                        (statusFilter === 'PENDING' && !g.sent);
+    return matchText && matchCat && matchStatus;
+  });
+
+  if (!filtered.length) {
+    tbody.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:32px;color:var(--taupe);">No invitees match your current filter. Add guests from the first tab!</td></tr>`;
     return;
   }
-  
-  tbody.innerHTML = filtered.map((g, idx) => {
-    const url = buildGuestUrl(g.name, g.salutation);
-    const badgeClass = g.sent ? 'badge-sent' : 'badge-pending';
-    const badgeText = g.sent ? '✓ Sent' : 'Pending';
-    return '<tr>' +
-      '<td style="color:var(--taupe);">' + (idx + 1) + '</td>' +
-      '<td style="font-weight:500;"><div style="color:var(--cream);">' + escapeHtml(g.name) + '</div></td>' +
-      '<td style="color:var(--taupe);font-size:11px;">' + escapeHtml(g.salutation || 'Honoured Guest') + '</td>' +
-      '<td><button class="badge-status ' + badgeClass + '" onclick="toggleSent(' + g.id + ')">' + badgeText + '</button></td>' +
-      '<td><div style="display:flex;gap:6px;">' +
-        '<button class="pill" title="Copy GitHub Link" onclick="copyTableUrl(\'' + escapeHtml(url) + '\')">📋</button>' +
-        '<button class="pill" style="color:#25D366;border-color:rgba(37,211,102,.4);" title="WhatsApp with GitHub Link" onclick="sendWhatsAppRow(' + g.id + ')">💬 WA</button>' +
-        '<a class="pill" href="' + url + '" target="_blank" title="Preview GitHub Link">👁️</a>' +
-        '<button class="pill" style="color:#f87171;border-color:rgba(248,113,113,.3);" title="Delete" onclick="deleteGuest(' + g.id + ')">✕</button>' +
-      '</div></td>' +
-    '</tr>';
+
+  tbody.innerHTML = filtered.map((g, index) => {
+    const link = buildInviteUrl(g.name, g.salutation);
+    return `
+      <tr>
+        <td style="color:var(--taupe);">${index + 1}</td>
+        <td>
+          <div style="font-weight:500;color:var(--cream);font-size:13px;">${esc(g.name)}</div>
+          <div style="font-size:10px;color:var(--taupe);margin-top:2px;">
+            ${esc(g.salutation)} ${g.note ? ' · <span style="color:var(--gold-light);">' + esc(g.note) + '</span>' : ''}
+          </div>
+        </td>
+        <td><span class="cat-badge">${esc(g.category || "Groom's Family")}</span></td>
+        <td style="font-weight:500;">${g.pax || 1}</td>
+        <td style="font-family:monospace;font-size:11px;color:var(--cream-soft);">${esc(g.phone || '—')}</td>
+        <td>
+          <button type="button" class="status-pill ${g.sent ? 'status-sent' : 'status-pending'}" onclick="toggleStatus(${g.id})">
+            ${g.sent ? '✓ Sent' : 'Pending'}
+          </button>
+        </td>
+        <td>
+          <div class="row-actions">
+            <button type="button" class="icon-btn" style="color:var(--wa);border-color:rgba(37,211,102,0.35);" title="Send on WhatsApp" onclick="sendRowWhatsApp(${g.id})">WA</button>
+            <button type="button" class="icon-btn" title="Copy Link" onclick="copyRowLink('${esc(link)}')">Copy</button>
+            <a href="${link}" target="_blank" class="icon-btn" title="Preview Card">↗</a>
+            <button type="button" class="icon-btn" title="Edit Guest" onclick="editGuest(${g.id})">✎</button>
+            <button type="button" class="icon-btn" style="color:var(--danger);" title="Delete" onclick="deleteGuest(${g.id})">✕</button>
+          </div>
+        </td>
+      </tr>
+    `;
   }).join('');
 }
 
-function escapeHtml(s){
-  return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
+function esc(str) {
+  return String(str || '').replace(/&/g,'&').replace(/</g,'<').replace(/>/g,'>').replace(/"/g,'"').replace(/'/g,''');
 }
 
-function toggleSent(id){
-  const g = guests.find(x=>x.id==id);
-  if(g){
+function toggleStatus(id) {
+  const g = guestList.find(x => x.id === id);
+  if (g) {
     g.sent = !g.sent;
-    saveGuests();
-    renderGuestTable();
+    saveDB();
+    renderTable();
   }
 }
 
-function copyTableUrl(url){
-  navigator.clipboard.writeText(url).then(()=>{
-    showToast('✓ GitHub link copied to clipboard!');
-  });
+function copyRowLink(link) {
+  navigator.clipboard.writeText(link).then(() => notify('Link copied to clipboard!'));
 }
 
-function sendWhatsAppRow(id){
-  const g = guests.find(x=>x.id==id);
-  if(!g) return;
-  const url = buildGuestUrl(g.name, g.salutation);
-  const msg = buildWhatsAppMessage(g.name, g.salutation, url, g.lang || 'en');
+function sendRowWhatsApp(id) {
+  const g = guestList.find(x => x.id === id);
+  if (!g) return;
+  const link = buildInviteUrl(g.name, g.salutation);
+  const msg = generateMessage(g.name, link, g.lang || 'bn');
+  const phone = formatWaPhone(g.phone);
+
   g.sent = true;
-  saveGuests();
-  renderGuestTable();
-  window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(msg), '_blank');
+  saveDB();
+  renderTable();
+
+  const waUrl = phone
+    ? `https://api.whatsapp.com/send?phone=${phone}&text=${encodeURIComponent(msg)}`
+    : `https://api.whatsapp.com/send?text=${encodeURIComponent(msg)}`;
+  window.open(waUrl, '_blank');
 }
 
-function deleteGuest(id){
-  guests = guests.filter(x=>x.id!=id);
-  saveGuests();
-  renderGuestTable();
-  showToast('Guest removed');
+function editGuest(id) {
+  const g = guestList.find(x => x.id === id);
+  if (!g) return;
+  document.getElementById('editGuestId').value = g.id;
+  document.getElementById('guestName').value = g.name;
+  document.getElementById('guestSalutation').value = g.salutation || 'Honoured Guest';
+  document.getElementById('guestCategory').value = g.category || "Groom's Family";
+  document.getElementById('guestPhone').value = g.phone || '';
+  document.getElementById('guestPax').value = g.pax || 2;
+  document.getElementById('guestNote').value = g.note || '';
+  document.getElementById('saveBtnLabel').textContent = 'Update Guest';
+  updatePreview();
+  switchTab('create');
 }
 
-function clearAllGuests(){
-  if(confirm('Are you sure you want to clear the entire guest list?')){
-    guests = [];
-    saveGuests();
-    renderGuestTable();
-    showToast('All guests cleared');
+function deleteGuest(id) {
+  if (confirm('Remove this guest from your list?')) {
+    guestList = guestList.filter(x => x.id !== id);
+    saveDB();
+    renderTable();
+    notify('Guest deleted');
   }
 }
 
-function exportGuestsCSV(){
-  if(!guests.length){
-    showToast('No guests to export!');
+/* Bulk Import */
+function runBulkImport() {
+  const raw = document.getElementById('batchInput').value;
+  const lines = raw.split('\n').map(l => l.trim()).filter(Boolean);
+  if (!lines.length) {
+    notify('Please paste at least one name!');
     return;
   }
-  let csv = 'Name,Salutation,Status,GitHub Public Link\r\n';
-  guests.forEach(g=>{
-    const url = buildGuestUrl(g.name, g.salutation);
-    csv += '"' + g.name.replace(/"/g,'""') + '","' + (g.salutation||'').replace(/"/g,'""') + '","' + (g.sent?'Sent':'Pending') + '","' + url + '"\r\n';
+
+  const cat = document.getElementById('batchCategory').value;
+  const pax = Math.max(1, parseInt(document.getElementById('batchDefaultPax').value, 10) || 2);
+
+  lines.forEach((line, i) => {
+    const parts = line.split(',');
+    const name = parts[0].trim();
+    const phone = parts[1] ? parts[1].trim() : '';
+    if (name) {
+      guestList.unshift({
+        id: Date.now() + i,
+        name: name,
+        salutation: 'Honoured Guest',
+        category: cat,
+        phone: phone,
+        pax: pax,
+        note: '',
+        lang: 'bn',
+        sent: false,
+        createdAt: new Date().toLocaleDateString()
+      });
+    }
   });
-  const b = new Blob([csv],{type:'text/csv;charset=utf-8'});
-  const u = URL.createObjectURL(b);
+
+  saveDB();
+  document.getElementById('batchInput').value = '';
+  notify(`Imported ${lines.length} guests!`);
+  switchTab('directory');
+}
+
+/* Export & Backup */
+function exportCSV() {
+  if (!guestList.length) return notify('No data to export!');
+  let csv = 'Name,Salutation,Category,Pax,Phone,Status,Note,Invitation Link\r\n';
+  guestList.forEach(g => {
+    const link = buildInviteUrl(g.name, g.salutation);
+    csv += `"${g.name.replace(/"/g,'""')}","${g.salutation}","${g.category}",${g.pax},"${g.phone}","${g.sent ? 'Sent' : 'Pending'}","${(g.note||'').replace(/"/g,'""')}","${link}"\r\n`;
+  });
+  downloadFile(csv, 'Jhumu-Suvo-Wedding-Guests.csv', 'text/csv;charset=utf-8;');
+}
+
+function exportJSON() {
+  if (!guestList.length) return notify('No data to backup!');
+  downloadFile(JSON.stringify(guestList, null, 2), 'Jhumu-Suvo-Guests-Backup.json', 'application/json');
+}
+
+function importJSON(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = function(ev) {
+    try {
+      const parsed = JSON.parse(ev.target.result);
+      if (Array.isArray(parsed)) {
+        guestList = parsed;
+        saveDB();
+        renderTable();
+        notify('Backup restored successfully!');
+      }
+    } catch (err) {
+      notify('Invalid backup JSON file');
+    }
+  };
+  reader.readAsText(file);
+}
+
+function downloadFile(content, filename, mime) {
+  const blob = new Blob([content], { type: mime });
+  const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
-  a.href = u;
-  a.download = 'Jhumu-Suvo-Wedding-Guests-GitHub-Links.csv';
+  a.href = url;
+  a.download = filename;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
-  setTimeout(()=>URL.revokeObjectURL(u),2000);
-  showToast('✓ CSV file exported with GitHub links!');
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
-/* TOAST UTILITY */
-let toastTimeout;
-function showToast(msg){
-  const t = document.getElementById('toast');
-  document.getElementById('toastMsg').textContent = msg;
-  t.classList.add('show');
-  clearTimeout(toastTimeout);
-  toastTimeout = setTimeout(()=>t.classList.remove('show'), 3000);
+/* Toast */
+let toastTimer;
+function notify(msg) {
+  const el = document.getElementById('toast');
+  document.getElementById('toastText').textContent = msg;
+  el.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.classList.remove('show'), 2800);
 }
 
-// Initialise
-initBaseUrlUI();
-loadGuests();
+/* Init */
+document.getElementById('baseUrlInput').value = getBaseUrl();
+loadDB();
 updatePreview();
 </script>
 </body>
