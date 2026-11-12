@@ -40,17 +40,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-}
+.container { max-width: 1100px; margin: 0 auto; }
 
-/* Typography */
 .cinzel { font-family: 'Cinzel Decorative', serif; color: var(--gold); }
 .serif { font-family: 'Cormorant Garamond', serif; }
 .arabic { font-family: 'Scheherazade New', serif; color: var(--gold); }
 
-/* Header */
 .top-header {
   display: flex;
   flex-wrap: wrap;
@@ -93,13 +88,8 @@ body {
   line-height: 1.6;
 }
 
-.event-meta span {
-  color: var(--gold);
-  font-weight: 500;
-  letter-spacing: 1px;
-}
+.event-meta span { color: var(--gold); font-weight: 500; letter-spacing: 1px; }
 
-/* KPI Stats Grid */
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
@@ -114,12 +104,6 @@ body {
   padding: 18px 20px;
   position: relative;
   overflow: hidden;
-  transition: transform 0.25s ease, border-color 0.25s ease;
-}
-
-.stat-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--border-strong);
 }
 
 .stat-card::after {
@@ -134,29 +118,10 @@ body {
 .stat-card.pending::after { background: #fbbf24; }
 .stat-card.pax::after { background: #60a5fa; }
 
-.stat-label {
-  font-size: 10px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--taupe);
-  margin-bottom: 8px;
-}
+.stat-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--taupe); margin-bottom: 8px; }
+.stat-val { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 600; color: var(--cream); line-height: 1; }
+.stat-sub { font-size: 10px; color: var(--taupe); margin-top: 6px; }
 
-.stat-val {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 32px;
-  font-weight: 600;
-  color: var(--cream);
-  line-height: 1;
-}
-
-.stat-sub {
-  font-size: 10px;
-  color: var(--taupe);
-  margin-top: 6px;
-}
-
-/* Navigation Tabs */
 .nav-tabs {
   display: flex;
   flex-wrap: wrap;
@@ -182,28 +147,15 @@ body {
   transition: all 0.25s ease;
 }
 
-.nav-btn:hover {
-  color: var(--cream);
-  border-color: var(--border-strong);
-}
-
+.nav-btn:hover { color: var(--cream); border-color: var(--border-strong); }
 .nav-btn.active {
   background: linear-gradient(135deg, rgba(207, 169, 104, 0.2), rgba(207, 169, 104, 0.08));
   border-color: var(--gold);
   color: var(--gold-light);
-  box-shadow: 0 4px 20px rgba(207, 169, 104, 0.12);
 }
 
-.count-pill {
-  background: var(--gold);
-  color: var(--bg);
-  font-size: 10px;
-  font-weight: 600;
-  padding: 2px 7px;
-  border-radius: 10px;
-}
+.count-pill { background: var(--gold); color: var(--bg); font-size: 10px; font-weight: 600; padding: 2px 7px; border-radius: 10px; }
 
-/* Main Panel */
 .panel {
   background: linear-gradient(165deg, rgba(35, 24, 19, 0.94), rgba(20, 14, 10, 0.98));
   border: 1px solid var(--border);
@@ -212,7 +164,6 @@ body {
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
 }
 
-/* Two Column Studio Layout */
 .studio-grid {
   display: grid;
   grid-template-columns: 1.15fr 0.85fr;
@@ -220,35 +171,13 @@ body {
   align-items: start;
 }
 
-@media (max-width: 860px) {
-  .studio-grid { grid-template-columns: 1fr; }
-  .event-meta { text-align: left; }
-}
+@media (max-width: 860px) { .studio-grid { grid-template-columns: 1fr; } }
 
-/* Form Controls */
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 540px) { .form-row { grid-template-columns: 1fr; } }
 
-@media (max-width: 540px) {
-  .form-row { grid-template-columns: 1fr; }
-}
-
-.field {
-  margin-bottom: 16px;
-}
-
-.field label {
-  display: block;
-  font-size: 10px;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  color: var(--taupe);
-  margin-bottom: 7px;
-  font-weight: 500;
-}
+.field { margin-bottom: 16px; }
+.field label { display: block; font-size: 10px; letter-spacing: 1.8px; text-transform: uppercase; color: var(--taupe); margin-bottom: 7px; font-weight: 500; }
 
 .ctrl {
   width: 100%;
@@ -260,333 +189,91 @@ body {
   font-size: 13px;
   border-radius: 6px;
   outline: none;
-  transition: all 0.2s ease;
 }
+.ctrl:focus { border-color: var(--gold); box-shadow: 0 0 0 3px rgba(207, 169, 104, 0.12); }
 
-.ctrl:focus {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(207, 169, 104, 0.12);
-}
-
-.quick-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin-top: 8px;
-}
-
+.quick-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
 .tag-btn {
-  font-size: 10px;
-  padding: 4px 10px;
-  border-radius: 20px;
-  background: rgba(207, 169, 104, 0.08);
-  border: 1px solid rgba(207, 169, 104, 0.22);
-  color: var(--cream-soft);
-  cursor: pointer;
-  transition: all 0.2s;
+  font-size: 10px; padding: 4px 10px; border-radius: 20px;
+  background: rgba(207, 169, 104, 0.08); border: 1px solid rgba(207, 169, 104, 0.22);
+  color: var(--cream-soft); cursor: pointer;
 }
+.tag-btn:hover { background: var(--gold); color: var(--bg); }
 
-.tag-btn:hover {
-  background: var(--gold);
-  color: var(--bg);
-  border-color: var(--gold);
-}
-
-/* Royal Invitation Live Preview Card */
 .preview-box {
   background: radial-gradient(circle at top, #2e2018 0%, #19110c 100%);
   border: 1px solid var(--border-strong);
-  border-radius: 10px;
-  padding: 28px 22px;
-  text-align: center;
-  position: relative;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), inset 0 0 30px rgba(207, 169, 104, 0.06);
+  border-radius: 10px; padding: 28px 22px; text-align: center; position: relative;
 }
-
-.preview-box::before {
-  content: '';
-  position: absolute;
-  inset: 8px;
-  border: 1px solid rgba(207, 169, 104, 0.25);
-  border-radius: 6px;
-  pointer-events: none;
-}
-
-.preview-bismillah {
-  font-size: 20px;
-  margin-bottom: 10px;
-  opacity: 0.9;
-}
-
-.preview-salutation {
-  font-size: 9px;
-  letter-spacing: 3.5px;
-  text-transform: uppercase;
-  color: var(--taupe);
-  margin-bottom: 6px;
-}
-
+.preview-bismillah { font-size: 20px; margin-bottom: 10px; }
+.preview-salutation { font-size: 9px; letter-spacing: 3.5px; text-transform: uppercase; color: var(--taupe); margin-bottom: 6px; }
 .preview-guest {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: clamp(26px, 3vw, 34px);
-  font-style: italic;
-  font-weight: 600;
-  color: var(--gold-light);
-  line-height: 1.2;
-  margin-bottom: 10px;
-  word-break: break-word;
+  font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 3vw, 34px);
+  font-style: italic; font-weight: 600; color: var(--gold-light); line-height: 1.2; margin-bottom: 10px;
 }
+.preview-divider { width: 60px; height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 12px auto; }
+.preview-meta-pills { display: flex; justify-content: center; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+.meta-chip { font-size: 9px; letter-spacing: 1px; padding: 4px 10px; border-radius: 4px; background: rgba(207, 169, 104, 0.1); border: 1px solid rgba(207, 169, 104, 0.2); color: var(--cream-soft); }
 
-.preview-divider {
-  width: 60px;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  margin: 12px auto;
-}
-
-.preview-meta-pills {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-top: 12px;
-}
-
-.meta-chip {
-  font-size: 9px;
-  letter-spacing: 1px;
-  padding: 4px 10px;
-  border-radius: 4px;
-  background: rgba(207, 169, 104, 0.1);
-  border: 1px solid rgba(207, 169, 104, 0.2);
-  color: var(--cream-soft);
-}
-
-/* Generated Link Display */
 .generated-url-box {
-  margin-top: 16px;
-  background: rgba(10, 7, 5, 0.85);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 10px 12px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  margin-top: 16px; background: rgba(10, 7, 5, 0.85);
+  border: 1px solid var(--border); border-radius: 6px; padding: 10px 12px;
+  display: flex; align-items: center; gap: 8px;
 }
+.generated-url-text { font-family: monospace; font-size: 11px; color: var(--gold-light); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1; }
 
-.generated-url-text {
-  font-family: monospace;
-  font-size: 11px;
-  color: var(--gold-light);
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  flex: 1;
-}
-
-/* Buttons */
 .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  padding: 11px 18px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  border-radius: 6px;
-  cursor: pointer;
-  border: 1px solid transparent;
-  text-decoration: none;
-  transition: all 0.2s ease;
+  display: inline-flex; align-items: center; justify-content: center; gap: 7px;
+  padding: 11px 18px; font-family: 'Montserrat', sans-serif; font-size: 10px;
+  font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; border-radius: 6px;
+  cursor: pointer; border: 1px solid transparent; text-decoration: none; transition: all 0.2s;
 }
-
 .btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+.btn-gold { background: linear-gradient(135deg, var(--gold-light), var(--gold)); color: #140d09; }
+.btn-wa { background: var(--wa); color: #fff; }
+.btn-wa:hover { background: #20bd5a; }
+.btn-outline { background: transparent; border-color: var(--border-strong); color: var(--gold-light); }
+.btn-outline:hover { background: rgba(207, 169, 104, 0.1); }
+.action-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 16px; }
 
-.btn-gold {
-  background: linear-gradient(135deg, var(--gold-light), var(--gold));
-  color: #140d09;
-}
+.directory-toolbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 18px; }
+.filter-group { display: flex; flex-wrap: wrap; gap: 8px; flex: 1; }
+.table-container { overflow-x: auto; border: 1px solid var(--border); border-radius: 8px; background: rgba(14, 9, 7, 0.6); }
 
-.btn-gold:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(207, 169, 104, 0.35);
-}
+table { width: 100%; border-collapse: collapse; text-align: left; font-size: 12px; }
+th { background: rgba(34, 23, 18, 0.95); padding: 13px 14px; font-size: 9px; font-weight: 600; letter-spacing: 1.8px; text-transform: uppercase; color: var(--gold); border-bottom: 1px solid var(--border); white-space: nowrap; }
+td { padding: 13px 14px; border-bottom: 1px solid rgba(207, 169, 104, 0.08); vertical-align: middle; }
+tr:hover td { background: rgba(207, 169, 104, 0.04); }
 
-.btn-wa {
-  background: var(--wa);
-  color: #fff;
-}
+.cat-badge { display: inline-block; padding: 3px 8px; font-size: 9px; letter-spacing: 0.8px; border-radius: 4px; background: rgba(207, 169, 104, 0.12); color: var(--gold-light); }
+.status-pill { padding: 4px 10px; border-radius: 20px; font-size: 9px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; cursor: pointer; border: 1px solid transparent; }
+.status-sent { background: rgba(52, 211, 153, 0.15); color: var(--success); }
+.status-pending { background: rgba(251, 191, 36, 0.12); color: #fbbf24; }
 
-.btn-wa:hover {
-  background: #20bd5a;
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
-}
-
-.btn-outline {
-  background: transparent;
-  border-color: var(--border-strong);
-  color: var(--gold-light);
-}
-
-.btn-outline:hover {
-  background: rgba(207, 169, 104, 0.1);
-}
-
-.action-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
-  margin-top: 16px;
-}
-
-/* Guest Directory Table & Filters */
-.directory-toolbar {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 18px;
-}
-
-.filter-group {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  flex: 1;
-}
-
-.table-container {
-  overflow-x: auto;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  background: rgba(14, 9, 7, 0.6);
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  text-align: left;
-  font-size: 12px;
-}
-
-th {
-  background: rgba(34, 23, 18, 0.95);
-  padding: 13px 14px;
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 1.8px;
-  text-transform: uppercase;
-  color: var(--gold);
-  border-bottom: 1px solid var(--border);
-  white-space: nowrap;
-}
-
-td {
-  padding: 13px 14px;
-  border-bottom: 1px solid rgba(207, 169, 104, 0.08);
-  vertical-align: middle;
-}
-
-tr:hover td {
-  background: rgba(207, 169, 104, 0.04);
-}
-
-.cat-badge {
-  display: inline-block;
-  padding: 3px 8px;
-  font-size: 9px;
-  letter-spacing: 0.8px;
-  border-radius: 4px;
-  background: rgba(207, 169, 104, 0.12);
-  color: var(--gold-light);
-  border: 1px solid rgba(207, 169, 104, 0.25);
-}
-
-.status-pill {
-  padding: 4px 10px;
-  border-radius: 20px;
-  font-size: 9px;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  cursor: pointer;
-  border: 1px solid transparent;
-}
-
-.status-sent {
-  background: rgba(52, 211, 153, 0.15);
-  color: var(--success);
-  border-color: rgba(52, 211, 153, 0.35);
-}
-
-.status-pending {
-  background: rgba(251, 191, 36, 0.12);
-  color: #fbbf24;
-  border-color: rgba(251, 191, 36, 0.35);
-}
-
-.row-actions {
-  display: flex;
-  gap: 6px;
-}
-
+.row-actions { display: flex; gap: 6px; }
 .icon-btn {
-  padding: 6px 9px;
-  border-radius: 5px;
-  font-size: 11px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid var(--border);
-  color: var(--cream-soft);
-  cursor: pointer;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  transition: all 0.2s;
+  padding: 6px 9px; border-radius: 5px; font-size: 11px;
+  background: rgba(255, 255, 255, 0.04); border: 1px solid var(--border);
+  color: var(--cream-soft); cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; gap: 4px;
 }
+.icon-btn:hover { border-color: var(--gold); color: var(--gold); }
 
-.icon-btn:hover {
-  border-color: var(--gold);
-  color: var(--gold);
-}
-
-/* Toast Notification */
 #toast {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
+  position: fixed; bottom: 24px; right: 24px;
   background: linear-gradient(135deg, #2c1e16, #1a110c);
-  border: 1px solid var(--gold);
-  color: var(--cream);
-  padding: 13px 20px;
-  border-radius: 8px;
-  font-size: 12px;
+  border: 1px solid var(--gold); color: var(--cream);
+  padding: 13px 20px; border-radius: 8px; font-size: 12px;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.75);
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  transform: translateY(80px);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-  z-index: 9999;
+  display: flex; align-items: center; gap: 10px;
+  transform: translateY(80px); opacity: 0; pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1); z-index: 9999;
 }
-
-#toast.show {
-  transform: translateY(0);
-  opacity: 1;
-}
+#toast.show { transform: translateY(0); opacity: 1; }
 </style>
 </head>
 <body>
 
 <div class="container">
-  <!-- Top Header -->
   <header class="top-header">
     <div class="brand-area">
       <div class="eyebrow">Royal Wedding Guest Studio</div>
@@ -598,7 +285,6 @@ tr:hover td {
     </div>
   </header>
 
-  <!-- Live Dashboard Stats -->
   <section class="stats-grid">
     <div class="stat-card">
       <div class="stat-label">Total Invitees</div>
@@ -613,7 +299,7 @@ tr:hover td {
     <div class="stat-card sent">
       <div class="stat-label">Invitations Sent</div>
       <div class="stat-val" id="statSent">0</div>
-      <div class="stat-sub">Delivered via WhatsApp / Link</div>
+      <div class="stat-sub">Delivered via WhatsApp</div>
     </div>
     <div class="stat-card pending">
       <div class="stat-label">Pending Invites</div>
@@ -622,27 +308,14 @@ tr:hover td {
     </div>
   </section>
 
-  <!-- Navigation Tabs -->
   <nav class="nav-tabs">
-    <button class="nav-btn active" id="nav-create" onclick="switchTab('create')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
-      Create & Preview Invite
-    </button>
-    <button class="nav-btn" id="nav-directory" onclick="switchTab('directory')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      Invitee List & Tracking
-      <span class="count-pill" id="tabBadgeCount">0</span>
-    </button>
-    <button class="nav-btn" id="nav-batch" onclick="switchTab('batch')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-      Bulk Import
-    </button>
+    <button class="nav-btn active" id="nav-create" onclick="switchTab('create')">Create & Preview Invite</button>
+    <button class="nav-btn" id="nav-directory" onclick="switchTab('directory')">Invitee List & Tracking <span class="count-pill" id="tabBadgeCount">0</span></button>
+    <button class="nav-btn" id="nav-batch" onclick="switchTab('batch')">Bulk Import</button>
   </nav>
 
-  <!-- TAB 1: CREATE & PREVIEW -->
   <section id="view-create" class="panel">
     <div class="studio-grid">
-      <!-- Left: Guest Information Form -->
       <div>
         <input type="hidden" id="editGuestId" value=""/>
         <div class="field">
@@ -702,17 +375,16 @@ tr:hover td {
         <div class="field">
           <label>WhatsApp Invitation Language</label>
           <div style="display:flex;gap:18px;margin-top:6px;">
-            <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--cream);text-transform:none;letter-spacing:0;cursor:pointer;">
-              <input type="radio" name="msgLang" value="bn" checked/> বাংলা ও ইংরেজি (Bengali & English)
+            <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--cream);cursor:pointer;">
+              <input type="radio" name="msgLang" value="bn" checked/> বাংলা ও ইংরেজি
             </label>
-            <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--cream);text-transform:none;letter-spacing:0;cursor:pointer;">
+            <label style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--cream);cursor:pointer;">
               <input type="radio" name="msgLang" value="en"/> English Formal
             </label>
           </div>
         </div>
       </div>
 
-      <!-- Right: Live Royal Card Preview & Actions -->
       <div>
         <div class="preview-box">
           <div class="arabic preview-bismillah">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</div>
@@ -729,42 +401,36 @@ tr:hover td {
           </div>
         </div>
 
-        <!-- Generated Link -->
         <div class="generated-url-box">
           <span class="generated-url-text" id="liveUrlDisplay">https://jhumurhut.github.io/Wedding_Ceremony/</span>
-          <a id="openLiveBtn" href="#" target="_blank" class="icon-btn" title="Open Link in New Tab">↗ Open</a>
+          <a id="openLiveBtn" href="#" target="_blank" class="icon-btn" title="Open Link">↗ Open</a>
         </div>
 
-        <!-- Action Buttons -->
         <div class="action-grid">
           <button type="button" class="btn btn-wa" onclick="shareCurrentWhatsApp()">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.49 0-2.94-.4-4.21-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23z"/></svg>
             Send WhatsApp
           </button>
 
           <button type="button" class="btn btn-gold" onclick="copyCurrentLink()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
             Copy Invite Link
           </button>
 
           <button type="button" class="btn btn-outline" id="saveGuestBtn" onclick="saveGuestRecord()">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/></svg>
             <span id="saveBtnLabel">Save to List</span>
           </button>
 
           <button type="button" class="btn btn-outline" onclick="resetForm()">
-            Clear / New Form
+            Clear / New
           </button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- TAB 2: INVITEE DATABASE & TRACKING -->
   <section id="view-directory" class="panel" style="display:none;">
     <div class="directory-toolbar">
       <div class="filter-group">
-        <input type="text" id="searchInput" class="ctrl" placeholder="Search by name, phone, or note..." style="max-width:250px;padding:9px 12px;" oninput="renderTable()"/>
+        <input type="text" id="searchInput" class="ctrl" placeholder="Search guests..." style="max-width:250px;padding:9px 12px;" oninput="renderTable()"/>
         
         <select id="filterCategory" class="ctrl" style="max-width:170px;padding:9px 12px;" onchange="renderTable()">
           <option value="ALL">All Groups</option>
@@ -782,9 +448,7 @@ tr:hover td {
         </select>
       </div>
 
-      <div style="display:flex;gap:8px;flex-wrap:wrap;">
-        <button type="button" class="btn btn-outline" style="padding:8px 13px;" onclick="exportCSV()">Export CSV</button>
-      </div>
+      <button type="button" class="btn btn-outline" style="padding:8px 13px;" onclick="exportCSV()">Export CSV</button>
     </div>
 
     <div class="table-container">
@@ -805,7 +469,6 @@ tr:hover td {
     </div>
   </section>
 
-  <!-- TAB 3: BULK IMPORT -->
   <section id="view-batch" class="panel" style="display:none;">
     <div class="form-row" style="margin-bottom:14px;">
       <div class="field">
@@ -819,16 +482,15 @@ tr:hover td {
         </select>
       </div>
       <div class="field">
-        <label for="batchDefaultPax">Default Guests (Pax) per Invite</label>
+        <label for="batchDefaultPax">Default Guests (Pax)</label>
         <input type="number" id="batchDefaultPax" class="ctrl" value="2" min="1" max="20"/>
       </div>
     </div>
 
     <div class="field">
-      <label for="batchInput">Paste Guest Names (One per line — optionally add phone after comma, e.g. <code>Tanvir Ahmed, 01711000000</code>)</label>
+      <label for="batchInput">Paste Guest Names (One per line — optionally add phone after comma)</label>
       <textarea id="batchInput" class="ctrl" rows="7" placeholder="Uncle Rafiq & Family, 01711223344
-Dr. Kamal Hossain
-Farhana Sultana & Spouse, 01819887766"></textarea>
+Dr. Kamal Hossain"></textarea>
     </div>
 
     <div style="display:flex;gap:10px;">
@@ -838,14 +500,12 @@ Farhana Sultana & Spouse, 01819887766"></textarea>
   </section>
 </div>
 
-<!-- Toast -->
 <div id="toast">
   <span style="color:var(--gold);font-weight:bold;">✓</span>
   <span id="toastText">Done!</span>
 </div>
 
 <script>
-// Fixed Live GitHub Pages URL
 const INVITE_BASE_URL = 'https://jhumurhut.github.io/Wedding_Ceremony/';
 const DB_KEY = 'jhumu_suvo_guests_db_v3';
 
@@ -860,7 +520,6 @@ function buildInviteUrl(name, salutation) {
   return url.toString();
 }
 
-/* Local Session / Browser Persistence */
 function loadDB() {
   try {
     const raw = localStorage.getItem(DB_KEY);
@@ -891,7 +550,6 @@ function refreshStats() {
   document.getElementById('tabBadgeCount').textContent = total;
 }
 
-/* Navigation */
 function switchTab(tab) {
   ['create', 'directory', 'batch'].forEach(t => {
     document.getElementById('view-' + t).style.display = (t === tab) ? 'block' : 'none';
@@ -900,7 +558,6 @@ function switchTab(tab) {
   if (tab === 'directory') renderTable();
 }
 
-/* Form & Live Preview */
 function updatePreview() {
   const name = document.getElementById('guestName').value.trim();
   const sal = document.getElementById('guestSalutation').value;
@@ -980,7 +637,6 @@ function resetForm() {
   updatePreview();
 }
 
-/* WhatsApp & Copy Helpers */
 function generateMessage(name, link, lang) {
   if (lang === 'bn') {
     return `بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ\n\nআসসালামু আলাইকুম,\nশ্রদ্ধেয় ${name},\n\nআল্লাহ্‌র অশেষ রহমতে আগামী ২৪ ডিসেম্বর ২০২৬, বৃহস্পতিবার জুমরাত সুলতানা (ঝুমু) এবং এস. এম. সাকিব (শুভ)-এর শুভ বিবাহ অনুষ্ঠিত হতে যাচ্ছে।\n\nআপনার জন্য বিশেষভাবে প্রস্তুতকৃত ডিজিটাল আমন্ত্রণপত্রটি দেখতে নিচের লিংকে ক্লিক করুন:\n👉 ${link}\n\n📍 স্থান: আল-আমিন কমিউনিটি সেন্টার, সূত্রাপুর, ঢাকা।\n⏰ সময়: রাত ০৯:৩০ মিনিট।\n\nআপনার সপরিবারে উপস্থিতি ও দোয়া আমাদের একান্ত কাম্য।\n\nইতি,\nঝুমু ও শুভ`;
@@ -1021,7 +677,6 @@ function copyCurrentLink() {
   navigator.clipboard.writeText(link).then(() => notify('Invitation link copied!'));
 }
 
-/* Directory Table & Actions */
 function renderTable() {
   const tbody = document.getElementById('guestTableBody');
   const q = (document.getElementById('searchInput').value || '').toLowerCase();
@@ -1040,7 +695,7 @@ function renderTable() {
   });
 
   if (!filtered.length) {
-    tbody.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:32px;color:var(--taupe);">No invitees match your current filter. Add guests from the first tab!</td></tr>`;
+    tbody.innerHTML = `<tr><td colspan="7" style="text-align:center;padding:32px;color:var(--taupe);">No invitees found.</td></tr>`;
     return;
   }
 
@@ -1135,7 +790,6 @@ function deleteGuest(id) {
   }
 }
 
-/* Bulk Import */
 function runBulkImport() {
   const raw = document.getElementById('batchInput').value;
   const lines = raw.split('\n').map(l => l.trim()).filter(Boolean);
@@ -1172,7 +826,6 @@ function runBulkImport() {
   switchTab('directory');
 }
 
-/* Export CSV */
 function exportCSV() {
   if (!guestList.length) return notify('No data to export!');
   let csv = 'Name,Salutation,Category,Pax,Phone,Status,Note,Invitation Link\r\n';
@@ -1191,7 +844,6 @@ function exportCSV() {
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
-/* Toast */
 let toastTimer;
 function notify(msg) {
   const el = document.getElementById('toast');
@@ -1201,7 +853,6 @@ function notify(msg) {
   toastTimer = setTimeout(() => el.classList.remove('show'), 2800);
 }
 
-/* Init */
 loadDB();
 updatePreview();
 </script>
