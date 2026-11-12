@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Guest Invite Generator – Jhumu &amp; Suvo's Wedding</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500;600&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg: #18110d;
+  --bg-deep: #120c09;
+  --card: #251a14;
+  --card-inner: #1e1510;
+  --card-hover: #2e2019;
+  --cream: #f7f3ec;
+  --cream-soft: #e5dcd1;
+  --taupe: #a49485;
+  --taupe-dark: #6e6155;
+  --gold: #c8a96e;
+  --gold-light: #dfc896;
+  --gold-glow: #f0dfb3;
+  --border: rgba(200, 169, 110, 0.22);
+  --border-subtle: rgba(200, 169, 110, 0.12);
+  --border-strong: rgba(200, 169, 110, 0.42);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background-color: var(--bg);
+  background-image: 
+    radial-gradient(circle at 50% 10%, rgba(55, 38, 29, 0.5) 0%, transparent 60%),
+    linear-gradient(to bottom, #18110d 0%, #130d09 100%);
+  background-attachment: fixed;
+  color: var(--cream);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  padding: 30px 16px 80px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container{
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+/* Typography */
+.cinzel{font-family:'Cinzel Decorative',serif;color:var(--gold)}
+.serif{font-family:'Cormorant Garamond',serif}
+.arabic{font-family:'Scheherazade New',serif;color:var(--gold)}
+
+/* Header */
+.gen-header{
+  text-align: center;
+  padding: 20px 0 28px;
+  position: relative;
+}
+.header-badge{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 9px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--taupe);
+  margin-bottom: 12px;
+}
+.header-badge::before, .header-badge::after{
+  content: '';
+  width: 28px;
+  height: 1px;
+  background: var(--gold);
+  opacity: .4;
+}
+
+/* GitHub Link Configuration Box */
+.gh-banner{
+  background: linear-gradient(160deg, #2b1f17, #1f140f);
+  border: 1px solid var(--border-strong);
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-bottom: 22px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.45);
+}
+.gh-title-row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.gh-title{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 500;
+}
+.gh-detected{
+  font-size: 10px;
+  color: var(--taupe);
+  letter-spacing: 1px;
+}
+
+/* Panels */
+.g-card{
+  background: linear-gradient(165deg, rgba(38,27,21,.95), rgba(24,17,13,.98));
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 28px 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 16px 40px rgba(0,0,0,.4);
+  position: relative;
+}
+.g-card::before{
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px dashed rgba(200,169,110,.1);
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+/* Tabs */
+.tab-row{
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+}
+.tab-btn{
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--taupe);
+  padding: 9px 18px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all .25s ease;
+}
+.tab-btn.active{
+  background: rgba(200,169,110,.12);
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* Form layout */
+.form-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+}
+
+.inp-grp{
+  margin-bottom: 18px;
+  text-align: left;
+}
+.inp-lbl{
+  display: block;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--taupe);
+  margin-bottom: 7px;
+}
+.inp-ctrl{
+  width: 100%;
+  padding: 13px 16px;
+  background: rgba(20, 14, 10, 0.7);
+  border: 1px solid rgba(200,169,110,.25);
+  color: var(--cream);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  outline: none;
+  border-radius: 3px;
+  transition: border-color .25s, box-shadow .25s;
+}
+.inp-ctrl:focus{
+  border-color: var(--gold);
+  box-shadow: 0 0 0 1px rgba(200,169,110,.2), 0 4px 18px rgba(200,169,110,.1);
+}
+
+/* Quick pills */
+.pills{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+.pill{
+  font-size: 10px;
+  letter-spacing: 1px;
+  padding: 5px 12px;
+  border-radius: 14px;
+  background: rgba(200,169,110,.08);
+  border: 1px solid rgba(200,169,110,.2);
+  color: var(--taupe);
+  cursor: pointer;
+  transition: all .2s;
+}
+.pill:hover, .pill.selected{
+  background: var(--gold);
+  color: var(--bg);
+  border-color: var(--gold);
+}
+
+/* Live Preview Mockup Card */
+.mockup-wrap{
+  background: linear-gradient(160deg, #2b1e17, #1f140f);
+  border: 1px solid var(--border-strong);
+  border-radius: 4px;
+  padding: 24px;
+  text-align: center;
+  position: relative;
+  margin: 20px 0;
+  box-shadow: 0 12px 30px rgba(0,0,0,.5);
+}
+.mockup-wrap::after{
+  content: '';
+  position: absolute;
+  inset: 5px;
+  border: 1px dashed rgba(200,169,110,.15);
+  border-radius: 3px;
+  pointer-events: none;
+}
+.mockup-guest-title{
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--taupe);
+  margin-bottom: 6px;
+}
+.mockup-guest-name{
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(24px, 5vw, 36px);
+  color: var(--gold);
+  font-style: italic;
+  line-height: 1.25;
+  text-shadow: 0 2px 10px rgba(200,169,110,.3);
+  margin-bottom: 8px;
+}
+
+/* Link Box */
+.link-box{
+  background: rgba(18, 12, 9, 0.85);
+  border: 1px solid rgba(200,169,110,.2);
+  padding: 12px 16px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0;
+  overflow: hidden;
+}
+.link-text{
+  flex: 1;
+  font-family: monospace;
+  font-size: 11px;
+  color: var(--cream-soft);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+/* Buttons */
+.btn-row{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 22px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: all .25s ease;
+  text-decoration: none;
+  border: 1px solid var(--gold);
+}
+.btn-gold{
+  background: var(--gold);
+  color: var(--bg);
+  font-weight: 500;
+}
+.btn-gold:hover{
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(200,169,110,.3);
+}
+.btn-outline{
+  background: transparent;
+  color: var(--gold);
+}
+.btn-outline:hover{
+  background: rgba(200,169,110,.1);
+  transform: translateY(-2px);
+}
+.btn-wa{
+  background: #25D366;
+  border-color: #25D366;
+  color: #fff;
+  font-weight: 500;
+}
+.btn-wa:hover{
+  background: #20bd5a;
+  box-shadow: 0 8px 22px rgba(37,211,102,.35);
+  transform: translateY(-2px);
+}
+.btn svg{width:15px;height:15px;flex-shrink:0}
+
+/* Guest Table */
+.tbl-wrap{
+  overflow-x: auto;
+  margin-top: 16px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+table{
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 12px;
+}
+th{
+  background: rgba(30, 21, 15, 0.9);
+  padding: 14px 16px;
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid var(--border);
+}
+td{
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(200,169,110,.08);
+  color: var(--cream);
+}
+tr:hover td{
+  background: rgba(200,169,110,.04);
+}
+.badge-status{
+  display: inline-block;
+  padding: 4px 9px;
+  border-radius: 10px;
+  font-size: 9px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.badge-sent{
+  background: rgba(37,211,102,.15);
+  color: #34d399;
+  border: 1px solid rgba(37,211,102,.3);
+}
+.badge-pending{
+  background: rgba(200,169,110,.12);
+  color: var(--gold);
+  border: 1px solid rgba(200,169,110,.25);
+}
+
+/* Toast */
+#toast{
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(40px);
+  opacity: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, #35251c, #221711);
+  border: 1px solid var(--gold);
+  color: var(--cream);
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 11px;
+  letter-spacing: 1px;
+  box-shadow: 0 12px 36px rgba(0,0,0,.7), 0 0 16px rgba(200,169,110,.25);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10000;
+  transition: all .3s cubic-bezier(.4,0,.2,1);
+}
+#toast.show{transform:translateX(-50%) translateY(0);opacity:1}
+\n\n
+
+/* CLASSIC EDITION — restrained editorial styling, preserving all generator logic */
+:root{
+ --bg:#15120f;--bg-deep:#100d0b;--card:#201a15;--card-inner:#19140f;
+ --cream:#f4efe5;--cream-soft:#d8cfc0;--taupe:#b2a695;--gold:#c5a875;
+ --gold-light:#dfc99f;--border:rgba(197,168,117,.24);--border-strong:rgba(197,168,117,.48);
+}
+html{scroll-behavior:smooth}
+body{
+ padding:38px 18px 76px;
+ background:#15120f;
+ background-image:linear-gradient(135deg,rgba(197,168,117,.035) 0 1px,transparent 1px 100%),
+  radial-gradient(ellipse at 50% 0%,rgba(119,91,57,.16),transparent 52%),
+  linear-gradient(180deg,#17130f 0%,#100e0c 100%);
+ background-size:28px 28px,auto,auto;
+ color:var(--cream);font-weight:400;
+}
+.container{max-width:820px}
+.gen-header{padding:30px 18px 34px;margin:0 auto 26px;max-width:700px}
+.gen-header:before{width:min(88%,560px);border-top:1px solid rgba(197,168,117,.42);border-bottom:1px solid rgba(197,168,117,.24)}
+.header-badge{
+ border:0;border-radius:0;background:transparent;padding:0 0 12px;
+ color:#c7b38f;font-size:9px;letter-spacing:3.8px;font-weight:600;
+}
+.header-badge:before,.header-badge:after{width:34px;background:#c5a875;opacity:.65}
+.gen-header h1{font-family:'Cinzel',serif;font-weight:500;letter-spacing:1.4px;color:#d5bd8d;text-shadow:none}
+.gen-header .serif{color:#e9dfcf!important;font-size:21px!important;letter-spacing:.3px}
+.gen-header > div:last-child{font-size:9px!important;letter-spacing:2px!important;color:#b8a17a!important;margin-top:13px!important}
+.gh-banner,.g-card{
+ background:linear-gradient(150deg,rgba(37,30,23,.98),rgba(25,20,16,.99));
+ border:1px solid rgba(197,168,117,.32);border-radius:3px;
+ box-shadow:0 14px 36px rgba(0,0,0,.28),inset 0 1px rgba(255,255,255,.025);
+}
+.gh-banner{padding:22px 24px;margin-bottom:20px}
+.gh-banner:before,.g-card:before{inset:6px;border:1px solid rgba(197,168,117,.09);border-radius:1px}
+.gh-title{font-size:10px;letter-spacing:1.8px;color:#d6c197}
+.gh-detected{font-size:10px;color:#b8ad9d}
+.g-card{padding:30px 30px;margin-bottom:24px}
+.tab-row{gap:4px;border-bottom:1px solid rgba(197,168,117,.22);padding-bottom:13px;margin-bottom:27px}
+.tab-btn{border-radius:2px;padding:11px 15px;font-size:9px;letter-spacing:1.25px;color:#b9ad9c}
+.tab-btn.active{background:rgba(197,168,117,.12);border:1px solid rgba(197,168,117,.5);color:#e4d1a8;box-shadow:none}
+.inp-lbl{font-size:9px;letter-spacing:1.55px;color:#c8b58f;font-weight:600}
+.inp-ctrl{
+ min-height:46px;padding:12px 14px;border-radius:2px!important;
+ background:#15110e!important;border:1px solid rgba(197,168,117,.27)!important;
+ color:#f4efe5!important;font-size:13px;box-shadow:none!important;
+}
+.inp-ctrl:focus{border-color:#c5a875!important;box-shadow:0 0 0 2px rgba(197,168,117,.12)!important}
+.inp-ctrl::placeholder{color:#82786b}
+select.inp-ctrl{color-scheme:dark}
+.pills{gap:7px}.pill{border-radius:2px!important;padding:6px 10px;font-size:9px;letter-spacing:.45px}
+.pill:hover,.pill.selected{background:rgba(197,168,117,.18)!important;color:#f0dfbd!important}
+.mockup-wrap{
+ border-radius:2px!important;padding:30px 20px!important;margin:25px 0 22px!important;
+ background:linear-gradient(145deg,#211a14,#17120e)!important;
+ border:1px solid rgba(197,168,117,.48)!important;
+ box-shadow:inset 0 0 0 4px rgba(197,168,117,.035),0 10px 24px rgba(0,0,0,.22)!important;
+}
+.mockup-wrap:after{inset:7px;border:1px solid rgba(197,168,117,.14);border-radius:0}
+.mockup-guest-title{font-size:9px;letter-spacing:3px;color:#b9a47e}
+.mockup-guest-name{color:#d6bd8e;text-shadow:none;font-size:clamp(26px,5vw,38px)}
+.link-box{border-radius:2px!important;background:#14100d!important;border-color:rgba(197,168,117,.26)!important;padding:13px 15px}
+.link-text{color:#ded4c4}
+.btn-row{gap:9px;margin-top:17px}
+.btn{
+ border-radius:2px!important;padding:12px 17px;font-size:9px;letter-spacing:1.15px;
+ font-weight:600;box-shadow:none!important;transform:none!important;
+}
+.btn-gold{background:#c5a875!important;border:1px solid #d4bd91!important;color:#17120d!important}
+.btn-gold:hover{background:#d6c093!important}
+.btn-outline{background:transparent!important;border:1px solid rgba(197,168,117,.48)!important;color:#dfcca6!important}
+.btn-outline:hover{background:rgba(197,168,117,.09)!important}
+.btn-wa{background:#285b46!important;border:1px solid #47765f!important;color:#f5f3e9!important}
+.btn-wa:hover{background:#326c53!important}
+.tbl-wrap{border-radius:2px;border-color:rgba(197,168,117,.25)}
+th{background:#211a14;color:#d4bd91;font-size:9px;letter-spacing:1.5px}
+td{color:#eee5d7}
+tr:hover td{background:rgba(197,168,117,.045)}
+.badge-status{border-radius:2px}
+#toast{border-radius:2px;background:#211a14;border-color:rgba(197,168,117,.5);box-shadow:0 10px 28px rgba(0,0,0,.35)}
+:focus-visible{outline:2px solid #d6bd8e!important;outline-offset:3px}
+@media(max-width:600px){
+ body{padding:18px 11px 52px}
+ .gen-header{padding:22px 8px 26px;margin-bottom:18px}
+ .gen-header .serif{font-size:18px!important}
+ .gh-banner{padding:18px 15px}
+ .g-card{padding:22px 15px}
+ .tab-row{gap:5px}
+ .tab-btn{padding:10px 11px;font-size:8px;letter-spacing:.8px}
+ .form-grid{grid-template-columns:minmax(0,1fr)}
+ .btn-row{display:grid;grid-template-columns:1fr 1fr}
+ .btn-row .btn{width:100%;padding:12px 8px;font-size:8px;letter-spacing:.7px}
+ .mockup-wrap{padding:26px 13px!important}
+ .tbl-wrap{margin-left:-2px;margin-right:-2px}
+}
+@media(max-width:380px){.btn-row{grid-template-columns:1fr}.header-badge{letter-spacing:2.5px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+
+/* Compact invitation desk: enter a name, then send. */
+.gh-banner,
+.container > div[style*="justify-content:space-between"],
+.tab-row, #tabBatch, #tabList, .mockup-wrap,
+#tabSingle .inp-grp:nth-of-type(2),
+#tabSingle > .inp-grp:has(input[name="msgLang"]),
+#tabSingle .pills, #tabSingle > .inp-lbl, #tabSingle .link-box,
+#previewBtn, #tabSingle button[onclick="saveGuestToList()"] {
+  display:none !important;
+}
+.container{max-width:560px;padding-top:28px}
+.gen-header{margin-bottom:24px;padding-bottom:16px}
+.gen-header h1{font-size:clamp(23px,5vw,30px)!important}
+.gen-header>div:last-child{display:none}
+.g-card{padding:clamp(20px,5vw,34px);border-radius:16px}
+#tabSingle{display:block!important}
+#tabSingle .form-grid{display:block}
+#tabSingle .inp-grp{margin:0 0 20px}
+#guestNameInput{min-height:58px;font-size:17px;padding:16px 17px;border-radius:10px;letter-spacing:.2px}
+#guestNameInput::placeholder{font-size:13px}
+#tabSingle .btn-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+#tabSingle .btn-row .btn{min-height:50px;justify-content:center;font-size:10px;letter-spacing:1px;border-radius:9px}
+#tabSingle .btn-wa{grid-column:1/-1;min-height:56px!important;font-size:12px!important}
+#tabSingle .btn-gold{background:linear-gradient(135deg,#c5a36b,#a9854f);color:#21170f}
+@media(max-width:480px){
+ .container{padding:20px 14px 36px}
+ .gen-header{margin-bottom:20px}
+ #tabSingle .btn-row{grid-template-columns:1fr}
+ #tabSingle .btn-wa{grid-column:auto}
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- Header -->
+  <header class="gen-header">
+    <div class="header-badge">PRIVATE INVITATION DESK</div>
+    <h1 class="cinzel" style="font-size:clamp(22px,4.5vw,34px);margin-bottom:6px;">Send Guest Invitation</h1>
+    <div class="serif" style="font-size:clamp(15px,3vw,19px);color:var(--taupe);font-style:italic;">
+      The Wedding of Jhumu &amp; Suvo
+    </div>
+    <div style="font-size:10px;letter-spacing:2px;color:var(--gold);margin-top:8px;">
+      24 December 2026 · Al-Amin Community Center, Dhaka
+    </div>
+  </header>
+
+  <!-- GitHub Live Link Configuration Bar -->
+  <div class="gh-banner">
+    <div class="gh-title-row">
+      <div class="gh-title">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        <span>GitHub Pages Public Base Link</span>
+      </div>
+      <div class="gh-detected" id="ghStatusMsg">Target for WhatsApp &amp; Copy Links</div>
+    </div>
+    
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <input class="inp-ctrl" id="githubBaseUrlInput" type="text" placeholder="https://jhumurhut.github.io/wedding/" oninput="onBaseUrlChanged()" style="flex:1;min-width:260px;padding:11px 14px;font-size:12px;font-family:monospace;background:rgba(15,10,7,0.8);"/>
+      <button class="btn btn-gold" type="button" style="padding:10px 18px;" onclick="saveBaseUrl()">Save URL</button>
+      <button class="btn btn-outline" type="button" style="padding:10px 14px;" onclick="resetBaseUrl()" title="Reset to auto-detect">Reset</button>
+    </div>
+    <div style="font-size:9px;color:var(--taupe);margin-top:7px;letter-spacing:0.5px;">
+      * All links generated for WhatsApp, copying, and SMS will use this public GitHub link so guests can open it on their phones.
+    </div>
+  </div>
+
+  <!-- Navigation / Return Link -->
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;font-size:11px;">
+    <a href="index.html" class="btn btn-outline" style="padding:7px 14px;">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      Open Local index.html
+    </a>
+    <div style="color:var(--taupe);font-size:11px;">
+      Total Saved Guests: <span id="guestCountBadge" style="color:var(--gold);font-weight:600;">0</span>
+    </div>
+  </div>
+
+  <!-- Main Generator Card -->
+  <div class="g-card">
+    <div class="tab-row">
+      <button class="tab-btn active" id="tabSingleBtn" onclick="switchTab('single')">Single Guest</button>
+      <button class="tab-btn" id="tabBatchBtn" onclick="switchTab('batch')">Batch / Multi-Guest Import</button>
+      <button class="tab-btn" id="tabListBtn" onclick="switchTab('list')">Guest List &amp; Status (<span id="tabCount">0</span>)</button>
+    </div>
+
+    <!-- TAB 1: SINGLE GUEST GENERATOR -->
+    <div id="tabSingle">
+      <div class="form-grid">
+        <!-- Guest Name Input -->
+        <div class="inp-grp">
+          <label class="inp-lbl" for="guestNameInput">Guest Name *</label>
+          <input class="inp-ctrl" id="guestNameInput" type="text" placeholder="e.g. Dr. Shafiqul Islam &amp; Family" oninput="updatePreview()" maxlength="70" autocomplete="off"/>
+          
+          <div class="pills">
+            <span style="font-size:9px;color:var(--taupe);display:flex;align-items:center;">Quick:</span>
+            <button class="pill" type="button" onclick="appendPill('&amp; Family')">+ &amp; Family</button>
+            <button class="pill" type="button" onclick="appendPill('&amp; Spouse')">+ &amp; Spouse</button>
+            <button class="pill" type="button" onclick="setPill('Uncle ')">Uncle...</button>
+            <button class="pill" type="button" onclick="setPill('Mr. &amp; Mrs. ')">Mr. &amp; Mrs...</button>
+          </div>
+        </div>
+
+        <!-- Honorific / Salutation Dropdown -->
+        <div class="inp-grp">
+          <label class="inp-lbl" for="salutationSelect">Salutation / Category</label>
+          <select class="inp-ctrl" id="salutationSelect" onchange="updatePreview()">
+            <option value="Honoured Guest">Honoured Guest (সম্মানিত অতিথি)</option>
+            <option value="Respected Uncle &amp; Family">Respected Uncle &amp; Family</option>
+            <option value="Dearest Friend">Dearest Friend (প্রিয় বন্ধু)</option>
+            <option value="Esteemed Colleague">Esteemed Colleague (শ্রদ্ধেয় সহকর্মী)</option>
+            <option value="Beloved Family">Beloved Family (আত্মীয়-স্বজন)</option>
+            <option value="VIP Guest">VIP Guest</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Message Language Preference -->
+      <div class="inp-grp">
+        <label class="inp-lbl">WhatsApp / SMS Message Style</label>
+        <div style="display:flex;gap:16px;margin-top:6px;flex-wrap:wrap;">
+          <label style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--cream-soft);cursor:pointer;">
+            <input type="radio" name="msgLang" value="en" checked onchange="updatePreview()"/> English (Islamic Formal)
+          </label>
+          <label style="display:flex;align-items:center;gap:6px;font-size:11px;color:var(--cream-soft);cursor:pointer;">
+            <input type="radio" name="msgLang" value="bn" onchange="updatePreview()"/> Bengali &amp; English (বাংলা আমন্ত্রণ)
+          </label>
+        </div>
+      </div>
+
+      <!-- Live Mockup of How Guest Will See Their Card -->
+      <div class="mockup-wrap">
+        <div class="mockup-guest-title" id="mockupTitle">Honoured Guest</div>
+        <div class="mockup-guest-name" id="mockupName">— Type guest name above —</div>
+        <div style="font-size:10px;color:var(--taupe);letter-spacing:2px;text-transform:uppercase;">
+          Cordially Invited to the Wedding of Jhumu &amp; Suvo
+        </div>
+      </div>
+
+      <!-- Generated Link Box (Public GitHub Link) -->
+      <div class="inp-lbl" style="text-align:left;">Public GitHub Link Ready to Share:</div>
+      <div class="link-box">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--gold);flex-shrink:0"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        <div class="link-text" id="linkTextDisplay">Generating GitHub link...</div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="btn-row">
+        <!-- Copy Link -->
+        <button class="btn btn-gold" onclick="copyPersonalizedLink()" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+          Copy GitHub Link
+        </button>
+
+        <!-- Send via WhatsApp -->
+        <button class="btn btn-wa" onclick="sendWhatsAppDirect()" type="button">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm0 18.15c-1.49 0-2.94-.4-4.21-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.17 8.17 0 0 1-1.25-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.23 8.23z"/></svg>
+          Share on WhatsApp
+        </button>
+
+        <!-- Preview Invitation -->
+        <a class="btn btn-outline" id="previewBtn" href="#" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+          Open Link
+        </a>
+
+        <!-- Save to List -->
+        <button class="btn btn-outline" onclick="saveGuestToList()" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          Save to Guest List
+        </button>
+      </div>
+    </div>
+
+    <!-- TAB 2: BATCH GUEST IMPORT -->
+    <div id="tabBatch" style="display:none;">
+      <div class="inp-grp">
+        <label class="inp-lbl" for="batchTextarea">Paste Multiple Guest Names (One Name per Line)</label>
+        <textarea class="inp-ctrl" id="batchTextarea" rows="8" placeholder="Uncle Rafiq &amp; Family&#10;Dr. Kamal Hossain&#10;Tanvir Ahmed &amp; Spouse&#10;Farhana Sultana&#10;Auntie Bilkis"></textarea>
+      </div>
+      
+      <div class="btn-row" style="margin-top:14px;">
+        <button class="btn btn-gold" onclick="processBatchImport()" type="button">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Generate All GitHub Links
+        </button>
+        <button class="btn btn-outline" onclick="document.getElementById('batchTextarea').value=''" type="button">
+          Clear Text
+        </button>
+      </div>
+    </div>
+
+    <!-- TAB 3: GUEST LIST & TRACKER -->
+    <div id="tabList" style="display:none;">
+      <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;margin-bottom:14px;">
+        <input class="inp-ctrl" id="searchGuestInp" type="text" placeholder="Search guests…" oninput="renderGuestTable()" style="max-width:240px;padding:8px 12px;font-size:12px;"/>
+        
+        <div style="display:flex;gap:8px;">
+          <button class="btn btn-outline" style="padding:8px 14px;font-size:9px;" onclick="exportGuestsCSV()">
+            Export CSV
+          </button>
+          <button class="btn btn-outline" style="padding:8px 14px;font-size:9px;color:#f87171;border-color:rgba(248,113,113,.4);" onclick="clearAllGuests()">
+            Clear All
+          </button>
+        </div>
+      </div>
+
+      <div class="tbl-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Guest Name</th>
+              <th>Salutation</th>
+              <th>Status</th>
+              <th>Quick Actions</th>
+            </tr>
+          </thead>
+          <tbody id="guestTbody">
+            <!-- Dynamic rows -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Floating Toast -->
+<div id="toast">
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--gold);flex-shrink:0"><polyline points="20 6 9 17 4 12"/></svg>
+  <span id="toastMsg">Link copied to clipboard!</span>
+</div>
+
+<script>
+/* GITHUB BASE URL CONFIGURATION */
+const GITHUB_DEFAULT_FALLBACK = 'https://jhumurhut.github.io/Wedding_Ceremony/';
+const GITHUB_STORAGE_KEY = 'wedding_github_base_url_v1';
+
+function getEffectiveBaseUrl(){
+  const custom = localStorage.getItem(GITHUB_STORAGE_KEY);
+  if(custom && custom.trim()) return normalizeUrl(custom.trim());
+  
+  if(window.location.hostname.endsWith('github.io')){
+    let p = window.location.pathname;
+    // Guest links must open the public invitation page, not this management page.
+    p = p.replace(/(?:invite|guest-invite-generator)\.html\/?$/i, '');
+    return normalizeUrl(window.location.origin + p);
+  }
+  
+  return normalizeUrl(GITHUB_DEFAULT_FALLBACK);
+}
+
+function normalizeUrl(url){
+  let u = (url || '').trim();
+  if(!u) u = GITHUB_DEFAULT_FALLBACK;
+  if(!u.startsWith('http://') && !u.startsWith('https://')){
+    u = 'https://' + u;
+  }
+  u = u.replace(/\/index\.html\/?$/i, '/');
+  if(!u.endsWith('/')){
+    u += '/';
+  }
+  return u;
+}
+
+function initBaseUrlUI(){
+  const current = getEffectiveBaseUrl();
+  const inp = document.getElementById('githubBaseUrlInput');
+  inp.value = current;
+  
+  if(window.location.hostname.endsWith('github.io')){
+    document.getElementById('ghStatusMsg').textContent = '✓ Live GitHub Pages Detected';
+  } else {
+    document.getElementById('ghStatusMsg').textContent = 'Custom GitHub Pages URL';
+  }
+}
+
+function onBaseUrlChanged(){
+  updatePreview();
+}
+
+function saveBaseUrl(){
+  const inp = document.getElementById('githubBaseUrlInput');
+  const normalized = normalizeUrl(inp.value);
+  inp.value = normalized;
+  localStorage.setItem(GITHUB_STORAGE_KEY, normalized);
+  showToast('✓ Public GitHub URL saved!');
+  updatePreview();
+  if(document.getElementById('tabList').style.display !== 'none'){
+    renderGuestTable();
+  }
+}
+
+function resetBaseUrl(){
+  localStorage.removeItem(GITHUB_STORAGE_KEY);
+  initBaseUrlUI();
+  showToast('Reset to default GitHub URL');
+  updatePreview();
+  if(document.getElementById('tabList').style.display !== 'none'){
+    renderGuestTable();
+  }
+}
+
+/* GUEST STORAGE */
+const STORAGE_KEY = 'jhumu_suvo_guest_list_v2';
+let guests = [];
+
+function loadGuests(){
+  try{
+    const d = localStorage.getItem(STORAGE_KEY);
+    guests = d ? JSON.parse(d) : [];
+  }catch(e){ guests = []; }
+  updateCountBadges();
+}
+
+function saveGuests(){
+  try{
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(guests));
+  }catch(e){}
+  updateCountBadges();
+}
+
+function updateCountBadges(){
+  document.getElementById('guestCountBadge').textContent = guests.length;
+  document.getElementById('tabCount').textContent = guests.length;
+}
+
+/* TAB SWITCHING */
+function switchTab(t){
+  ['single','batch','list'].forEach(id=>{
+    document.getElementById('tab' + capitalize(id)).style.display = (id === t ? 'block' : 'none');
+    document.getElementById('tab' + capitalize(id) + 'Btn').classList.toggle('active', id === t);
+  });
+  if(t === 'list') renderGuestTable();
+}
+function capitalize(s){return s.charAt(0).toUpperCase() + s.slice(1);}
+
+/* BUILD GITHUB PUBLIC INVITATION URL */
+function buildGuestUrl(name, salutation){
+  const base = getEffectiveBaseUrl();
+  const url = new URL(base);
+  url.searchParams.set('guest', name.trim());
+  if(salutation && salutation !== 'Honoured Guest'){
+    url.searchParams.set('salutation', salutation.trim());
+  }
+  return url.toString();
+}
+
+/* WHATSAPP MESSAGE TEXT GENERATION */
+function buildWhatsAppMessage(name, salutation, link, lang){
+  if(lang === 'bn'){
+    return 'بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ\n\n' +
+      'আসসালামু আলাইকুম,\n\n' +
+      'শ্রদ্ধেয় ' + name + ',\n\n' +
+      'আল্লাহ্‌র অশেষ রহমতে আগামী ২৪ ডিসেম্বর ২০২৬, বৃহস্পতিবার জুমরাত সুলতানা (ঝুমু) এবং এস. এম. সাকিব (শুভ)-এর শুভ বিবাহ অনুষ্ঠিত হতে যাচ্ছে।\n\n' +
+      'আপনার জন্য বিশেষভাবে প্রস্তুত করা ডিজিটাল আমন্ত্রণপত্রটি দেখতে নিচের লিংকে ক্লিক করুন:\n' +
+      '👉 ' + link + '\n\n' +
+      'অনুষ্ঠানের স্থান: আল-আমিন কমিউনিটি সেন্টার, সূত্রাপুর, ঢাকা।\n' +
+      'সময়: রাত ০৯:৩০ মিনিট।\n\n' +
+      'আপনার সপরিবারে উপস্থিতি ও দোয়া আমাদের জন্য পরম আশীর্বাদ।\n\n' +
+      'ইতি,\nঝুমু ও শুভ এবং পরিবারবর্গ';
+  } else {
+    return 'بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ\n\n' +
+      'Assalamu Alaikum wa Rahmatullah,\n\n' +
+      'Dear ' + name + ',\n\n' +
+      'Together with their families, Jumrat Sultana (Jhumu) & S. M. Sakib (Suvo) joyfully invite you to share in the celebration of their Islamic wedding (Nikah & Walima).\n\n' +
+      '📅 Date: Thursday, 24 December 2026 at 09:30 PM\n' +
+      '📍 Venue: Al-Amin Community Center, 103/1 R. M. Das Road, Loharpul, Sutrapur, Dhaka\n\n' +
+      'Please open your personalized digital wedding invitation card here:\n' +
+      '👉 ' + link + '\n\n' +
+      'Your gracious presence and heartfelt prayers will be a true blessing to us.\n\n' +
+      'Warm regards,\nJhumu & Suvo';
+  }
+}
+
+/* LIVE PREVIEW */
+function updatePreview(){
+  const nameInp = document.getElementById('guestNameInput').value.trim();
+  const salSelect = document.getElementById('salutationSelect').value;
+  
+  const displayName = nameInp || '— Type guest name above —';
+  document.getElementById('mockupName').textContent = displayName;
+  document.getElementById('mockupTitle').textContent = salSelect;
+
+  const url = buildGuestUrl(nameInp || 'Honoured Guest', salSelect);
+  document.getElementById('linkTextDisplay').textContent = url;
+  document.getElementById('previewBtn').href = url;
+}
+
+function appendPill(txt){
+  const el = document.getElementById('guestNameInput');
+  el.value = el.value.trim() + ' ' + txt;
+  updatePreview();
+  el.focus();
+}
+
+function setPill(txt){
+  const el = document.getElementById('guestNameInput');
+  el.value = txt;
+  updatePreview();
+  el.focus();
+}
+
+/* COPY LINK (COPIES PUBLIC GITHUB LINK) */
+function copyPersonalizedLink(){
+  const name = document.getElementById('guestNameInput').value.trim();
+  if(!name){
+    showToast('⚠️ Please type a guest name first!');
+    document.getElementById('guestNameInput').focus();
+    return;
+  }
+  const sal = document.getElementById('salutationSelect').value;
+  const url = buildGuestUrl(name, sal);
+  
+  navigator.clipboard.writeText(url).then(()=>{
+    showToast('✓ Public GitHub link copied to clipboard!');
+  }).catch(()=>{
+    showToast('Copy failed, please copy manually');
+  });
+}
+
+/* WHATSAPP DIRECT SHARE WITH GITHUB LINK */
+function sendWhatsAppDirect(){
+  const name = document.getElementById('guestNameInput').value.trim();
+  if(!name){
+    showToast('⚠️ Please type a guest name first!');
+    document.getElementById('guestNameInput').focus();
+    return;
+  }
+  const sal = document.getElementById('salutationSelect').value;
+  const lang = document.querySelector('input[name="msgLang"]:checked').value;
+  const url = buildGuestUrl(name, sal);
+  const msg = buildWhatsAppMessage(name, sal, url, lang);
+  
+  const waUrl = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(msg);
+  window.open(waUrl, '_blank');
+}
+
+/* SAVE GUEST */
+function saveGuestToList(){
+  const name = document.getElementById('guestNameInput').value.trim();
+  if(!name){
+    showToast('⚠️ Please enter a guest name!');
+    return;
+  }
+  const sal = document.getElementById('salutationSelect').value;
+  const lang = document.querySelector('input[name="msgLang"]:checked').value;
+  
+  guests.push({
+    id: Date.now(),
+    name: name,
+    salutation: sal,
+    lang: lang,
+    sent: false,
+    dateAdded: new Date().toLocaleDateString()
+  });
+  saveGuests();
+  showToast('✓ Guest saved to list with GitHub link!');
+  document.getElementById('guestNameInput').value = '';
+  updatePreview();
+}
+
+/* BATCH IMPORT */
+function processBatchImport(){
+  const txt = document.getElementById('batchTextarea').value;
+  const lines = txt.split('\n').map(l=>l.trim()).filter(l=>l.length>0);
+  if(!lines.length){
+    showToast('⚠️ Please paste at least one name!');
+    return;
+  }
+  
+  lines.forEach(line=>{
+    guests.push({
+      id: Date.now() + Math.random(),
+      name: line,
+      salutation: 'Honoured Guest',
+      lang: 'en',
+      sent: false,
+      dateAdded: new Date().toLocaleDateString()
+    });
+  });
+  saveGuests();
+  showToast('✓ Added ' + lines.length + ' guests to list!');
+  document.getElementById('batchTextarea').value = '';
+  switchTab('list');
+}
+
+/* RENDER GUEST TABLE */
+function renderGuestTable(){
+  const tbody = document.getElementById('guestTbody');
+  const q = (document.getElementById('searchGuestInp').value || '').toLowerCase();
+  
+  const filtered = guests.filter(g => g.name.toLowerCase().includes(q) || (g.salutation||'').toLowerCase().includes(q));
+  
+  if(!filtered.length){
+    tbody.innerHTML = '<tr><td colspan="5" style="text-align:center;color:var(--taupe);padding:30px;">No guests found. Add someone above!</td></tr>';
+    return;
+  }
+  
+  tbody.innerHTML = filtered.map((g, idx) => {
+    const url = buildGuestUrl(g.name, g.salutation);
+    const badgeClass = g.sent ? 'badge-sent' : 'badge-pending';
+    const badgeText = g.sent ? '✓ Sent' : 'Pending';
+    return '<tr>' +
+      '<td style="color:var(--taupe);">' + (idx + 1) + '</td>' +
+      '<td style="font-weight:500;"><div style="color:var(--cream);">' + escapeHtml(g.name) + '</div></td>' +
+      '<td style="color:var(--taupe);font-size:11px;">' + escapeHtml(g.salutation || 'Honoured Guest') + '</td>' +
+      '<td><button class="badge-status ' + badgeClass + '" onclick="toggleSent(' + g.id + ')">' + badgeText + '</button></td>' +
+      '<td><div style="display:flex;gap:6px;">' +
+        '<button class="pill" title="Copy GitHub Link" onclick="copyTableUrl(\'' + escapeHtml(url) + '\')">📋</button>' +
+        '<button class="pill" style="color:#25D366;border-color:rgba(37,211,102,.4);" title="WhatsApp with GitHub Link" onclick="sendWhatsAppRow(' + g.id + ')">💬 WA</button>' +
+        '<a class="pill" href="' + url + '" target="_blank" title="Preview GitHub Link">👁️</a>' +
+        '<button class="pill" style="color:#f87171;border-color:rgba(248,113,113,.3);" title="Delete" onclick="deleteGuest(' + g.id + ')">✕</button>' +
+      '</div></td>' +
+    '</tr>';
+  }).join('');
+}
+
+function escapeHtml(s){
+  return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;');
+}
+
+function toggleSent(id){
+  const g = guests.find(x=>x.id==id);
+  if(g){
+    g.sent = !g.sent;
+    saveGuests();
+    renderGuestTable();
+  }
+}
+
+function copyTableUrl(url){
+  navigator.clipboard.writeText(url).then(()=>{
+    showToast('✓ GitHub link copied to clipboard!');
+  });
+}
+
+function sendWhatsAppRow(id){
+  const g = guests.find(x=>x.id==id);
+  if(!g) return;
+  const url = buildGuestUrl(g.name, g.salutation);
+  const msg = buildWhatsAppMessage(g.name, g.salutation, url, g.lang || 'en');
+  g.sent = true;
+  saveGuests();
+  renderGuestTable();
+  window.open('https://api.whatsapp.com/send?text=' + encodeURIComponent(msg), '_blank');
+}
+
+function deleteGuest(id){
+  guests = guests.filter(x=>x.id!=id);
+  saveGuests();
+  renderGuestTable();
+  showToast('Guest removed');
+}
+
+function clearAllGuests(){
+  if(confirm('Are you sure you want to clear the entire guest list?')){
+    guests = [];
+    saveGuests();
+    renderGuestTable();
+    showToast('All guests cleared');
+  }
+}
+
+function exportGuestsCSV(){
+  if(!guests.length){
+    showToast('No guests to export!');
+    return;
+  }
+  let csv = 'Name,Salutation,Status,GitHub Public Link\r\n';
+  guests.forEach(g=>{
+    const url = buildGuestUrl(g.name, g.salutation);
+    csv += '"' + g.name.replace(/"/g,'""') + '","' + (g.salutation||'').replace(/"/g,'""') + '","' + (g.sent?'Sent':'Pending') + '","' + url + '"\r\n';
+  });
+  const b = new Blob([csv],{type:'text/csv;charset=utf-8'});
+  const u = URL.createObjectURL(b);
+  const a = document.createElement('a');
+  a.href = u;
+  a.download = 'Jhumu-Suvo-Wedding-Guests-GitHub-Links.csv';
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  setTimeout(()=>URL.revokeObjectURL(u),2000);
+  showToast('✓ CSV file exported with GitHub links!');
+}
+
+/* TOAST UTILITY */
+let toastTimeout;
+function showToast(msg){
+  const t = document.getElementById('toast');
+  document.getElementById('toastMsg').textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimeout);
+  toastTimeout = setTimeout(()=>t.classList.remove('show'), 3000);
+}
+
+// Initialise
+initBaseUrlUI();
+loadGuests();
+updatePreview();
+</script>
+</body>
+</html>
