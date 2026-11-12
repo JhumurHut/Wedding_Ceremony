@@ -1043,6 +1043,11 @@ body.invitation-open #pageIndicator { opacity: 1; }
   .ceremony-time-grid { gap: 8px; }
 }
 
+
+/* Discreet host navigation to the linked guest invitation manager */
+.host-access-link{position:fixed;left:12px;bottom:12px;z-index:1400;padding:8px 12px;border:1px solid rgba(200,169,110,.34);border-radius:999px;background:rgba(25,18,13,.82);backdrop-filter:blur(10px);color:rgba(223,200,150,.72);font:500 8px Montserrat,sans-serif;letter-spacing:2px;text-transform:uppercase;text-decoration:none;box-shadow:0 5px 18px rgba(0,0,0,.25);transition:.25s ease}
+.host-access-link:hover{color:#f4e8cc;border-color:#c8a96e;background:rgba(41,26,19,.96);box-shadow:0 0 18px rgba(200,169,110,.18)}
+@media(max-width:540px){.host-access-link{left:8px;bottom:8px;padding:7px 10px;font-size:7px}}
 </style>
 </head>
 <body>
@@ -1673,6 +1678,9 @@ body.invitation-open #pageIndicator { opacity: 1; }
 
 <!-- Toast Feedback -->
 <div id="toast">Copied!</div>
+
+<!-- Discreet host access: links this invitation site to the guest manager. -->
+<a class="host-access-link" href="invite.html" aria-label="Open host invitation manager">Host Access</a>
 
 <script>
 /* ══ 1. URL PARAMETERS (PERSONALIZED GUEST GREETING) ══ */
