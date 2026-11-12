@@ -19,6 +19,9 @@
 :root {
   --bg-page: #19120d;
   --bg-deep: #120b08;
+  --cream: #f7f3ec;
+  --cream-soft: #e5dcd1;
+  --taupe: #a49485;
   
   /* Theme 1: Light Cream Frame */
   --light-frame-bg: #f8f4ec;
@@ -40,7 +43,6 @@
   --gold: #c8a96e;
   --gold-light: #dfc896;
   --gold-glow: #f4e8cc;
-  --taupe: #a49485;
   --terracotta: #8e4221;
 }
 
@@ -50,7 +52,7 @@ body {
   background-color: var(--bg-page);
   background-image: 
     radial-gradient(circle at 50% 12%, rgba(55, 38, 28, 0.6) 0%, transparent 60%),
-    url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMjAnIGhlaWdodD0nMTIwJyB2aWV3Qm94PScwIDAgMTIwIDEyMCc+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5nLWxpbmUgeyBzdHJva2U6ICNjOGE5NmU7IHN0cm9rZS13aWR0aDogMC43OyBmaWxsOiBub25lOyBvcGFjaXR5OiAwLjE4OyB9CiAgICAgIC5nLWZpbGwgeyBzdHJva2U6ICNjOGE5NmU7IHN0cm9rZS13aWR0aDogMC44OyBmaWxsOiByZ2JhKDIwMCwxNjksMTEwLDAuMDE4KTsgb3BhY2l0eTogMC4yNTsgfQogICAgICAuZy1zdWIgIHsgc3Ryb2tlOiAjYzhhOTZlOyBzdHJva2Utd2lkdGg6IDAuNDU7IGZpbGw6IG5vbmU7IG9wYWNpdHk6IDAuMTI7IH0KICAgICAgLmctZG90ICB7IGZpbGw6ICNjOGE5NmU7IG9wYWNpdHk6IDAuMzU7IH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxwb2x5Z29uIGNsYXNzPSdnLWZpbGwnIHBvaW50cz0nNjAuMCwzNC4wIDY1LjAsNDguMCA3OC40LDQxLjYgNzIuMCw1NS4wIDg2LjAsNjAuMCA3Mi4wLDY1LjAgNzguNCw3OC40IDY1LjAsNzIuMCA2MC4wLDg2LjAgNTUuMCw3Mi4wIDQxLjYsNzguNCA0OC4wLDY1LjAgMzQuMCw2MC4wIDQ4LjAsNTUuMCA0MS42LDQxLjYgNTUuMCw0OC4wJy8+CiAgPGNpcmNsZSBjeD0nNjAnIGN5PSc2MCcgcj0nMTMnIGNsYXNzPSdnLXN1Yicgc3Ryb2tlLWRhc2hhcnJheT0nMiAyJy8+CiAgPGNpcmNsZSBjeD0nNjAnIGN5PSc2MCcgcj0nMS44JyBjbGFzcz0nZy1kb3QnLz4KICA8cG9seWdvbiBjbGFzcz0nZy1maWxsJyBwb2ludHM9JzAuMCwtMjYuMCA1LjAsLTEyLjAgMTguNCwtMTguNCAxMi4wLC01LjAgMjYuMCwwLjAgMTIuMCw1LjAgMTguNCwxOC40IDUuMCwxMi4wIDAuMCwyNi4wIC01LjAsMTIuMCAtMTguNCwxOC40IC0xMi4wLDUuMCAtMjYuMCwwLjAgLTEyLjAsLTUuMCAtMTguNCwtMTguNCAtNS4wLC0xMi4wJy8+CiAgPHBvbHlnb24gY2xhc3M9J2ctZmlsbCcgcG9pbnRzPScxMjAuMCwtMjYuMCAxMjUuMCwtMTIuMCAxMzguNCwtMTguNCAxMzIuMCwtNS4wIDE0Ni4wLDAuMCAxMzIuMCw1LjAgMTM4LjQsMTguNCAxMjUuMCwxMi4wIDEyMC4wLDI2LjAgMTE1LjAsMTIuMCAxMDEuNiwxOC40IDEwOC4wLDUuMCA5NC4wLDAuMCAxMDguMCwtNS4wIDEwMS42LC0xOC40IDExNS4wLC0xMi4wJy8+CiAgPHBvbHlnb24gY2xhc3M9J2ctZmlsbCcgcG9pbnRzPScwLjAsOTQuMCA1LjAsMTA4LjAgMTguNCwxMDEuNiAxMi4wLDExNS4wIDI2LjAsMTIwLjAgMTIuMCwxMjUuMCAxOC40LDEzOC40IDUuMCwxMzIuMCAwLjAsMTQ2LjAgLTUuMCwxMzIuMCAtMTguNCwxMzguNCAtMTIuMCwxMjUuMCAtMjYuMCwxMjAuMCAtMTIuMCwxMTUuMCAtMTguNCwxMDEuNiAtNS4wLDEwOC4wJy8+CiAgPHBvbHlnb24gY2xhc3M9J2ctZmlsbCcgcG9pbnRzPScxMjAuMCw5NC4wIDEyNS4wLDEwOC4wIDEzOC40LDEwMS42IDEzMi4wLDExNS4wIDE0Ni4wLDEyMC4wIDEzMi4wLDEyNS4wIDEzOC40LDEzOC40IDEyNS4wLDEzMi4wIDEyMC4wLDE0Ni4wIDExNS4wLDEzMi4wIDEwMS42LDEzOC40IDEwOC4wLDEyNS4wIDk0LjAsMTIwLjAgMTA4LjAsMTE1LjAgMTAxLjYsMTAxLjYgMTE1LjAsMTA4LjAnLz4KICA8bGluZSB4MT0nMCcgeTE9JzYwJyB4Mj0nMzQnIHkyPSc2MCcgY2xhc3M9J2ctbGluZScvPgogIDxsaW5lIHgxPSc4NicgeTE9JzYwJyB4Mj0nMTIwJyB5Mj0nNjAnIGNsYXNzPSdnLWxpbmUnLz4KICA8bGluZSB4MT0nNjAnIHkxPScwJyB4Mj0nNjAnIHkyPSczNCcgY2xhc3M9J2ctbGluZScvPgogIDxsaW5lIHgxPSc2MCcgeTE9Jzg2JyB4Mj0nNjAnIHkyPScxMjAnIGNsYXNzPSdnLWxpbmUnLz4KPC9zdmc+"),
+    url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMjAnIGhlaWdodD0nMTIwJyB2aWV3Qm94PScwIDAgMTIwIDEyMCc+CiAgPGRlZnM+CiAgICA8c3R5bGU+CiAgICAgIC5nLWxpbmUgeyBzdHJva2U6ICNjOGE5NmU7IHN0cm9rZS13aWR0aDogMC43OyBmaWxsOiBub25lOyBvcGFjaXR5OiAwLjE4OyB9CiAgICAgIC5nLWZpbGwgeyBzdHJva2U6ICNjOGE5NmU7IHN0cm9rZS13aWR0aDogMC44OyBmaWxsOiByZ2JhKDIwMCwxNjksMTEwLDAuMDE4KTsgb3BhY2l0eTogMC4yNTsgfQogICAgICAuZy1zdWIgIHsgc3Ryb2tlOiAjYzhhOTZlOyBzdHJva2Utd2lkdGg6IDAuNDU7IGZpbGw6IG5vbmU7IG9wYWNpdHk6IDAuMTI7IH0KICAgICAgLmctZG90ICB7IGZpbGw6ICNjOGE5NmU7IG9wYWNpdHk6IDAuMzU7IH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxwb2x5Z29uIGNsYXNzPSdnLWZpbGwnIHBvaW50cz0nNjAuMCwzNC4wIDY1LjAsNDguMCA3OC40LDQxLjYgNzIuMCw1NS4wIDg2LjAsNjAuMCA3Mi4wLDY1LjAgNzguNCw3OC40IDY1LjAsNzIuMCA2MC4wLDg2LjAgNTUuMCw3Mi4wIDQxLjYsNzguNCA0OC4wLDY1LjAgMzQuMCw2MC4wIDQ4LjAsNTUuMCA0MS42LDQxLjYgNTUuMCw0OC4wJy8+CiAgPGNpcmNsZSBjeD0nNjAnIGN5PSc2MCcgcj0nMTMnIGNsYXNzPSdnLXN1Yicgc3Ryb2tlLWRhc2hhcnJheT0nMiAyJy8+CiAgPGNpcmNsZSBjeD0nNjAnIGN5PSc2MCcgcj0nMS44JyBjbASS0nZy1kb3QnLz4KICA8cG9seWdvbiBjbGFzcz0nZy1maWxsJyBwb2ludHM9JzAwLjAsLTI2LjAgNS4wLC0xMi4wIDE4LjQsLTE4LjQgMTIuMCwtNS4wIDI2LjAsMC4wIDEyLjAsNS4wIDE4LjQsMTguNCA1LjAsMTIuMCAwLjAsMjYuMCAtNS4wLDEyLjAgLTE4LjQsMTguNCAtMTIuMCw1LjAgLTI2LjAsMC4wIC0xMi4wLC01LjAgLTE4LjQsLTE4LjQgLTUuMCwtMTIuMCcvPgogIDxwb2x5Z29uIGNsYXNzPSdnLWZpbGwnIHBvaW50cz0nMTIwLjAsLTI2LjAgMTI1LjAsLTEyLjAgMTM4LjQsLTE4LjQgMTMyLjAsLTUuMCAxNDYuMCwwLjAgMTMyLjAsNS4wIDEzOC40LDE4LjQgMTI1LjAsMTIuMCAxMjAuMCwyNi4wIDExNS4wLDEyLjAgMTAxLjYsMTguNCAxMDguMCw1LjAgOTQuMCwwLjAgMTA4LjAsLTUuMCAxMDEuNiwtMTguNCAxMTUuMCwtMTIuMCcvPgogIDxwb2x5Z29uIGNsYXNzPSdnLWZpbGwnIHBvaW50cz0nMC4wLDk0LjAgNS4wLDEwOC4wIDE4LjQsMTAxLjYgMTIuMCwxMTUuMCAyNi4wLDEyMC4wIDEyLjAsMTI1LjAgMTguNCwxMzguNCA1LjAsMTMyLjAgMC4wLDE0Ni4wIC01LjAsMTMyLjAgLTE4LjQsMTM4LjQgLTEyLjAsMTI1LjAgLTI2LjAsMTIwLjAgLTEyLjAsMTE1LjAgLTE4LjQsMTAxLjYgLTUuMCwxMDguMCcvPgogIDxwb2x5Z29uIGNsYXNzPSdnLWZpbGwnIHBvaW50cz0nMTIwLjAsOTQuMCAxMjUuMCwxMDguMCAxMzguNCwxMDEuNiAxMzIuMCwxMTUuMCAxNDYuMCwxMjAuMCAxMzIuMCwxMjUuMCAxMzguNCwxMzguNCAxMjUuMCwxMzIuMCAxMjAuMCwxNDYuMCAxMTUuMCwxMzIuMCAxMDEuNiwxMzguNCAxMDguMCwxMjUuMCA5NC4wLDEyMC4wIDEwOC4wLDExNS4wIDEwMS42LDEwMS42IDExNS4wLDEwOC4wJy8+CiAgPGxpbmUgeDE9JzAnIHkxPSc2MCcgaDI9JzM0JyB5Mj0nNjAnIGNsYXNzPSdnLWxpbmUnLz4KICA8bGluZSB4MT0nODYnIHkxPSc2MCcgaDI9JzEyMCcgeTI9JzYwJyBjbGFzcz0nZy1saW5lJy8+CiAgPGxpbmUgeDE9JzYwJyB5MT0nMCcgaDI9JzYwJyB5Mj0nMzQnIGNsYXNzPSdnLWxpbmUnLz4KICA8bGluZSB4MT0nNjAnIHkxPSc4NicgaDI9JzYwJyB5Mj0nMTIwJyBjbGFzcz0nZy1saW5lJy8+CiAgPGNpcmNsZSBjeD0nNjAnIGN5PSc2MCcgcj0nNTgnIGZpbGw9J25vbmUnIHN0cm9rZT0nI2M4YTk2ZScgc3Ryb2tlLXdpZHRoPScwLjUnIG9wYWNpdHk9JzAuMTUnLz4KICA8L3N2Zz4="),
     linear-gradient(to bottom, #1b130e 0%, #110b07 100%);
   background-attachment: fixed;
   color: #f7f3eb;
@@ -161,8 +163,8 @@ body {
   box-shadow: none;
 }
 
-/* ══ COVER ENVELOPE ══ */
-#cover{
+/* ══ COVER ENVELOPE (FIRST SCREEN - FROM SCREENSHOT 2) ══ */
+#cover {
   position: fixed;
   inset: 0;
   z-index: 2000;
@@ -173,8 +175,8 @@ body {
   justify-content: center;
   transition: opacity .9s ease;
 }
-#cover.exit{opacity:0;pointer-events:none}
-.cover-top{
+#cover.exit { opacity: 0; pointer-events: none; }
+.cover-top {
   position: absolute;
   top: 24px;
   left: 0;
@@ -197,8 +199,8 @@ body {
 }
 
 /* Envelope Container */
-.env-wrap{position:relative;width:min(320px,88vw);cursor:pointer;user-select:none}
-.env-body{
+.env-wrap { position: relative; width: min(320px, 88vw); cursor: pointer; user-select: none; }
+.env-body {
   width: 100%;
   padding-top: 64%;
   background: linear-gradient(165deg, #2d2018, #221711);
@@ -210,11 +212,11 @@ body {
 }
 
 /* Crease lines */
-.env-crease{position:absolute;inset:0;pointer-events:none;overflow:hidden;border-radius:3px}
-.env-crease svg{position:absolute;inset:0;width:100%;height:100%}
+.env-crease { position: absolute; inset: 0; pointer-events: none; overflow: hidden; border-radius: 3px; }
+.env-crease svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 
 /* Inner Card */
-.inner-card{
+.inner-card {
   position: absolute;
   left: 5%;
   right: 5%;
@@ -235,7 +237,7 @@ body {
   overflow: hidden;
   box-shadow: inset 0 0 20px rgba(0,0,0,.3);
 }
-.inner-card::after{
+.inner-card::after {
   content: '';
   position: absolute;
   inset: 5px;
@@ -243,8 +245,8 @@ body {
   border-radius: 2px;
   pointer-events: none;
 }
-.inner-card.slide-up{transform:translateY(-62%)}
-.cov-bism{
+.inner-card.slide-up { transform: translateY(-62%); }
+.cov-bism {
   font-family: 'Scheherazade New', serif;
   font-size: clamp(14px, 4.5vw, 22px);
   color: var(--gold);
@@ -252,19 +254,19 @@ body {
   margin-bottom: 2px;
   text-shadow: 0 2px 10px rgba(200,169,110,.3);
 }
-.cov-names{
+.cov-names {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(13px, 3.8vw, 19px);
-  color: var(--dark-frame-text);
+  color: var(--cream);
   font-weight: 300;
   line-height: 1.3;
   margin-top: 5px;
 }
-.cov-amp{font-style:italic;color:var(--gold);font-size:1.15em}
-.cov-date{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--taupe);margin-top:7px}
+.cov-amp { font-style: italic; color: var(--gold); font-size: 1.15em; }
+.cov-date { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--taupe); margin-top: 7px; }
 
 /* Personalized Guest Tag on Envelope Preview */
-.cov-guest-badge{
+.cov-guest-badge {
   margin-top: 8px;
   padding: 3px 10px;
   background: rgba(200,169,110,.1);
@@ -277,16 +279,17 @@ body {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  display: none;
 }
 
 /* Perspective Flap */
-.flap-pv{perspective:950px;position:absolute;top:-1px;left:-1px;right:-1px;z-index:5;pointer-events:none}
-.env-flap{width:100%;transform-origin:top center;transform:rotateX(0deg);transition:transform .95s cubic-bezier(.4,0,.2,1)}
-.env-flap svg{display:block;width:100%}
-.env-flap.open{transform:rotateX(-180deg)}
+.flap-pv { perspective: 950px; position: absolute; top: -1px; left: -1px; right: -1px; z-index: 5; pointer-events: none; }
+.env-flap { width: 100%; transform-origin: top center; transform: rotateX(0deg); transition: transform .95s cubic-bezier(.4,0,.2,1); }
+.env-flap svg { display: block; width: 100%; }
+.env-flap.open { transform: rotateX(-180deg); }
 
 /* Wax Seal */
-.wax{
+.wax {
   position: absolute;
   left: 50%;
   bottom: -32px;
@@ -298,18 +301,18 @@ body {
   transition: transform .3s;
   filter: drop-shadow(0 4px 16px rgba(0,0,0,.6)) drop-shadow(0 0 10px rgba(200,169,110,.35));
 }
-.wax:hover{transform:translateX(-50%) scale(1.08)}
-.wax.break{animation:sbk .5s ease forwards}
-@keyframes sbk{
-  0%{transform:translateX(-50%) scale(1);opacity:1}
-  40%{transform:translateX(-50%) scale(1.25) rotate(-10deg);opacity:.6}
-  100%{transform:translateX(-50%) scale(0) rotate(22deg);opacity:0}
+.wax:hover { transform: translateX(-50%) scale(1.08); }
+.wax.break { animation: sbk .5s ease forwards; }
+@keyframes sbk {
+  0% { transform: translateX(-50%) scale(1); opacity: 1; }
+  40% { transform: translateX(-50%) scale(1.25) rotate(-10deg); opacity: .6; }
+  100% { transform: translateX(-50%) scale(0) rotate(22deg); opacity: 0; }
 }
 
 /* Tap Hint */
-.tap-hint{margin-top:56px;display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--taupe)}
-.tap-hint span{font-size:9px;letter-spacing:5px;text-transform:uppercase}
-.tap-ring{
+.tap-hint { margin-top: 56px; display: flex; flex-direction: column; align-items: center; gap: 10px; color: var(--taupe); }
+.tap-hint span { font-size: 9px; letter-spacing: 5px; text-transform: uppercase; }
+.tap-ring {
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -321,10 +324,9 @@ body {
   font-size: 14px;
   animation: rp 2.3s ease-in-out infinite;
 }
-@keyframes rp{0%,100%{box-shadow:0 0 0 0 rgba(200,169,110,.4)}50%{box-shadow:0 0 0 10px rgba(200,169,110,0)}}
-.tap-animate{animation:fbounce 2.3s ease-in-out infinite}
-@keyframes fbounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
-
+@keyframes rp { 0%, 100% { box-shadow: 0 0 0 0 rgba(200,169,110,.4); } 50% { box-shadow: 0 0 0 10px rgba(200,169,110,0); } }
+.tap-animate { animation: fbounce 2.3s ease-in-out infinite; }
+@keyframes fbounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
 
 /* ══ MAIN CONTAINER & TWO-COLOR FRAMES ══ */
 #main {
@@ -430,7 +432,7 @@ body {
   position: relative;
   box-shadow: 0 16px 36px rgba(0,0,0,0.3);
 }
-.envelope-flap {
+.envelope-flap-art {
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 52%;
@@ -541,22 +543,9 @@ body {
   gap: 20px;
   margin: 24px 0 10px;
 }
-.time-col {
-  text-align: center;
-}
-.time-col-sub {
-  font-size: 9px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--dark-frame-subtext);
-}
-.time-col-big {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 48px;
-  font-weight: 300;
-  line-height: 1;
-  color: var(--gold-light);
-}
+.time-col { text-align: center; }
+.time-col-sub { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--dark-frame-subtext); }
+.time-col-big { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; line-height: 1; color: var(--gold-light); }
 
 /* ══ SECTION 3: PERSONALIZED INVITEE CARD (LIGHT FRAME) ══ */
 .guest-card-box {
@@ -610,7 +599,7 @@ body {
   margin-top: 4px;
 }
 
-/* Calendar Month Component (Like Video 00:43 - 00:52) */
+/* Calendar Month Component */
 .calendar-card {
   background: var(--dark-frame-inner);
   border: 1px solid rgba(200, 169, 110, 0.3);
@@ -666,7 +655,6 @@ body {
   color: var(--gold-light);
 }
 
-/* Direct Add to Calendar (Zero Download!) */
 .btn-calendar {
   display: inline-flex;
   align-items: center;
@@ -703,7 +691,6 @@ body {
   margin-bottom: 18px;
 }
 
-/* Interactive Map Frame */
 .map-container {
   width: 100%;
   height: 240px;
@@ -714,11 +701,7 @@ body {
   box-shadow: 0 10px 24px rgba(0,0,0,0.15);
   margin-bottom: 16px;
 }
-.map-container iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
+.map-container iframe { width: 100%; height: 100%; border: none; }
 .map-float-btn {
   position: absolute;
   top: 10px;
@@ -738,7 +721,6 @@ body {
   z-index: 5;
 }
 
-/* Quick Navigation Action Buttons */
 .nav-actions {
   display: flex;
   flex-direction: column;
@@ -762,23 +744,10 @@ body {
   transition: all .25s ease;
   border: none;
 }
-.btn-uber {
-  background: #000;
-  color: #fff;
-}
-.btn-pathao {
-  background: #e21330;
-  color: #fff;
-}
-.btn-copy-addr {
-  background: #382419;
-  color: var(--gold-light);
-  border: 1px solid rgba(200,169,110,0.4);
-}
-.btn-ride:hover {
-  transform: translateY(-2px);
-  filter: brightness(1.1);
-}
+.btn-uber { background: #000; color: #fff; }
+.btn-pathao { background: #e21330; color: #fff; }
+.btn-copy-addr { background: #382419; color: var(--gold-light); border: 1px solid rgba(200,169,110,0.4); }
+.btn-ride:hover { transform: translateY(-2px); filter: brightness(1.1); }
 
 /* ══ SECTION 6: WEDDING DAY SCHEDULE (DARK FRAME) ══ */
 .timeline {
@@ -797,10 +766,7 @@ body {
   width: 1px;
   background: rgba(200,169,110,0.3);
 }
-.timeline-item {
-  position: relative;
-  margin-bottom: 24px;
-}
+.timeline-item { position: relative; margin-bottom: 24px; }
 .timeline-dot {
   position: absolute;
   left: -28px;
@@ -811,18 +777,8 @@ body {
   background: #291a13;
   border: 2px solid var(--gold);
 }
-.timeline-time {
-  font-size: 10px;
-  letter-spacing: 2px;
-  color: var(--gold-light);
-  font-weight: 500;
-  margin-bottom: 2px;
-}
-.timeline-desc {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 17px;
-  color: #fff;
-}
+.timeline-time { font-size: 10px; letter-spacing: 2px; color: var(--gold-light); font-weight: 500; margin-bottom: 2px; }
+.timeline-desc { font-family: 'Cormorant Garamond', serif; font-size: 17px; color: #fff; }
 
 /* ══ SECTION 7: GUESTBOOK (LIGHT FRAME) ══ */
 .guestbook-input {
@@ -837,9 +793,7 @@ body {
   margin-bottom: 10px;
   outline: none;
 }
-.guestbook-input:focus {
-  border-color: var(--light-frame-accent);
-}
+.guestbook-input:focus { border-color: var(--light-frame-accent); }
 .btn-send-wish {
   background: #382419;
   color: #fff;
@@ -852,15 +806,8 @@ body {
   cursor: pointer;
   transition: all .25s ease;
 }
-.btn-send-wish:hover {
-  background: #4e3324;
-}
-.wishes-list {
-  margin-top: 20px;
-  text-align: left;
-  max-height: 220px;
-  overflow-y: auto;
-}
+.btn-send-wish:hover { background: #4e3324; }
+.wishes-list { margin-top: 20px; text-align: left; max-height: 220px; overflow-y: auto; }
 .wish-card {
   background: var(--light-frame-inner);
   border-left: 2px solid var(--light-frame-accent);
@@ -869,23 +816,11 @@ body {
   margin-bottom: 8px;
   font-size: 11px;
 }
-.wish-author {
-  font-weight: 600;
-  color: var(--light-frame-text);
-  margin-bottom: 2px;
-}
-.wish-text {
-  color: var(--light-frame-subtext);
-  line-height: 1.4;
-}
+.wish-author { font-weight: 600; color: var(--light-frame-text); margin-bottom: 2px; }
+.wish-text { color: var(--light-frame-subtext); line-height: 1.4; }
 
 /* ══ SECTION 8: CLOSING BLESSING (DARK FRAME) ══ */
-.closing-dua {
-  font-size: clamp(22px, 5.5vw, 30px);
-  color: var(--gold-light);
-  line-height: 1.7;
-  margin: 12px 0;
-}
+.closing-dua { font-size: clamp(22px, 5.5vw, 30px); color: var(--gold-light); line-height: 1.7; margin: 12px 0; }
 .closing-couple {
   font-family: 'Cinzel Decorative', serif;
   font-size: 24px;
@@ -913,10 +848,7 @@ body {
   z-index: 3000;
   box-shadow: 0 8px 24px rgba(0,0,0,0.6);
 }
-#toast.show {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
-}
+#toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 </style>
 </head>
 <body>
@@ -948,7 +880,7 @@ body {
   <span id="autoScrollTxt">Auto Scroll</span>
 </button>
 
-<!-- ══ COVER ENVELOPE ══ -->
+<!-- ══ COVER ENVELOPE (FIRST SCREEN - FROM SCREENSHOT 2) ══ -->
 <div id="cover">
   <div class="cover-top">
     <span>Wedding Invitation</span>
@@ -978,7 +910,7 @@ body {
         <div class="cov-date">24 · December · 2026</div>
 
         <!-- Personalized Guest Tag on Envelope Preview -->
-        <div class="cov-guest-badge" id="covGuestBadge" style="display:none;">
+        <div class="cov-guest-badge" id="covGuestBadge">
           <span style="opacity:.8;">Honoured Guest:</span> <strong id="covGuestName" style="color:var(--gold-light);"></strong>
         </div>
       </div>
@@ -1023,59 +955,56 @@ body {
   </div>
 </div>
 
-<!-- ══ MAIN INVITATION CONTENT ══ -->
+<!-- ══ MAIN INVITATION CONTENT (PRESERVED EXACTLY FROM YOUR INDEX FILE) ══ -->
 <div id="main">
 
   <!-- ── 1. HERO / SAVE THE DATE (LIGHT FRAME) ── -->
   <section class="frame-light" id="hero">
-    
-<svg class="floral-decor floral-tr" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M180 0 C155 30 120 70 90 120 C130 90 160 45 180 0Z" fill="#b89e82" opacity="0.45"/>
-  <path d="M180 0 C145 40 110 85 75 140 C115 110 150 60 180 0Z" fill="#9e8469" opacity="0.38"/>
-  <path d="M180 0 Q125 45 95 95 Q145 55 180 0Z" fill="#ded0bc" opacity="0.6"/>
-  <path d="M180 15 Q135 60 110 115 Q155 70 180 15Z" fill="#ece0ce" opacity="0.65"/>
-  <ellipse cx="125" cy="50" rx="16" ry="9" transform="rotate(-35 125 50)" fill="#7a7061" opacity="0.65"/>
-  <ellipse cx="95" cy="80" rx="15" ry="8" transform="rotate(-40 95 80)" fill="#696153" opacity="0.7"/>
-  <ellipse cx="65" cy="115" rx="14" ry="7.5" transform="rotate(-45 65 115)" fill="#5c5548" opacity="0.75"/>
-  <path d="M180 0 Q120 65 60 145" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
-  <circle cx="60" cy="145" r="3" fill="#c8a96e" opacity="0.85"/>
-  <circle cx="85" cy="118" r="2.5" fill="#dfc896" opacity="0.9"/>
-  <circle cx="108" cy="88" r="2.5" fill="#c8a96e" opacity="0.85"/>
-  <circle cx="132" cy="55" r="2.8" fill="#dfc896" opacity="0.9"/>
-  <circle cx="135" cy="45" r="17" fill="#f4ece1" opacity="0.92"/>
-  <circle cx="135" cy="45" r="13" fill="#e5d7c3" opacity="0.8"/>
-  <circle cx="135" cy="45" r="8.5" fill="#cfbeaa" opacity="0.75"/>
-  <circle cx="135" cy="45" r="4" fill="#a8927b" opacity="0.8"/>
-  <circle cx="100" cy="85" r="12" fill="#f4ece1" opacity="0.9"/>
-  <circle cx="100" cy="85" r="8.5" fill="#e0d0bc" opacity="0.8"/>
-</svg>
-    
-<svg class="floral-decor floral-bl" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M0 180 C25 150 60 110 90 60 C50 90 20 135 0 180Z" fill="#b89e82" opacity="0.45"/>
-  <path d="M0 180 C35 140 70 95 105 40 C65 70 30 120 0 180Z" fill="#9e8469" opacity="0.38"/>
-  <path d="M0 180 Q55 135 85 85 Q35 125 0 180Z" fill="#ded0bc" opacity="0.6"/>
-  <path d="M0 165 Q45 120 70 65 Q25 110 0 165Z" fill="#ece0ce" opacity="0.65"/>
-  <ellipse cx="55" cy="130" rx="16" ry="9" transform="rotate(35 55 130)" fill="#7a7061" opacity="0.65"/>
-  <ellipse cx="85" cy="100" rx="15" ry="8" transform="rotate(40 85 100)" fill="#696153" opacity="0.7"/>
-  <ellipse cx="115" cy="65" rx="14" ry="7.5" transform="rotate(45 115 65)" fill="#5c5548" opacity="0.75"/>
-  <path d="M0 180 Q60 115 120 35" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
-  <circle cx="120" cy="35" r="3" fill="#c8a96e" opacity="0.85"/>
-  <circle cx="95" cy="62" r="2.5" fill="#dfc896" opacity="0.9"/>
-  <circle cx="72" cy="92" r="2.5" fill="#c8a96e" opacity="0.85"/>
-  <circle cx="48" cy="125" r="2.8" fill="#dfc896" opacity="0.9"/>
-  <circle cx="45" cy="135" r="17" fill="#f4ece1" opacity="0.92"/>
-  <circle cx="45" cy="135" r="13" fill="#e5d7c3" opacity="0.8"/>
-  <circle cx="45" cy="135" r="8.5" fill="#cfbeaa" opacity="0.75"/>
-  <circle cx="45" cy="135" r="4" fill="#a8927b" opacity="0.8"/>
-  <circle cx="80" cy="95" r="12" fill="#f4ece1" opacity="0.9"/>
-  <circle cx="80" cy="95" r="8.5" fill="#e0d0bc" opacity="0.8"/>
-</svg>
+    <svg class="floral-decor floral-tr" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M180 0 C155 30 120 70 90 120 C130 90 160 45 180 0Z" fill="#b89e82" opacity="0.45"/>
+      <path d="M180 0 C145 40 110 85 75 140 C115 110 150 60 180 0Z" fill="#9e8469" opacity="0.38"/>
+      <path d="M180 0 Q125 45 95 95 Q145 55 180 0Z" fill="#ded0bc" opacity="0.6"/>
+      <path d="M180 15 Q135 60 110 115 Q155 70 180 15Z" fill="#ece0ce" opacity="0.65"/>
+      <ellipse cx="125" cy="50" rx="16" ry="9" transform="rotate(-35 125 50)" fill="#7a7061" opacity="0.65"/>
+      <ellipse cx="95" cy="80" rx="15" ry="8" transform="rotate(-40 95 80)" fill="#696153" opacity="0.7"/>
+      <ellipse cx="65" cy="115" rx="14" ry="7.5" transform="rotate(-45 65 115)" fill="#5c5548" opacity="0.75"/>
+      <path d="M180 0 Q120 65 60 145" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
+      <circle cx="60" cy="145" r="3" fill="#c8a96e" opacity="0.85"/>
+      <circle cx="85" cy="118" r="2.5" fill="#dfc896" opacity="0.9"/>
+      <circle cx="108" cy="88" r="2.5" fill="#c8a96e" opacity="0.85"/>
+      <circle cx="132" cy="55" r="2.8" fill="#dfc896" opacity="0.9"/>
+      <circle cx="135" cy="45" r="17" fill="#f4ece1" opacity="0.92"/>
+      <circle cx="135" cy="45" r="13" fill="#e5d7c3" opacity="0.8"/>
+      <circle cx="135" cy="45" r="8.5" fill="#cfbeaa" opacity="0.75"/>
+      <circle cx="135" cy="45" r="4" fill="#a8927b" opacity="0.8"/>
+      <circle cx="100" cy="85" r="12" fill="#f4ece1" opacity="0.9"/>
+      <circle cx="100" cy="85" r="8.5" fill="#e0d0bc" opacity="0.8"/>
+    </svg>
+    <svg class="floral-decor floral-bl" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M0 180 C25 150 60 110 90 60 C50 90 20 135 0 180Z" fill="#b89e82" opacity="0.45"/>
+      <path d="M0 180 C35 140 70 95 105 40 C65 70 30 120 0 180Z" fill="#9e8469" opacity="0.38"/>
+      <path d="M0 180 Q55 135 85 85 Q35 125 0 180Z" fill="#ded0bc" opacity="0.6"/>
+      <path d="M0 165 Q45 120 70 65 Q25 110 0 165Z" fill="#ece0ce" opacity="0.65"/>
+      <ellipse cx="55" cy="130" rx="16" ry="9" transform="rotate(35 55 130)" fill="#7a7061" opacity="0.65"/>
+      <ellipse cx="85" cy="100" rx="15" ry="8" transform="rotate(40 85 100)" fill="#696153" opacity="0.7"/>
+      <ellipse cx="115" cy="65" rx="14" ry="7.5" transform="rotate(45 115 65)" fill="#5c5548" opacity="0.75"/>
+      <path d="M0 180 Q60 115 120 35" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
+      <circle cx="120" cy="35" r="3" fill="#c8a96e" opacity="0.85"/>
+      <circle cx="95" cy="62" r="2.5" fill="#dfc896" opacity="0.9"/>
+      <circle cx="72" cy="92" r="2.5" fill="#c8a96e" opacity="0.85"/>
+      <circle cx="48" cy="125" r="2.8" fill="#dfc896" opacity="0.9"/>
+      <circle cx="45" cy="135" r="17" fill="#f4ece1" opacity="0.92"/>
+      <circle cx="45" cy="135" r="13" fill="#e5d7c3" opacity="0.8"/>
+      <circle cx="45" cy="135" r="8.5" fill="#cfbeaa" opacity="0.75"/>
+      <circle cx="45" cy="135" r="4" fill="#a8927b" opacity="0.8"/>
+      <circle cx="80" cy="95" r="12" fill="#f4ece1" opacity="0.9"/>
+      <circle cx="80" cy="95" r="8.5" fill="#e0d0bc" opacity="0.8"/>
+    </svg>
 
     <div class="save-the-date">Save The Date</div>
-
     <div class="envelope-art">
       <div class="envelope-base">
-        <div class="envelope-flap"></div>
+        <div class="envelope-flap-art"></div>
         <div class="envelope-photo">
           <div class="envelope-photo-inner">
             <span class="cinzel" style="font-size:16px;color:#7a5a3a;letter-spacing:1px;">J &amp; S</span>
@@ -1085,13 +1014,11 @@ body {
         <div class="wax-seal-mini">J&amp;S</div>
       </div>
     </div>
-
     <div class="hero-names">
       Jumrat Sultana
       <span class="amp">&amp;</span>
       S. M. Sakib
     </div>
-
     <div class="hr-light"></div>
     <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--light-frame-subtext);">
       Wedding Celebration
@@ -1100,50 +1027,45 @@ body {
 
   <!-- ── 2. CEREMONY INFO (DARK FRAME) ── -->
   <section class="frame-dark" id="ceremony">
-    
-<svg class="floral-decor floral-tl" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <g transform="translate(180, 0) scale(-1, 1)">
-    <path d="M180 0 C155 30 120 70 90 120 C130 90 160 45 180 0Z" fill="#b89e82" opacity="0.45"/>
-    <path d="M180 0 C145 40 110 85 75 140 C115 110 150 60 180 0Z" fill="#9e8469" opacity="0.38"/>
-    <path d="M180 0 Q125 45 95 95 Q145 55 180 0Z" fill="#ded0bc" opacity="0.6"/>
-    <path d="M180 15 Q135 60 110 115 Q155 70 180 15Z" fill="#ece0ce" opacity="0.65"/>
-    <ellipse cx="125" cy="50" rx="16" ry="9" transform="rotate(-35 125 50)" fill="#7a7061" opacity="0.65"/>
-    <ellipse cx="95" cy="80" rx="15" ry="8" transform="rotate(-40 95 80)" fill="#696153" opacity="0.7"/>
-    <path d="M180 0 Q120 65 60 145" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
-    <circle cx="60" cy="145" r="3" fill="#c8a96e" opacity="0.85"/>
-    <circle cx="85" cy="118" r="2.5" fill="#dfc896" opacity="0.9"/>
-    <circle cx="135" cy="45" r="16" fill="#f4ece1" opacity="0.92"/>
-    <circle cx="135" cy="45" r="11" fill="#e5d7c3" opacity="0.8"/>
-  </g>
-</svg>
-    
-<svg class="floral-decor floral-br" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <g transform="translate(180, 180) scale(-1, -1)">
-    <path d="M180 0 C155 30 120 70 90 120 C130 90 160 45 180 0Z" fill="#b89e82" opacity="0.45"/>
-    <path d="M180 0 C145 40 110 85 75 140 C115 110 150 60 180 0Z" fill="#9e8469" opacity="0.38"/>
-    <path d="M180 0 Q125 45 95 95 Q145 55 180 0Z" fill="#ded0bc" opacity="0.6"/>
-    <path d="M180 15 Q135 60 110 115 Q155 70 180 15Z" fill="#ece0ce" opacity="0.65"/>
-    <ellipse cx="125" cy="50" rx="16" ry="9" transform="rotate(-35 125 50)" fill="#7a7061" opacity="0.65"/>
-    <ellipse cx="95" cy="80" rx="15" ry="8" transform="rotate(-40 95 80)" fill="#696153" opacity="0.7"/>
-    <path d="M180 0 Q120 65 60 145" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
-    <circle cx="60" cy="145" r="3" fill="#c8a96e" opacity="0.85"/>
-    <circle cx="85" cy="118" r="2.5" fill="#dfc896" opacity="0.9"/>
-    <circle cx="135" cy="45" r="16" fill="#f4ece1" opacity="0.92"/>
-    <circle cx="135" cy="45" r="11" fill="#e5d7c3" opacity="0.8"/>
-  </g>
-</svg>
+    <svg class="floral-decor floral-tl" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g transform="translate(180, 0) scale(-1, 1)">
+        <path d="M180 0 C155 30 120 70 90 120 C130 90 160 45 180 0Z" fill="#b89e82" opacity="0.45"/>
+        <path d="M180 0 C145 40 110 85 75 140 C115 110 150 60 180 0Z" fill="#9e8469" opacity="0.38"/>
+        <path d="M180 0 Q125 45 95 95 Q145 55 180 0Z" fill="#ded0bc" opacity="0.6"/>
+        <path d="M180 15 Q135 60 110 115 Q155 70 180 15Z" fill="#ece0ce" opacity="0.65"/>
+        <ellipse cx="125" cy="50" rx="16" ry="9" transform="rotate(-35 125 50)" fill="#7a7061" opacity="0.65"/>
+        <ellipse cx="95" cy="80" rx="15" ry="8" transform="rotate(-40 95 80)" fill="#696153" opacity="0.7"/>
+        <path d="M180 0 Q120 65 60 145" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
+        <circle cx="60" cy="145" r="3" fill="#c8a96e" opacity="0.85"/>
+        <circle cx="85" cy="118" r="2.5" fill="#dfc896" opacity="0.9"/>
+        <circle cx="135" cy="45" r="16" fill="#f4ece1" opacity="0.92"/>
+        <circle cx="135" cy="45" r="11" fill="#e5d7c3" opacity="0.8"/>
+      </g>
+    </svg>
+    <svg class="floral-decor floral-br" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g transform="translate(180, 180) scale(-1, -1)">
+        <path d="M180 0 C155 30 120 70 90 120 C130 90 160 45 180 0Z" fill="#b89e82" opacity="0.45"/>
+        <path d="M180 0 C145 40 110 85 75 140 C115 110 150 60 180 0Z" fill="#9e8469" opacity="0.38"/>
+        <path d="M180 0 Q125 45 95 95 Q145 55 180 0Z" fill="#ded0bc" opacity="0.6"/>
+        <path d="M180 15 Q135 60 110 115 Q155 70 180 15Z" fill="#ece0ce" opacity="0.65"/>
+        <ellipse cx="125" cy="50" rx="16" ry="9" transform="rotate(-35 125 50)" fill="#7a7061" opacity="0.65"/>
+        <ellipse cx="95" cy="80" rx="15" ry="8" transform="rotate(-40 95 80)" fill="#696153" opacity="0.7"/>
+        <path d="M180 0 Q120 65 60 145" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
+        <circle cx="60" cy="145" r="3" fill="#c8a96e" opacity="0.85"/>
+        <circle cx="85" cy="118" r="2.5" fill="#dfc896" opacity="0.9"/>
+        <circle cx="135" cy="45" r="16" fill="#f4ece1" opacity="0.92"/>
+        <circle cx="135" cy="45" r="11" fill="#e5d7c3" opacity="0.8"/>
+      </g>
+    </svg>
 
     <span class="lbl-dark">Ceremony Info</span>
-    
     <div class="arabic" style="font-size:22px;color:var(--gold-light);margin-bottom:8px;">
       بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
     </div>
-    
     <div class="ceremony-intro">
       In the Name of Allah, the Most Gracious, the Most Merciful.<br>
       Please join us as we celebrate the beginning of our life together.
     </div>
-
     <div class="couple-full-block">
       <div class="c-full-name">Jumrat Sultana</div>
       <div class="c-nick">“ Jhumu ”</div>
@@ -1151,7 +1073,6 @@ body {
       <div class="c-full-name">S. M. Sakib</div>
       <div class="c-nick">“ Suvo ”</div>
     </div>
-
     <div class="ceremony-time-grid">
       <div class="time-col">
         <div class="time-col-sub">At</div>
@@ -1166,59 +1087,55 @@ body {
         <div style="font-size:14px;color:#fff;font-weight:500;margin-top:4px;">Thursday</div>
       </div>
     </div>
-
     <div style="font-size:10px;color:var(--dark-frame-subtext);margin-top:12px;letter-spacing:1px;">
       Al-Amin Community Center, Sutrapur, Dhaka
     </div>
   </section>
 
-  <!-- ── 3. PERSONALIZED INVITEE CARD (LIGHT FRAME - NO INPUT) ── -->
+  <!-- ── 3. PERSONALIZED INVITEE CARD (LIGHT FRAME) ── -->
   <section class="frame-light" id="invitee">
-    
-<svg class="floral-decor floral-tr" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M180 0 C155 30 120 70 90 120 C130 90 160 45 180 0Z" fill="#b89e82" opacity="0.45"/>
-  <path d="M180 0 C145 40 110 85 75 140 C115 110 150 60 180 0Z" fill="#9e8469" opacity="0.38"/>
-  <path d="M180 0 Q125 45 95 95 Q145 55 180 0Z" fill="#ded0bc" opacity="0.6"/>
-  <path d="M180 15 Q135 60 110 115 Q155 70 180 15Z" fill="#ece0ce" opacity="0.65"/>
-  <ellipse cx="125" cy="50" rx="16" ry="9" transform="rotate(-35 125 50)" fill="#7a7061" opacity="0.65"/>
-  <ellipse cx="95" cy="80" rx="15" ry="8" transform="rotate(-40 95 80)" fill="#696153" opacity="0.7"/>
-  <ellipse cx="65" cy="115" rx="14" ry="7.5" transform="rotate(-45 65 115)" fill="#5c5548" opacity="0.75"/>
-  <path d="M180 0 Q120 65 60 145" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
-  <circle cx="60" cy="145" r="3" fill="#c8a96e" opacity="0.85"/>
-  <circle cx="85" cy="118" r="2.5" fill="#dfc896" opacity="0.9"/>
-  <circle cx="108" cy="88" r="2.5" fill="#c8a96e" opacity="0.85"/>
-  <circle cx="132" cy="55" r="2.8" fill="#dfc896" opacity="0.9"/>
-  <circle cx="135" cy="45" r="17" fill="#f4ece1" opacity="0.92"/>
-  <circle cx="135" cy="45" r="13" fill="#e5d7c3" opacity="0.8"/>
-  <circle cx="135" cy="45" r="8.5" fill="#cfbeaa" opacity="0.75"/>
-  <circle cx="135" cy="45" r="4" fill="#a8927b" opacity="0.8"/>
-  <circle cx="100" cy="85" r="12" fill="#f4ece1" opacity="0.9"/>
-  <circle cx="100" cy="85" r="8.5" fill="#e0d0bc" opacity="0.8"/>
-</svg>
-    
-<svg class="floral-decor floral-bl" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M0 180 C25 150 60 110 90 60 C50 90 20 135 0 180Z" fill="#b89e82" opacity="0.45"/>
-  <path d="M0 180 C35 140 70 95 105 40 C65 70 30 120 0 180Z" fill="#9e8469" opacity="0.38"/>
-  <path d="M0 180 Q55 135 85 85 Q35 125 0 180Z" fill="#ded0bc" opacity="0.6"/>
-  <path d="M0 165 Q45 120 70 65 Q25 110 0 165Z" fill="#ece0ce" opacity="0.65"/>
-  <ellipse cx="55" cy="130" rx="16" ry="9" transform="rotate(35 55 130)" fill="#7a7061" opacity="0.65"/>
-  <ellipse cx="85" cy="100" rx="15" ry="8" transform="rotate(40 85 100)" fill="#696153" opacity="0.7"/>
-  <ellipse cx="115" cy="65" rx="14" ry="7.5" transform="rotate(45 115 65)" fill="#5c5548" opacity="0.75"/>
-  <path d="M0 180 Q60 115 120 35" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
-  <circle cx="120" cy="35" r="3" fill="#c8a96e" opacity="0.85"/>
-  <circle cx="95" cy="62" r="2.5" fill="#dfc896" opacity="0.9"/>
-  <circle cx="72" cy="92" r="2.5" fill="#c8a96e" opacity="0.85"/>
-  <circle cx="48" cy="125" r="2.8" fill="#dfc896" opacity="0.9"/>
-  <circle cx="45" cy="135" r="17" fill="#f4ece1" opacity="0.92"/>
-  <circle cx="45" cy="135" r="13" fill="#e5d7c3" opacity="0.8"/>
-  <circle cx="45" cy="135" r="8.5" fill="#cfbeaa" opacity="0.75"/>
-  <circle cx="45" cy="135" r="4" fill="#a8927b" opacity="0.8"/>
-  <circle cx="80" cy="95" r="12" fill="#f4ece1" opacity="0.9"/>
-  <circle cx="80" cy="95" r="8.5" fill="#e0d0bc" opacity="0.8"/>
-</svg>
+    <svg class="floral-decor floral-tr" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M180 0 C155 30 120 70 90 120 C130 90 160 45 180 0Z" fill="#b89e82" opacity="0.45"/>
+      <path d="M180 0 C145 40 110 85 75 140 C115 110 150 60 180 0Z" fill="#9e8469" opacity="0.38"/>
+      <path d="M180 0 Q125 45 95 95 Q145 55 180 0Z" fill="#ded0bc" opacity="0.6"/>
+      <path d="M180 15 Q135 60 110 115 Q155 70 180 15Z" fill="#ece0ce" opacity="0.65"/>
+      <ellipse cx="125" cy="50" rx="16" ry="9" transform="rotate(-35 125 50)" fill="#7a7061" opacity="0.65"/>
+      <ellipse cx="95" cy="80" rx="15" ry="8" transform="rotate(-40 95 80)" fill="#696153" opacity="0.7"/>
+      <ellipse cx="65" cy="115" rx="14" ry="7.5" transform="rotate(-45 65 115)" fill="#5c5548" opacity="0.75"/>
+      <path d="M180 0 Q120 65 60 145" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
+      <circle cx="60" cy="145" r="3" fill="#c8a96e" opacity="0.85"/>
+      <circle cx="85" cy="118" r="2.5" fill="#dfc896" opacity="0.9"/>
+      <circle cx="108" cy="88" r="2.5" fill="#c8a96e" opacity="0.85"/>
+      <circle cx="132" cy="55" r="2.8" fill="#dfc896" opacity="0.9"/>
+      <circle cx="135" cy="45" r="17" fill="#f4ece1" opacity="0.92"/>
+      <circle cx="135" cy="45" r="13" fill="#e5d7c3" opacity="0.8"/>
+      <circle cx="135" cy="45" r="8.5" fill="#cfbeaa" opacity="0.75"/>
+      <circle cx="135" cy="45" r="4" fill="#a8927b" opacity="0.8"/>
+      <circle cx="100" cy="85" r="12" fill="#f4ece1" opacity="0.9"/>
+      <circle cx="100" cy="85" r="8.5" fill="#e0d0bc" opacity="0.8"/>
+    </svg>
+    <svg class="floral-decor floral-bl" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M0 180 C25 150 60 110 90 60 C50 90 20 135 0 180Z" fill="#b89e82" opacity="0.45"/>
+      <path d="M0 180 C35 140 70 95 105 40 C65 70 30 120 0 180Z" fill="#9e8469" opacity="0.38"/>
+      <path d="M0 180 Q55 135 85 85 Q35 125 0 180Z" fill="#ded0bc" opacity="0.6"/>
+      <path d="M0 165 Q45 120 70 65 Q25 110 0 165Z" fill="#ece0ce" opacity="0.65"/>
+      <ellipse cx="55" cy="130" rx="16" ry="9" transform="rotate(35 55 130)" fill="#7a7061" opacity="0.65"/>
+      <ellipse cx="85" cy="100" rx="15" ry="8" transform="rotate(40 85 100)" fill="#696153" opacity="0.7"/>
+      <ellipse cx="115" cy="65" rx="14" ry="7.5" transform="rotate(45 115 65)" fill="#5c5548" opacity="0.75"/>
+      <path d="M0 180 Q60 115 120 35" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
+      <circle cx="120" cy="35" r="3" fill="#c8a96e" opacity="0.85"/>
+      <circle cx="95" cy="62" r="2.5" fill="#dfc896" opacity="0.9"/>
+      <circle cx="72" cy="92" r="2.5" fill="#c8a96e" opacity="0.85"/>
+      <circle cx="48" cy="125" r="2.8" fill="#dfc896" opacity="0.9"/>
+      <circle cx="45" cy="135" r="17" fill="#f4ece1" opacity="0.92"/>
+      <circle cx="45" cy="135" r="13" fill="#e5d7c3" opacity="0.8"/>
+      <circle cx="45" cy="135" r="8.5" fill="#cfbeaa" opacity="0.75"/>
+      <circle cx="45" cy="135" r="4" fill="#a8927b" opacity="0.8"/>
+      <circle cx="80" cy="95" r="12" fill="#f4ece1" opacity="0.9"/>
+      <circle cx="80" cy="95" r="8.5" fill="#e0d0bc" opacity="0.8"/>
+    </svg>
 
     <span class="lbl-light">This Invitation is Prepared for</span>
-
     <div class="guest-card-box">
       <div class="guest-salutation" id="invSalutation">Honoured Guest</div>
       <div class="guest-name-disp" id="invDisp">— Dear Guest —</div>
@@ -1226,46 +1143,43 @@ body {
         Your gracious presence will bring immense joy, warmth and barakah to our celebration.
       </div>
     </div>
-
     <div style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--light-frame-accent);">
       Cordially Invited by Jhumu &amp; Suvo
     </div>
   </section>
 
-  <!-- ── 4. RECEPTION & CALENDAR (DARK FRAME - EXACTLY LIKE VIDEO) ── -->
+  <!-- ── 4. RECEPTION & CALENDAR (DARK FRAME) ── -->
   <section class="frame-dark" id="calendar-sec">
-    
-<svg class="floral-decor floral-tl" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <g transform="translate(180, 0) scale(-1, 1)">
-    <path d="M180 0 C155 30 120 70 90 120 C130 90 160 45 180 0Z" fill="#b89e82" opacity="0.45"/>
-    <path d="M180 0 C145 40 110 85 75 140 C115 110 150 60 180 0Z" fill="#9e8469" opacity="0.38"/>
-    <path d="M180 0 Q125 45 95 95 Q145 55 180 0Z" fill="#ded0bc" opacity="0.6"/>
-    <path d="M180 15 Q135 60 110 115 Q155 70 180 15Z" fill="#ece0ce" opacity="0.65"/>
-    <ellipse cx="125" cy="50" rx="16" ry="9" transform="rotate(-35 125 50)" fill="#7a7061" opacity="0.65"/>
-    <ellipse cx="95" cy="80" rx="15" ry="8" transform="rotate(-40 95 80)" fill="#696153" opacity="0.7"/>
-    <path d="M180 0 Q120 65 60 145" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
-    <circle cx="60" cy="145" r="3" fill="#c8a96e" opacity="0.85"/>
-    <circle cx="85" cy="118" r="2.5" fill="#dfc896" opacity="0.9"/>
-    <circle cx="135" cy="45" r="16" fill="#f4ece1" opacity="0.92"/>
-    <circle cx="135" cy="45" r="11" fill="#e5d7c3" opacity="0.8"/>
-  </g>
-</svg>
-    
-<svg class="floral-decor floral-br" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <g transform="translate(180, 180) scale(-1, -1)">
-    <path d="M180 0 C155 30 120 70 90 120 C130 90 160 45 180 0Z" fill="#b89e82" opacity="0.45"/>
-    <path d="M180 0 C145 40 110 85 75 140 C115 110 150 60 180 0Z" fill="#9e8469" opacity="0.38"/>
-    <path d="M180 0 Q125 45 95 95 Q145 55 180 0Z" fill="#ded0bc" opacity="0.6"/>
-    <path d="M180 15 Q135 60 110 115 Q155 70 180 15Z" fill="#ece0ce" opacity="0.65"/>
-    <ellipse cx="125" cy="50" rx="16" ry="9" transform="rotate(-35 125 50)" fill="#7a7061" opacity="0.65"/>
-    <ellipse cx="95" cy="80" rx="15" ry="8" transform="rotate(-40 95 80)" fill="#696153" opacity="0.7"/>
-    <path d="M180 0 Q120 65 60 145" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
-    <circle cx="60" cy="145" r="3" fill="#c8a96e" opacity="0.85"/>
-    <circle cx="85" cy="118" r="2.5" fill="#dfc896" opacity="0.9"/>
-    <circle cx="135" cy="45" r="16" fill="#f4ece1" opacity="0.92"/>
-    <circle cx="135" cy="45" r="11" fill="#e5d7c3" opacity="0.8"/>
-  </g>
-</svg>
+    <svg class="floral-decor floral-tl" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g transform="translate(180, 0) scale(-1, 1)">
+        <path d="M180 0 C155 30 120 70 90 120 C130 90 160 45 180 0Z" fill="#b89e82" opacity="0.45"/>
+        <path d="M180 0 C145 40 110 85 75 140 C115 110 150 60 180 0Z" fill="#9e8469" opacity="0.38"/>
+        <path d="M180 0 Q125 45 95 95 Q145 55 180 0Z" fill="#ded0bc" opacity="0.6"/>
+        <path d="M180 15 Q135 60 110 115 Q155 70 180 15Z" fill="#ece0ce" opacity="0.65"/>
+        <ellipse cx="125" cy="50" rx="16" ry="9" transform="rotate(-35 125 50)" fill="#7a7061" opacity="0.65"/>
+        <ellipse cx="95" cy="80" rx="15" ry="8" transform="rotate(-40 95 80)" fill="#696153" opacity="0.7"/>
+        <path d="M180 0 Q120 65 60 145" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
+        <circle cx="60" cy="145" r="3" fill="#c8a96e" opacity="0.85"/>
+        <circle cx="85" cy="118" r="2.5" fill="#dfc896" opacity="0.9"/>
+        <circle cx="135" cy="45" r="16" fill="#f4ece1" opacity="0.92"/>
+        <circle cx="135" cy="45" r="11" fill="#e5d7c3" opacity="0.8"/>
+      </g>
+    </svg>
+    <svg class="floral-decor floral-br" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g transform="translate(180, 180) scale(-1, -1)">
+        <path d="M180 0 C155 30 120 70 90 120 C130 90 160 45 180 0Z" fill="#b89e82" opacity="0.45"/>
+        <path d="M180 0 C145 40 110 85 75 140 C115 110 150 60 180 0Z" fill="#9e8469" opacity="0.38"/>
+        <path d="M180 0 Q125 45 95 95 Q145 55 180 0Z" fill="#ded0bc" opacity="0.6"/>
+        <path d="M180 15 Q135 60 110 115 Q155 70 180 15Z" fill="#ece0ce" opacity="0.65"/>
+        <ellipse cx="125" cy="50" rx="16" ry="9" transform="rotate(-35 125 50)" fill="#7a7061" opacity="0.65"/>
+        <ellipse cx="95" cy="80" rx="15" ry="8" transform="rotate(-40 95 80)" fill="#696153" opacity="0.7"/>
+        <path d="M180 0 Q120 65 60 145" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
+        <circle cx="60" cy="145" r="3" fill="#c8a96e" opacity="0.85"/>
+        <circle cx="85" cy="118" r="2.5" fill="#dfc896" opacity="0.9"/>
+        <circle cx="135" cy="45" r="16" fill="#f4ece1" opacity="0.92"/>
+        <circle cx="135" cy="45" r="11" fill="#e5d7c3" opacity="0.8"/>
+      </g>
+    </svg>
 
     <span class="lbl-dark">Reception &amp; Countdown</span>
     <div style="font-size:12px;color:var(--dark-frame-subtext);margin-bottom:12px;">The celebration takes place at 09:30 PM</div>
@@ -1290,7 +1204,7 @@ body {
       </div>
     </div>
 
-    <!-- Month Calendar (December 2026 Grid) -->
+    <!-- Month Calendar -->
     <div class="calendar-card">
       <div class="cal-month-title">December 2026</div>
       <div class="cal-grid">
@@ -1302,7 +1216,6 @@ body {
         <div class="cal-day-head">Sa</div>
         <div class="cal-day-head">Su</div>
 
-        <!-- 1 Dec 2026 is Tuesday -> 1 empty slot for Monday -->
         <div class="cal-cell"></div>
         <div class="cal-cell">1</div>
         <div class="cal-cell">2</div>
@@ -1330,7 +1243,6 @@ body {
         <div class="cal-cell">21</div>
         <div class="cal-cell">22</div>
         <div class="cal-cell">23</div>
-        <!-- Highlighted Wedding Day: 24th December -->
         <div class="cal-cell special-day">24</div>
         <div class="cal-cell">25</div>
         <div class="cal-cell">26</div>
@@ -1346,63 +1258,59 @@ body {
       </div>
     </div>
 
-    <!-- DIRECT ADD TO CALENDAR (ZERO FILE DOWNLOAD!) -->
     <a class="btn-calendar" href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Wedding+Celebration:+Jhumu+%26+Suvo&dates=20261224T153000Z/20261224T190000Z&details=Wedding+celebration+of+Jumrat+Sultana+(Jhumu)+and+S.+M.+Sakib+(Suvo)+at+Al-Amin+Community+Center,+Dhaka.&location=Al-Amin+Community+Center,+103/1+R.+M.+Das+Road,+Loharpul,+Sutrapur,+Dhaka&sf=true&output=xml" target="_blank" rel="noopener">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
       Add to Calendar
     </a>
   </section>
 
-  <!-- ── 5. VENUE & INTERACTIVE MAP (LIGHT FRAME - LIKE VIDEO) ── -->
+  <!-- ── 5. VENUE & INTERACTIVE MAP (LIGHT FRAME) ── -->
   <section class="frame-light" id="venue">
-    
-<svg class="floral-decor floral-tr" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M180 0 C155 30 120 70 90 120 C130 90 160 45 180 0Z" fill="#b89e82" opacity="0.45"/>
-  <path d="M180 0 C145 40 110 85 75 140 C115 110 150 60 180 0Z" fill="#9e8469" opacity="0.38"/>
-  <path d="M180 0 Q125 45 95 95 Q145 55 180 0Z" fill="#ded0bc" opacity="0.6"/>
-  <path d="M180 15 Q135 60 110 115 Q155 70 180 15Z" fill="#ece0ce" opacity="0.65"/>
-  <ellipse cx="125" cy="50" rx="16" ry="9" transform="rotate(-35 125 50)" fill="#7a7061" opacity="0.65"/>
-  <ellipse cx="95" cy="80" rx="15" ry="8" transform="rotate(-40 95 80)" fill="#696153" opacity="0.7"/>
-  <ellipse cx="65" cy="115" rx="14" ry="7.5" transform="rotate(-45 65 115)" fill="#5c5548" opacity="0.75"/>
-  <path d="M180 0 Q120 65 60 145" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
-  <circle cx="60" cy="145" r="3" fill="#c8a96e" opacity="0.85"/>
-  <circle cx="85" cy="118" r="2.5" fill="#dfc896" opacity="0.9"/>
-  <circle cx="108" cy="88" r="2.5" fill="#c8a96e" opacity="0.85"/>
-  <circle cx="132" cy="55" r="2.8" fill="#dfc896" opacity="0.9"/>
-  <circle cx="135" cy="45" r="17" fill="#f4ece1" opacity="0.92"/>
-  <circle cx="135" cy="45" r="13" fill="#e5d7c3" opacity="0.8"/>
-  <circle cx="135" cy="45" r="8.5" fill="#cfbeaa" opacity="0.75"/>
-  <circle cx="135" cy="45" r="4" fill="#a8927b" opacity="0.8"/>
-  <circle cx="100" cy="85" r="12" fill="#f4ece1" opacity="0.9"/>
-  <circle cx="100" cy="85" r="8.5" fill="#e0d0bc" opacity="0.8"/>
-</svg>
-    
-<svg class="floral-decor floral-bl" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M0 180 C25 150 60 110 90 60 C50 90 20 135 0 180Z" fill="#b89e82" opacity="0.45"/>
-  <path d="M0 180 C35 140 70 95 105 40 C65 70 30 120 0 180Z" fill="#9e8469" opacity="0.38"/>
-  <path d="M0 180 Q55 135 85 85 Q35 125 0 180Z" fill="#ded0bc" opacity="0.6"/>
-  <path d="M0 165 Q45 120 70 65 Q25 110 0 165Z" fill="#ece0ce" opacity="0.65"/>
-  <ellipse cx="55" cy="130" rx="16" ry="9" transform="rotate(35 55 130)" fill="#7a7061" opacity="0.65"/>
-  <ellipse cx="85" cy="100" rx="15" ry="8" transform="rotate(40 85 100)" fill="#696153" opacity="0.7"/>
-  <ellipse cx="115" cy="65" rx="14" ry="7.5" transform="rotate(45 115 65)" fill="#5c5548" opacity="0.75"/>
-  <path d="M0 180 Q60 115 120 35" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
-  <circle cx="120" cy="35" r="3" fill="#c8a96e" opacity="0.85"/>
-  <circle cx="95" cy="62" r="2.5" fill="#dfc896" opacity="0.9"/>
-  <circle cx="72" cy="92" r="2.5" fill="#c8a96e" opacity="0.85"/>
-  <circle cx="48" cy="125" r="2.8" fill="#dfc896" opacity="0.9"/>
-  <circle cx="45" cy="135" r="17" fill="#f4ece1" opacity="0.92"/>
-  <circle cx="45" cy="135" r="13" fill="#e5d7c3" opacity="0.8"/>
-  <circle cx="45" cy="135" r="8.5" fill="#cfbeaa" opacity="0.75"/>
-  <circle cx="45" cy="135" r="4" fill="#a8927b" opacity="0.8"/>
-  <circle cx="80" cy="95" r="12" fill="#f4ece1" opacity="0.9"/>
-  <circle cx="80" cy="95" r="8.5" fill="#e0d0bc" opacity="0.8"/>
-</svg>
+    <svg class="floral-decor floral-tr" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M180 0 C155 30 120 70 90 120 C130 90 160 45 180 0Z" fill="#b89e82" opacity="0.45"/>
+      <path d="M180 0 C145 40 110 85 75 140 C115 110 150 60 180 0Z" fill="#9e8469" opacity="0.38"/>
+      <path d="M180 0 Q125 45 95 95 Q145 55 180 0Z" fill="#ded0bc" opacity="0.6"/>
+      <path d="M180 15 Q135 60 110 115 Q155 70 180 15Z" fill="#ece0ce" opacity="0.65"/>
+      <ellipse cx="125" cy="50" rx="16" ry="9" transform="rotate(-35 125 50)" fill="#7a7061" opacity="0.65"/>
+      <ellipse cx="95" cy="80" rx="15" ry="8" transform="rotate(-40 95 80)" fill="#696153" opacity="0.7"/>
+      <ellipse cx="65" cy="115" rx="14" ry="7.5" transform="rotate(-45 65 115)" fill="#5c5548" opacity="0.75"/>
+      <path d="M180 0 Q120 65 60 145" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
+      <circle cx="60" cy="145" r="3" fill="#c8a96e" opacity="0.85"/>
+      <circle cx="85" cy="118" r="2.5" fill="#dfc896" opacity="0.9"/>
+      <circle cx="108" cy="88" r="2.5" fill="#c8a96e" opacity="0.85"/>
+      <circle cx="132" cy="55" r="2.8" fill="#dfc896" opacity="0.9"/>
+      <circle cx="135" cy="45" r="17" fill="#f4ece1" opacity="0.92"/>
+      <circle cx="135" cy="45" r="13" fill="#e5d7c3" opacity="0.8"/>
+      <circle cx="135" cy="45" r="8.5" fill="#cfbeaa" opacity="0.75"/>
+      <circle cx="135" cy="45" r="4" fill="#a8927b" opacity="0.8"/>
+      <circle cx="100" cy="85" r="12" fill="#f4ece1" opacity="0.9"/>
+      <circle cx="100" cy="85" r="8.5" fill="#e0d0bc" opacity="0.8"/>
+    </svg>
+    <svg class="floral-decor floral-bl" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M0 180 C25 150 60 110 90 60 C50 90 20 135 0 180Z" fill="#b89e82" opacity="0.45"/>
+      <path d="M0 180 C35 140 70 95 105 40 C65 70 30 120 0 180Z" fill="#9e8469" opacity="0.38"/>
+      <path d="M0 180 Q55 135 85 85 Q35 125 0 180Z" fill="#ded0bc" opacity="0.6"/>
+      <path d="M0 165 Q45 120 70 65 Q25 110 0 165Z" fill="#ece0ce" opacity="0.65"/>
+      <ellipse cx="55" cy="130" rx="16" ry="9" transform="rotate(35 55 130)" fill="#7a7061" opacity="0.65"/>
+      <ellipse cx="85" cy="100" rx="15" ry="8" transform="rotate(40 85 100)" fill="#696153" opacity="0.7"/>
+      <ellipse cx="115" cy="65" rx="14" ry="7.5" transform="rotate(45 115 65)" fill="#5c5548" opacity="0.75"/>
+      <path d="M0 180 Q60 115 120 35" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
+      <circle cx="120" cy="35" r="3" fill="#c8a96e" opacity="0.85"/>
+      <circle cx="95" cy="62" r="2.5" fill="#dfc896" opacity="0.9"/>
+      <circle cx="72" cy="92" r="2.5" fill="#c8a96e" opacity="0.85"/>
+      <circle cx="48" cy="125" r="2.8" fill="#dfc896" opacity="0.9"/>
+      <circle cx="45" cy="135" r="17" fill="#f4ece1" opacity="0.92"/>
+      <circle cx="45" cy="135" r="13" fill="#e5d7c3" opacity="0.8"/>
+      <circle cx="45" cy="135" r="8.5" fill="#cfbeaa" opacity="0.75"/>
+      <circle cx="45" cy="135" r="4" fill="#a8927b" opacity="0.8"/>
+      <circle cx="80" cy="95" r="12" fill="#f4ece1" opacity="0.9"/>
+      <circle cx="80" cy="95" r="8.5" fill="#e0d0bc" opacity="0.8"/>
+    </svg>
 
     <span class="lbl-light">Wedding Venue &amp; Directions</span>
     <div class="venue-name">Al-Amin Community Center</div>
     <div class="venue-addr">103/1 R. M. Das Road, Loharpul, Sutrapur, Dhaka</div>
 
-    <!-- Embedded Google Map with Floating Button (Like Video 00:54 - 01:03) -->
     <div class="map-container">
       <a class="map-float-btn" href="https://maps.google.com/?q=23.70241,90.41894+(Al-Amin+Community+Center)" target="_blank" rel="noopener">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
@@ -1411,21 +1319,15 @@ body {
       <iframe src="https://maps.google.com/maps?q=23.70241,90.41894&hl=en&z=16&output=embed" allowfullscreen="" loading="lazy"></iframe>
     </div>
 
-    <!-- One-Touch Transportation Buttons -->
     <div class="nav-actions">
-      <!-- Auto destination preset for Uber -->
       <a class="btn-ride btn-uber" href="https://m.uber.com/ul/?action=setPickup&pickup=my_location&dropoff[formatted_address]=Al-Amin+Community+Center%2C+103%2F1+R.+M.+Das+Road%2C+Loharpul%2C+Sutrapur%2C+Dhaka&dropoff[latitude]=23.70241&dropoff[longitude]=90.41894&dropoff[nickname]=Al-Amin+Community+Center" target="_blank" rel="noopener">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
-        Uber (Auto Destination)
+        Uber
       </a>
-
-      <!-- Pathao Ride -->
       <button class="btn-ride btn-pathao" onclick="openPathao()" type="button">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
         Pathao Ride
       </button>
-
-      <!-- Copy Address -->
       <button class="btn-ride btn-copy-addr" onclick="copyAddress()" type="button">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
         Copy Full Address
@@ -1435,38 +1337,36 @@ body {
 
   <!-- ── 6. WEDDING DAY SCHEDULE (DARK FRAME) ── -->
   <section class="frame-dark" id="schedule">
-    
-<svg class="floral-decor floral-tl" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <g transform="translate(180, 0) scale(-1, 1)">
-    <path d="M180 0 C155 30 120 70 90 120 C130 90 160 45 180 0Z" fill="#b89e82" opacity="0.45"/>
-    <path d="M180 0 C145 40 110 85 75 140 C115 110 150 60 180 0Z" fill="#9e8469" opacity="0.38"/>
-    <path d="M180 0 Q125 45 95 95 Q145 55 180 0Z" fill="#ded0bc" opacity="0.6"/>
-    <path d="M180 15 Q135 60 110 115 Q155 70 180 15Z" fill="#ece0ce" opacity="0.65"/>
-    <ellipse cx="125" cy="50" rx="16" ry="9" transform="rotate(-35 125 50)" fill="#7a7061" opacity="0.65"/>
-    <ellipse cx="95" cy="80" rx="15" ry="8" transform="rotate(-40 95 80)" fill="#696153" opacity="0.7"/>
-    <path d="M180 0 Q120 65 60 145" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
-    <circle cx="60" cy="145" r="3" fill="#c8a96e" opacity="0.85"/>
-    <circle cx="85" cy="118" r="2.5" fill="#dfc896" opacity="0.9"/>
-    <circle cx="135" cy="45" r="16" fill="#f4ece1" opacity="0.92"/>
-    <circle cx="135" cy="45" r="11" fill="#e5d7c3" opacity="0.8"/>
-  </g>
-</svg>
-    
-<svg class="floral-decor floral-br" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <g transform="translate(180, 180) scale(-1, -1)">
-    <path d="M180 0 C155 30 120 70 90 120 C130 90 160 45 180 0Z" fill="#b89e82" opacity="0.45"/>
-    <path d="M180 0 C145 40 110 85 75 140 C115 110 150 60 180 0Z" fill="#9e8469" opacity="0.38"/>
-    <path d="M180 0 Q125 45 95 95 Q145 55 180 0Z" fill="#ded0bc" opacity="0.6"/>
-    <path d="M180 15 Q135 60 110 115 Q155 70 180 15Z" fill="#ece0ce" opacity="0.65"/>
-    <ellipse cx="125" cy="50" rx="16" ry="9" transform="rotate(-35 125 50)" fill="#7a7061" opacity="0.65"/>
-    <ellipse cx="95" cy="80" rx="15" ry="8" transform="rotate(-40 95 80)" fill="#696153" opacity="0.7"/>
-    <path d="M180 0 Q120 65 60 145" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
-    <circle cx="60" cy="145" r="3" fill="#c8a96e" opacity="0.85"/>
-    <circle cx="85" cy="118" r="2.5" fill="#dfc896" opacity="0.9"/>
-    <circle cx="135" cy="45" r="16" fill="#f4ece1" opacity="0.92"/>
-    <circle cx="135" cy="45" r="11" fill="#e5d7c3" opacity="0.8"/>
-  </g>
-</svg>
+    <svg class="floral-decor floral-tl" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g transform="translate(180, 0) scale(-1, 1)">
+        <path d="M180 0 C155 30 120 70 90 120 C130 90 160 45 180 0Z" fill="#b89e82" opacity="0.45"/>
+        <path d="M180 0 C145 40 110 85 75 140 C115 110 150 60 180 0Z" fill="#9e8469" opacity="0.38"/>
+        <path d="M180 0 Q125 45 95 95 Q145 55 180 0Z" fill="#ded0bc" opacity="0.6"/>
+        <path d="M180 15 Q135 60 110 115 Q155 70 180 15Z" fill="#ece0ce" opacity="0.65"/>
+        <ellipse cx="125" cy="50" rx="16" ry="9" transform="rotate(-35 125 50)" fill="#7a7061" opacity="0.65"/>
+        <ellipse cx="95" cy="80" rx="15" ry="8" transform="rotate(-40 95 80)" fill="#696153" opacity="0.7"/>
+        <path d="M180 0 Q120 65 60 145" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
+        <circle cx="60" cy="145" r="3" fill="#c8a96e" opacity="0.85"/>
+        <circle cx="85" cy="118" r="2.5" fill="#dfc896" opacity="0.9"/>
+        <circle cx="135" cy="45" r="16" fill="#f4ece1" opacity="0.92"/>
+        <circle cx="135" cy="45" r="11" fill="#e5d7c3" opacity="0.8"/>
+      </g>
+    </svg>
+    <svg class="floral-decor floral-br" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g transform="translate(180, 180) scale(-1, -1)">
+        <path d="M180 0 C155 30 120 70 90 120 C130 90 160 45 180 0Z" fill="#b89e82" opacity="0.45"/>
+        <path d="M180 0 C145 40 110 85 75 140 C115 110 150 60 180 0Z" fill="#9e8469" opacity="0.38"/>
+        <path d="M180 0 Q125 45 95 95 Q145 55 180 0Z" fill="#ded0bc" opacity="0.6"/>
+        <path d="M180 15 Q135 60 110 115 Q155 70 180 15Z" fill="#ece0ce" opacity="0.65"/>
+        <ellipse cx="125" cy="50" rx="16" ry="9" transform="rotate(-35 125 50)" fill="#7a7061" opacity="0.65"/>
+        <ellipse cx="95" cy="80" rx="15" ry="8" transform="rotate(-40 95 80)" fill="#696153" opacity="0.7"/>
+        <path d="M180 0 Q120 65 60 145" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
+        <circle cx="60" cy="145" r="3" fill="#c8a96e" opacity="0.85"/>
+        <circle cx="85" cy="118" r="2.5" fill="#dfc896" opacity="0.9"/>
+        <circle cx="135" cy="45" r="16" fill="#f4ece1" opacity="0.92"/>
+        <circle cx="135" cy="45" r="11" fill="#e5d7c3" opacity="0.8"/>
+      </g>
+    </svg>
 
     <span class="lbl-dark">Wedding Day Schedule</span>
     <div style="font-size:12px;color:var(--dark-frame-subtext);margin-bottom:16px;">Thursday, 24 December 2026</div>
@@ -1497,48 +1397,46 @@ body {
 
   <!-- ── 7. GUESTBOOK & WISHES (LIGHT FRAME) ── -->
   <section class="frame-light" id="guestbook">
-    
-<svg class="floral-decor floral-tr" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M180 0 C155 30 120 70 90 120 C130 90 160 45 180 0Z" fill="#b89e82" opacity="0.45"/>
-  <path d="M180 0 C145 40 110 85 75 140 C115 110 150 60 180 0Z" fill="#9e8469" opacity="0.38"/>
-  <path d="M180 0 Q125 45 95 95 Q145 55 180 0Z" fill="#ded0bc" opacity="0.6"/>
-  <path d="M180 15 Q135 60 110 115 Q155 70 180 15Z" fill="#ece0ce" opacity="0.65"/>
-  <ellipse cx="125" cy="50" rx="16" ry="9" transform="rotate(-35 125 50)" fill="#7a7061" opacity="0.65"/>
-  <ellipse cx="95" cy="80" rx="15" ry="8" transform="rotate(-40 95 80)" fill="#696153" opacity="0.7"/>
-  <ellipse cx="65" cy="115" rx="14" ry="7.5" transform="rotate(-45 65 115)" fill="#5c5548" opacity="0.75"/>
-  <path d="M180 0 Q120 65 60 145" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
-  <circle cx="60" cy="145" r="3" fill="#c8a96e" opacity="0.85"/>
-  <circle cx="85" cy="118" r="2.5" fill="#dfc896" opacity="0.9"/>
-  <circle cx="108" cy="88" r="2.5" fill="#c8a96e" opacity="0.85"/>
-  <circle cx="132" cy="55" r="2.8" fill="#dfc896" opacity="0.9"/>
-  <circle cx="135" cy="45" r="17" fill="#f4ece1" opacity="0.92"/>
-  <circle cx="135" cy="45" r="13" fill="#e5d7c3" opacity="0.8"/>
-  <circle cx="135" cy="45" r="8.5" fill="#cfbeaa" opacity="0.75"/>
-  <circle cx="135" cy="45" r="4" fill="#a8927b" opacity="0.8"/>
-  <circle cx="100" cy="85" r="12" fill="#f4ece1" opacity="0.9"/>
-  <circle cx="100" cy="85" r="8.5" fill="#e0d0bc" opacity="0.8"/>
-</svg>
-    
-<svg class="floral-decor floral-bl" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <path d="M0 180 C25 150 60 110 90 60 C50 90 20 135 0 180Z" fill="#b89e82" opacity="0.45"/>
-  <path d="M0 180 C35 140 70 95 105 40 C65 70 30 120 0 180Z" fill="#9e8469" opacity="0.38"/>
-  <path d="M0 180 Q55 135 85 85 Q35 125 0 180Z" fill="#ded0bc" opacity="0.6"/>
-  <path d="M0 165 Q45 120 70 65 Q25 110 0 165Z" fill="#ece0ce" opacity="0.65"/>
-  <ellipse cx="55" cy="130" rx="16" ry="9" transform="rotate(35 55 130)" fill="#7a7061" opacity="0.65"/>
-  <ellipse cx="85" cy="100" rx="15" ry="8" transform="rotate(40 85 100)" fill="#696153" opacity="0.7"/>
-  <ellipse cx="115" cy="65" rx="14" ry="7.5" transform="rotate(45 115 65)" fill="#5c5548" opacity="0.75"/>
-  <path d="M0 180 Q60 115 120 35" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
-  <circle cx="120" cy="35" r="3" fill="#c8a96e" opacity="0.85"/>
-  <circle cx="95" cy="62" r="2.5" fill="#dfc896" opacity="0.9"/>
-  <circle cx="72" cy="92" r="2.5" fill="#c8a96e" opacity="0.85"/>
-  <circle cx="48" cy="125" r="2.8" fill="#dfc896" opacity="0.9"/>
-  <circle cx="45" cy="135" r="17" fill="#f4ece1" opacity="0.92"/>
-  <circle cx="45" cy="135" r="13" fill="#e5d7c3" opacity="0.8"/>
-  <circle cx="45" cy="135" r="8.5" fill="#cfbeaa" opacity="0.75"/>
-  <circle cx="45" cy="135" r="4" fill="#a8927b" opacity="0.8"/>
-  <circle cx="80" cy="95" r="12" fill="#f4ece1" opacity="0.9"/>
-  <circle cx="80" cy="95" r="8.5" fill="#e0d0bc" opacity="0.8"/>
-</svg>
+    <svg class="floral-decor floral-tr" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M180 0 C155 30 120 70 90 120 C130 90 160 45 180 0Z" fill="#b89e82" opacity="0.45"/>
+      <path d="M180 0 C145 40 110 85 75 140 C115 110 150 60 180 0Z" fill="#9e8469" opacity="0.38"/>
+      <path d="M180 0 Q125 45 95 95 Q145 55 180 0Z" fill="#ded0bc" opacity="0.6"/>
+      <path d="M180 15 Q135 60 110 115 Q155 70 180 15Z" fill="#ece0ce" opacity="0.65"/>
+      <ellipse cx="125" cy="50" rx="16" ry="9" transform="rotate(-35 125 50)" fill="#7a7061" opacity="0.65"/>
+      <ellipse cx="95" cy="80" rx="15" ry="8" transform="rotate(-40 95 80)" fill="#696153" opacity="0.7"/>
+      <ellipse cx="65" cy="115" rx="14" ry="7.5" transform="rotate(-45 65 115)" fill="#5c5548" opacity="0.75"/>
+      <path d="M180 0 Q120 65 60 145" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
+      <circle cx="60" cy="145" r="3" fill="#c8a96e" opacity="0.85"/>
+      <circle cx="85" cy="118" r="2.5" fill="#dfc896" opacity="0.9"/>
+      <circle cx="108" cy="88" r="2.5" fill="#c8a96e" opacity="0.85"/>
+      <circle cx="132" cy="55" r="2.8" fill="#dfc896" opacity="0.9"/>
+      <circle cx="135" cy="45" r="17" fill="#f4ece1" opacity="0.92"/>
+      <circle cx="135" cy="45" r="13" fill="#e5d7c3" opacity="0.8"/>
+      <circle cx="135" cy="45" r="8.5" fill="#cfbeaa" opacity="0.75"/>
+      <circle cx="135" cy="45" r="4" fill="#a8927b" opacity="0.8"/>
+      <circle cx="100" cy="85" r="12" fill="#f4ece1" opacity="0.9"/>
+      <circle cx="100" cy="85" r="8.5" fill="#e0d0bc" opacity="0.8"/>
+    </svg>
+    <svg class="floral-decor floral-bl" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <path d="M0 180 C25 150 60 110 90 60 C50 90 20 135 0 180Z" fill="#b89e82" opacity="0.45"/>
+      <path d="M0 180 C35 140 70 95 105 40 C65 70 30 120 0 180Z" fill="#9e8469" opacity="0.38"/>
+      <path d="M0 180 Q55 135 85 85 Q35 125 0 180Z" fill="#ded0bc" opacity="0.6"/>
+      <path d="M0 165 Q45 120 70 65 Q25 110 0 165Z" fill="#ece0ce" opacity="0.65"/>
+      <ellipse cx="55" cy="130" rx="16" ry="9" transform="rotate(35 55 130)" fill="#7a7061" opacity="0.65"/>
+      <ellipse cx="85" cy="100" rx="15" ry="8" transform="rotate(40 85 100)" fill="#696153" opacity="0.7"/>
+      <ellipse cx="115" cy="65" rx="14" ry="7.5" transform="rotate(45 115 65)" fill="#5c5548" opacity="0.75"/>
+      <path d="M0 180 Q60 115 120 35" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
+      <circle cx="120" cy="35" r="3" fill="#c8a96e" opacity="0.85"/>
+      <circle cx="95" cy="62" r="2.5" fill="#dfc896" opacity="0.9"/>
+      <circle cx="72" cy="92" r="2.5" fill="#c8a96e" opacity="0.85"/>
+      <circle cx="48" cy="125" r="2.8" fill="#dfc896" opacity="0.9"/>
+      <circle cx="45" cy="135" r="17" fill="#f4ece1" opacity="0.92"/>
+      <circle cx="45" cy="135" r="13" fill="#e5d7c3" opacity="0.8"/>
+      <circle cx="45" cy="135" r="8.5" fill="#cfbeaa" opacity="0.75"/>
+      <circle cx="45" cy="135" r="4" fill="#a8927b" opacity="0.8"/>
+      <circle cx="80" cy="95" r="12" fill="#f4ece1" opacity="0.9"/>
+      <circle cx="80" cy="95" r="8.5" fill="#e0d0bc" opacity="0.8"/>
+    </svg>
 
     <span class="lbl-light">Guestbook &amp; Warm Wishes</span>
     <div style="font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--light-frame-text);margin-bottom:12px;">
@@ -1547,7 +1445,6 @@ body {
 
     <input type="text" id="wishName" class="guestbook-input" placeholder="Your Name" maxlength="40">
     <textarea id="wishMsg" class="guestbook-input" style="height:70px;resize:none;" placeholder="Your Heartfelt Wishes &amp; Dua…" maxlength="200"></textarea>
-    
     <button class="btn-send-wish" onclick="addWish()" type="button">Send Wishes</button>
 
     <div class="wishes-list" id="wishesList">
@@ -1560,57 +1457,50 @@ body {
 
   <!-- ── 8. CLOSING BLESSINGS (DARK FRAME) ── -->
   <section class="frame-dark" id="closing">
-    
-<svg class="floral-decor floral-tl" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <g transform="translate(180, 0) scale(-1, 1)">
-    <path d="M180 0 C155 30 120 70 90 120 C130 90 160 45 180 0Z" fill="#b89e82" opacity="0.45"/>
-    <path d="M180 0 C145 40 110 85 75 140 C115 110 150 60 180 0Z" fill="#9e8469" opacity="0.38"/>
-    <path d="M180 0 Q125 45 95 95 Q145 55 180 0Z" fill="#ded0bc" opacity="0.6"/>
-    <path d="M180 15 Q135 60 110 115 Q155 70 180 15Z" fill="#ece0ce" opacity="0.65"/>
-    <ellipse cx="125" cy="50" rx="16" ry="9" transform="rotate(-35 125 50)" fill="#7a7061" opacity="0.65"/>
-    <ellipse cx="95" cy="80" rx="15" ry="8" transform="rotate(-40 95 80)" fill="#696153" opacity="0.7"/>
-    <path d="M180 0 Q120 65 60 145" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
-    <circle cx="60" cy="145" r="3" fill="#c8a96e" opacity="0.85"/>
-    <circle cx="85" cy="118" r="2.5" fill="#dfc896" opacity="0.9"/>
-    <circle cx="135" cy="45" r="16" fill="#f4ece1" opacity="0.92"/>
-    <circle cx="135" cy="45" r="11" fill="#e5d7c3" opacity="0.8"/>
-  </g>
-</svg>
-    
-<svg class="floral-decor floral-br" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-  <g transform="translate(180, 180) scale(-1, -1)">
-    <path d="M180 0 C155 30 120 70 90 120 C130 90 160 45 180 0Z" fill="#b89e82" opacity="0.45"/>
-    <path d="M180 0 C145 40 110 85 75 140 C115 110 150 60 180 0Z" fill="#9e8469" opacity="0.38"/>
-    <path d="M180 0 Q125 45 95 95 Q145 55 180 0Z" fill="#ded0bc" opacity="0.6"/>
-    <path d="M180 15 Q135 60 110 115 Q155 70 180 15Z" fill="#ece0ce" opacity="0.65"/>
-    <ellipse cx="125" cy="50" rx="16" ry="9" transform="rotate(-35 125 50)" fill="#7a7061" opacity="0.65"/>
-    <ellipse cx="95" cy="80" rx="15" ry="8" transform="rotate(-40 95 80)" fill="#696153" opacity="0.7"/>
-    <path d="M180 0 Q120 65 60 145" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
-    <circle cx="60" cy="145" r="3" fill="#c8a96e" opacity="0.85"/>
-    <circle cx="85" cy="118" r="2.5" fill="#dfc896" opacity="0.9"/>
-    <circle cx="135" cy="45" r="16" fill="#f4ece1" opacity="0.92"/>
-    <circle cx="135" cy="45" r="11" fill="#e5d7c3" opacity="0.8"/>
-  </g>
-</svg>
+    <svg class="floral-decor floral-tl" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g transform="translate(180, 0) scale(-1, 1)">
+        <path d="M180 0 C155 30 120 70 90 120 C130 90 160 45 180 0Z" fill="#b89e82" opacity="0.45"/>
+        <path d="M180 0 C145 40 110 85 75 140 C115 110 150 60 180 0Z" fill="#9e8469" opacity="0.38"/>
+        <path d="M180 0 Q125 45 95 95 Q145 55 180 0Z" fill="#ded0bc" opacity="0.6"/>
+        <path d="M180 15 Q135 60 110 115 Q155 70 180 15Z" fill="#ece0ce" opacity="0.65"/>
+        <ellipse cx="125" cy="50" rx="16" ry="9" transform="rotate(-35 125 50)" fill="#7a7061" opacity="0.65"/>
+        <ellipse cx="95" cy="80" rx="15" ry="8" transform="rotate(-40 95 80)" fill="#696153" opacity="0.7"/>
+        <path d="M180 0 Q120 65 60 145" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
+        <circle cx="60" cy="145" r="3" fill="#c8a96e" opacity="0.85"/>
+        <circle cx="85" cy="118" r="2.5" fill="#dfc896" opacity="0.9"/>
+        <circle cx="135" cy="45" r="16" fill="#f4ece1" opacity="0.92"/>
+        <circle cx="135" cy="45" r="11" fill="#e5d7c3" opacity="0.8"/>
+      </g>
+    </svg>
+    <svg class="floral-decor floral-br" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <g transform="translate(180, 180) scale(-1, -1)">
+        <path d="M180 0 C155 30 120 70 90 120 C130 90 160 45 180 0Z" fill="#b89e82" opacity="0.45"/>
+        <path d="M180 0 C145 40 110 85 75 140 C115 110 150 60 180 0Z" fill="#9e8469" opacity="0.38"/>
+        <path d="M180 0 Q125 45 95 95 Q145 55 180 0Z" fill="#ded0bc" opacity="0.6"/>
+        <path d="M180 15 Q135 60 110 115 Q155 70 180 15Z" fill="#ece0ce" opacity="0.65"/>
+        <ellipse cx="125" cy="50" rx="16" ry="9" transform="rotate(-35 125 50)" fill="#7a7061" opacity="0.65"/>
+        <ellipse cx="95" cy="80" rx="15" ry="8" transform="rotate(-40 95 80)" fill="#696153" opacity="0.7"/>
+        <path d="M180 0 Q120 65 60 145" stroke="#c8a96e" stroke-width="1.3" stroke-linecap="round" fill="none" opacity="0.75"/>
+        <circle cx="60" cy="145" r="3" fill="#c8a96e" opacity="0.85"/>
+        <circle cx="85" cy="118" r="2.5" fill="#dfc896" opacity="0.9"/>
+        <circle cx="135" cy="45" r="16" fill="#f4ece1" opacity="0.92"/>
+        <circle cx="135" cy="45" r="11" fill="#e5d7c3" opacity="0.8"/>
+      </g>
+    </svg>
 
     <div class="arabic closing-dua">
       بَارَكَ اللهُ لَكُمَا وَبَارَكَ عَلَيْكُمَا وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ
     </div>
-    
     <div style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--dark-frame-subtext);margin-bottom:20px;">
       May Allah bless you both and unite you in goodness
     </div>
-
     <div class="hr-dark"></div>
-
     <div style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:18px;color:var(--gold-light);margin-top:16px;">
       With warm love and deepest gratitude,
     </div>
-    
     <div class="closing-couple">
       Jhumu &amp; Suvo
     </div>
-
     <div style="font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--dark-frame-subtext);margin-top:8px;">
       24 · 12 · 2026
     </div>
@@ -1631,11 +1521,18 @@ body {
   const dispEl = document.getElementById('invDisp');
   const salEl = document.getElementById('invSalutation');
   const wishNameEl = document.getElementById('wishName');
+  const covGuestBadge = document.getElementById('covGuestBadge');
+  const covGuestName = document.getElementById('covGuestName');
 
   if (guest.trim()) {
-    dispEl.textContent = guest.trim();
+    const val = guest.trim();
+    dispEl.textContent = val;
     salEl.textContent = salutation.trim();
-    if (wishNameEl) wishNameEl.value = guest.trim();
+    if (wishNameEl) wishNameEl.value = val;
+    if (covGuestBadge && covGuestName) {
+      covGuestName.textContent = val;
+      covGuestBadge.style.display = 'inline-block';
+    }
   } else {
     dispEl.textContent = '— Dear Respected Guest —';
     salEl.textContent = 'Cordially Invited';
@@ -1663,7 +1560,6 @@ function playMusic() {
     isAudioPlaying = true;
     musicBtn.classList.add('playing');
   }).catch(() => {
-    // If external or local file blocked by browser policy, use Web Audio API procedural backup!
     startProceduralMusic();
     isAudioPlaying = true;
     musicBtn.classList.add('playing');
@@ -1680,7 +1576,6 @@ function pauseMusic() {
   musicBtn.classList.remove('playing');
 }
 
-// Procedural soothing acoustic harp / arpeggio synthesizer backup (100% offline guarantee)
 function startProceduralMusic() {
   if (proceduralInterval) return;
   try {
@@ -1688,12 +1583,11 @@ function startProceduralMusic() {
     if (!audioCtx) audioCtx = new AudioContext();
     if (audioCtx.state === 'suspended') audioCtx.resume();
 
-    // Romantic acoustic progression: G - D - Em - C
     const chords = [
-      [196.00, 246.94, 293.66, 392.00], // G
-      [146.83, 220.00, 293.66, 369.99], // D
-      [164.81, 246.94, 329.63, 392.00], // Em
-      [130.81, 196.00, 261.63, 329.63]  // C
+      [196.00, 246.94, 293.66, 392.00],
+      [146.83, 220.00, 293.66, 369.99],
+      [164.81, 246.94, 329.63, 392.00],
+      [130.81, 196.00, 261.63, 329.63]
     ];
     let chordIdx = 0;
     let noteIdx = 0;
@@ -1750,11 +1644,10 @@ function startAutoScroll() {
   autoScrollTimer = setInterval(() => {
     if (!isAutoScrollActive) return;
     window.scrollBy({ top: 1, behavior: 'auto' });
-    // Stop at the bottom
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 5) {
       stopAutoScroll();
     }
-  }, 24); // ~40px per second, elegant reading pace
+  }, 24);
 }
 
 function stopAutoScroll() {
@@ -1767,7 +1660,6 @@ function stopAutoScroll() {
   if (autoScrollTxt) autoScrollTxt.textContent = 'Auto Scroll: OFF';
 }
 
-// User touch/wheel interruption pause (gracefully pauses for 3.5s then resumes)
 function handleUserScrollInteraction() {
   if (!isAutoScrollActive) return;
   if (autoScrollTimer) {
@@ -1783,30 +1675,24 @@ window.addEventListener('wheel', handleUserScrollInteraction, { passive: true })
 window.addEventListener('touchstart', handleUserScrollInteraction, { passive: true });
 
 /* ══ 4. ENVELOPE OPENING ══ */
-let invitationOpened = false;
+let opened = false;
 function openEnvelope() {
-  if (invitationOpened) return;
-  invitationOpened = true;
-
-  // Start music directly from the guest's opening gesture.
+  if (opened) return;
+  opened = true;
+  document.getElementById('waxSeal').classList.add('break');
+  
   playMusic();
 
-  const waxSeal = document.getElementById('waxSeal');
-  const envFlap = document.getElementById('envFlap');
-  const innerCard = document.getElementById('innerCard');
-  const cover = document.getElementById('cover');
-
-  waxSeal.classList.add('break');
   setTimeout(() => {
-    envFlap.classList.add('open');
+    document.getElementById('envFlap').classList.add('open');
     setTimeout(() => {
-      innerCard.classList.add('slide-up');
+      document.getElementById('innerCard').classList.add('slide-up');
       setTimeout(() => {
-        cover.classList.add('exit');
-
-        // Keep the original auto-scroll behavior after the cover fades.
-        setTimeout(() => startAutoScroll(), 1100);
-        setTimeout(() => cover.remove(), 950);
+        document.getElementById('cover').classList.add('exit');
+        setTimeout(() => {
+          startAutoScroll();
+        }, 500);
+        setTimeout(() => document.getElementById('cover').remove(), 950);
       }, 700);
     }, 550);
   }, 350);
